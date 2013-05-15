@@ -1,0 +1,529 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inl",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 641,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "single.php",
+			"settings":
+			{
+				"buffer_size": 659,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 2487,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 3712,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 564,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "footer.php",
+			"settings":
+			{
+				"buffer_size": 128,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 110.0,
+		"selected_items":
+		[
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"close ",
+				"Project: Close"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"whit",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"white",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"high",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"hgh",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Add Repository"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"syn text",
+				"Set Syntax: Textile"
+			],
+			[
+				"align",
+				"Align Tabular"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"syn css",
+				"Set Syntax: CSS"
+			],
+			[
+				"live ",
+				"Live CSS: Uncolorize"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"pack",
+				"Package Control: Add Repository"
+			],
+			[
+				"pack re",
+				"Package Control: Add Repository"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pak ins",
+				"Package Control: Install Package"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"soda",
+				"Preferences: Package Control Settings – Default"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Dropbox/settings/software-list.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0053/opr0558A.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/temporary_downloads/configuration.php",
+		"/C/Users/Heracles/Desktop/greek-olive-oil/greekoliveoil.sql",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0074/opr05L4C.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003C/opr05S9W.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0052/opr0556M.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0046/opr053YJ.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0046/opr053XQ.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003D/opr0533O.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0038/opr052LO.tmp",
+		"/D/www/tectgr/archi.tect.gr/.htaccess",
+		"/D/www/tectgr/archi.tect.gr/.htaccess.orig",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0003/opr04XDH.tmp",
+		"/D/www/tectgr/archi.tect.gr/index.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_007D/opr04WPK.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0022/opr04B3Q.tmp",
+		"/C/Users/Heracles/AppData/Roaming/FileZilla/filezilla.xml",
+		"/D/Dropbox/Public/publications.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0056/opr03R0A.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0065/opr03SFH.tmp",
+		"/C/Users/Heracles/Desktop/master.m3u8",
+		"/C/Users/Heracles/Desktop/index_0_av.m3u8",
+		"/C/Users/Heracles/AppData/Local/Temp/7zE5E4B.tmp/README.txt",
+		"/C/Users/Heracles/AppData/Local/Temp/7zE67C2.tmp/README.txt",
+		"//192.168.1.1/c/usb_radio.xml",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_007E/opr01EG2.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0000/opr01EL6.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0000/opr01EL1.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0075/opr01DIO.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0076/opr01DLY.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0076/opr01DNH.tmp",
+		"/D/Dropbox/Public/grass-wiki.css",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0075/opr01DI0.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/application_cache/4fe812e6ab54a8fe6b939fd872071cf2/g_0005/opr000JP.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_005C/opr01B2I.tmp",
+		"/D/Dropbox/webdesign/speed-dial_nintendoGR/nintendogr_enhance.user.js",
+		"/C/Users/Heracles/Desktop/software.html",
+		"/D/Dropbox/webdesign/speed-dial_nintendoGR/script.js",
+		"/C/Users/Heracles/Desktop/software.txt",
+		"/C/Users/Heracles/Desktop/style.qss",
+		"/C/Program Files (x86)/Launchy/skins/Solid_grey/misc.txt",
+		"/C/Users/Heracles/Desktop/downloads/Index",
+		"/C/Users/Heracles/AppData/Local/Temp/7zEA0E.tmp/Index",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#content",
+			"user",
+			"sql",
+			"font",
+			"herac",
+			"ease-in",
+			"single",
+			"body",
+			"small",
+			"padding",
+			"');\n",
+			"wampser",
+			"favico",
+			"sku",
+			"BottomFragment",
+			"imglangdir",
+			"rtmp",
+			"remove",
+			"outdated",
+			"contents",
+			"Contents",
+			"contents",
+			"replaceURLWithHTMLLinks",
+			"7zi",
+			"launch",
+			"lau",
+			"soda"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#main"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 100.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "functions.php",
+					"settings":
+					{
+						"buffer_size": 2487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								553,
+								553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 3712,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2151,
+								2151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 449.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "footer.php",
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true
+}
