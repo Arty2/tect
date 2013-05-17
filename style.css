@@ -5,7 +5,7 @@ Description: n/a
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.0.1
+Version: 1.0.2
 Tags:
 License:
 License URI:
@@ -24,6 +24,10 @@ Colors and Typography and Misc
 
 Transitions
  */
+
+/*
+reset styles
+*/
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -144,7 +148,7 @@ input, select {
 }
 
 html {
-
+	font: 120%/1.5 "Georgia", serif; /* 62.5% for px → rem */
 }
 
 body {
@@ -152,39 +156,51 @@ body {
 	color: #222;
 }
 
-body > footer {
-	font: 300 1.25em/1.5 "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
-}
-#main {
-	font: 1.5em/1.5 "Georgia", serif;
-}
+/*
+specific styles
+*/
 
-	#main article {
-		margin: 0 0 3em 0;
+body > header .vcard {
+	font: 300 1em/1.5 "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
+}
+	body > header a:hover {
+		border-bottom-style: solid;
+		border-bottom-width: 4px;
+	}
+	body > header .vcard {
+		padding-bottom: 1em;
+		border-bottom: 1px dotted #000;
 	}
 
-		#main article header,
-		#main article aside {
-			width: 13em;
+#main { /* HTML5's future element */
+	
+}
+	#main article {
+		overflow: hidden;
+	}
+		#main article > header {
+			font: 1em/1.5 "Georgia", serif;
 		}
-
-			#main article header img {
-				height: auto;
+			#main article > a > header > h1,
+			#main article > a > header > p,
+			#main article > footer {
+				margin: 1em 0.7em 1em 0;
+				padding: 0 0.3em 0 1em;
+			}
+			#main article > header img {
+				height: 100%;
 				width: 100%;
+				margin: 0;
 			}
 
-			#main article header p {
-				font-size: 0.75em;
-			}
-
-		#main article p + p {
-			text-indent: 1em;
+		#main article > footer > .tags {
+			font: 0.65em/1.5 "Georgia", serif;
 		}
 
-		#main article a {
+/*		#main article a {
 			border-bottom: 1px solid #ccc;
+			border-color: rgba(0,0,0,0.2);
 		}
-
 			#main article a:hover,
 			#main article:hover a {
 				color: #FF8080;
@@ -198,61 +214,74 @@ body > footer {
 			#main article a:hover {
 				border-bottom-style: solid;
 				border-bottom-width: 4px;
-			}
+			}*/
 
+body > footer {
+	clear: both;
+}
 
+/*body *:hover {
+	outline: 1px dashed yellow;
+}*/
 /*
 media queries
 */
+
 @media only screen and (min-width: 1024px) {
-	body > footer {
-		margin: 1em;
-		padding: 0;
+	body {
+		padding: 1em;
+	}
+
+	body > header {
 		position: fixed;
-		top: 0;
-		width: 12em;
+		top: 1em;
+		width: 14em;
 	}
-
-	body > footer .title {
-		font-size: 0.9em;
-	}
-
-		body > footer a:hover {
-			border-bottom-style: solid;
-			border-bottom-width: 4px;
-		}
-	body.single > footer,
-	body.page > footer {
-		opacity: 0.3;
-
-		-webkit-transition	:opacity .3s;
-		-moz-transition		:opacity .3s;
-		-o-transition		:opacity .3s;
-		transition			:opacity .3s;
-	}
-
-		body.single > footer:hover,
-		body.page > footer:hover {
-			opacity: 1;
-		}
 
 	#main {
-		margin: 1em 1em 0 29em;
-		padding: 0;
-		width: auto;
+		margin-left: 15em;
 	}
-		#main article header,
-		#main article aside  {
+		#main.archive article {
 			float: left;
-			margin: 1em;
+			position: relative;
 
-			overflow: hidden;
+			height: 16em;
+			width: 16em;
+			margin: 0 1em 1em 0;
+		}
+			#main.archive article:last-child {
+				margin: 0;
+			}
+			#main.archive article:hover > a > header > h1 {
+				background: khaki;
+			}
+			#main.archive article:hover > a > header > img+p,
+			#main.archive article:hover > footer {
+				visibility: hidden;
+			}
+			#main.archive article:hover > a > header > img {
+				opacity: 1;
+			}
+
+		#main.archive article > a > header > h1 {
+			display: block;
+			position: absolute;
+			top: 0;
 		}
 
-		.single #main article header,
-		.page #main article header,
-		.single #main article aside,
-		.page #main article aside {
-			margin: -1em 0 0 -14.5em;
+		#main.archive article > a > header > p {
+			position: absolute;
+			top: 2em;
+		}
+
+		#main.archive article > a > header > img {
+			vertical-align: top;
+
+			opacity: 0.2;
+		}
+		
+		#main.archive article > footer {
+			position: absolute;
+			bottom: 0;
 		}
 }

@@ -1,5 +1,8 @@
 <?php
 
+	#add support rules
+	add_theme_support('post-thumbnails');
+
 	#allow Twitter embeds
 	add_filter('oembed_providers','tect_twitter_oembed');
 	function tect_twitter_oembed($a) {
