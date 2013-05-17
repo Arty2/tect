@@ -5,7 +5,7 @@ Description: n/a
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.0.2
+Version: 1.0.3
 Tags:
 License:
 License URI:
@@ -197,24 +197,24 @@ body > header .vcard {
 			font: 0.65em/1.5 "Georgia", serif;
 		}
 
-/*		#main article a {
+		#main.single article a {
 			border-bottom: 1px solid #ccc;
 			border-color: rgba(0,0,0,0.2);
 		}
-			#main article a:hover,
-			#main article:hover a {
+			#main.single article a:hover,
+			#main.single article:hover a {
 				color: #FF8080;
 				border-color: #FF8080;
 			}
 
-			#main article a:visited {
+			#main.single article a:visited {
 				border-bottom-style: dashed;
 			}
 
-			#main article a:hover {
+			#main.single article a:hover {
 				border-bottom-style: solid;
 				border-bottom-width: 4px;
-			}*/
+			}
 
 body > footer {
 	clear: both;
