@@ -26,13 +26,14 @@
 </head>
 <body <?php body_class($body_class); ?>>
 	<header>
-		<div class="vcard"> <!-- move this to settings page -->
+		<div class="vcard"> <!-- move to settings page or just use a text widget → sidebar.php -->
 			<h1><a class="url fn" href="http://archi.tect.gr/">Heracles Papatheodorou</a></h1>
-			<span class="title">licensed architect, <abbr title="Diploma in Architectural Engineering">dipl.</abbr> <a href="http://www.ntua.gr/index_en.html"><abbr title="National Technical University of Athens">NTUA</abbr></a></span><br />
+			<span class="title">licensed architect, <abbr title="Diploma in Architectural Engineering">dipl.</abbr> <a href="http://www.ntua.gr/index_en.html"><abbr title="National Technical University of Athens">NTUA</abbr></a></span>
+			<div class="adr">based in  <span class="locality">Athens</span>, <span class="country-name">Greece</span></div>
 			twitter: <a class="url" rel="me" href="http://twitter.com/Arty2">@<span class="nickname">Arty2</span></a><br />
 			email: <a class="email" href="mailto://archi@tect.gr">archi@tect.gr</span></a>
 		</div>
-	<nav> <!-- use widget instead -->
+	<nav> <!-- use widget instead! -->
 	<?php
 		wp_tag_cloud(array(
 			'smallest' => 0.75,

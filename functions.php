@@ -56,10 +56,8 @@
 			$content = apply_filters('the_content', $post->post_content);
 			return $content;
 		}
-		#shortcode / antispam @s
-		function tect_at() {
-			return '<img src="'.get_bloginfo('template_directory').'/graphics/at.png" alt="@" />';
-		}
+		#shortcode / show the date (stamp) according to WP's settings
+		//todo
 
 	#register widget areas
 	register_sidebar(array(

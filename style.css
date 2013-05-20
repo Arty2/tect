@@ -5,7 +5,7 @@ Description: n/a
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.0.3
+Version: 1.0.4
 Tags:
 License:
 License URI:
@@ -147,12 +147,18 @@ input, select {
 	vertical-align: middle;
 }
 
+p { /*look into http://kingdesk.com/projects/wp-typography/*/
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
 html {
 	font: 120%/1.5 "Georgia", serif; /* 62.5% for px → rem */
 }
 
 body {
-	background: #eee;
+	background: #eee url('./graphics/noise.png');
 	color: #222;
 }
 
@@ -176,16 +182,23 @@ body > header .vcard {
 	
 }
 	#main article {
-		overflow: hidden;
-	}
+		/*overflow: hidden;*/
+	}		
+		#main article > footer {
+			margin: 1em;
+			color: #777;
+		}
 		#main article > header {
 			font: 1em/1.5 "Georgia", serif;
 		}
-			#main article > a > header > h1,
-			#main article > a > header > p,
-			#main article > footer {
-				margin: 1em 0.7em 1em 0;
-				padding: 0 0.3em 0 1em;
+			#main article > a > header > h1 {
+				margin: 0.7em 0.5em 0.7em -0.5em;
+				padding: 0.3em 0.5em 0.3em 1.5em;
+
+				color: #777;
+			}
+			#main article > a > header > p {
+				margin: 1em;
 			}
 			#main article > header img {
 				height: 100%;
@@ -238,7 +251,7 @@ media queries
 		width: 14em;
 	}
 
-	#main {
+	#main.archive {
 		margin-left: 15em;
 	}
 		#main.archive article {
@@ -252,36 +265,78 @@ media queries
 			#main.archive article:last-child {
 				margin: 0;
 			}
-			#main.archive article:hover > a > header > h1 {
-				background: khaki;
-			}
+		
+		#main.archive article > footer {
+			position: absolute;
+			bottom: 0;
+		}
+
+		#main.archive article > a > header > img+p,
+		#main.archive article > footer {
+			-webkit-transition	:opacity .5s, visibility .8s;
+			-moz-transition		:opacity .5s, visibility .8s;
+			-o-transition		:opacity .5s, visibility .8s;
+			transition			:opacity .5s, visibility .8s;
+		}
 			#main.archive article:hover > a > header > img+p,
 			#main.archive article:hover > footer {
+				opacity: 0;
 				visibility: hidden;
-			}
-			#main.archive article:hover > a > header > img {
-				opacity: 1;
 			}
 
 		#main.archive article > a > header > h1 {
 			display: block;
 			position: absolute;
 			top: 0;
+			z-index: 100;
+
+			line-height: 1;
+
+			-webkit-transition	:background .5s;
+			-moz-transition		:background .5s;
+			-o-transition		:background .5s;
+			transition			:background .5s;
 		}
+			#main.archive article:hover > a > header > h1 {
+				background: khaki;
+				color: #000;
+			}
 
 		#main.archive article > a > header > p {
 			position: absolute;
 			top: 2em;
 		}
+			#main.archive article:hover > a > header > p {
+
+			}
 
 		#main.archive article > a > header > img {
 			vertical-align: top;
 
 			opacity: 0.2;
+
+			-webkit-transition	:opacity .5s;
+			-moz-transition		:opacity .5s;
+			-o-transition		:opacity .5s;
+			transition			:opacity .5s;
 		}
-		
-		#main.archive article > footer {
-			position: absolute;
-			bottom: 0;
+			#main.archive article:hover > a > header > img {
+				opacity: 1;
+			}
+
+	#main.single {
+		margin-left: 32em;
+		max-width: 40em;
+	}
+		#main.single article > header {
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+			border-bottom: 1px dotted #000;
+		}
+		#main.single article aside {
+			float: left;
+
+			margin-left: -17em;
+			width: 16em;
 		}
 }
