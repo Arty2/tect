@@ -25,6 +25,7 @@
 	 <?php wp_head(); ?> 
 </head>
 <body <?php body_class($body_class); ?>>
+<!-- http://codex.wordpress.org/Function_Reference/body_class -->
 	<header>
 		<div class="vcard"> <!-- move to settings page or just use a text widget → sidebar.php -->
 			<h1><a class="url fn" href="http://archi.tect.gr/">Heracles Papatheodorou</a></h1>
