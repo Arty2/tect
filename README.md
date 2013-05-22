@@ -5,10 +5,12 @@ tect // yet another WordPress theme
 
 aim
 -----------------------------------
+* make an unobtrusive, comptemporary & responsive theme suitable for visual designers and writers
 
 
 todo
 -----------------------------------
 * include appropriate FOSS license
-* settings page
-* write aims
+* theme settings page, move stuff there
+* media / <aside> sizes
+* accordion gallery

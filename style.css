@@ -162,6 +162,10 @@ body {
 	color: #222;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
+}
+
 /*
 specific styles
 */
@@ -268,8 +272,22 @@ media queries
 			opacity: 1;
 		}
 
+	body > header .logo {
+		float: right;
+
+		height: auto;
+		width: 2em;
+		margin: 0.5em -3em 0.5em 0.5em;
+
+		/*transition here once centered*/
+	}
+		body > header .logo:hover {
+			width: 2.5em;
+			margin: 0.25em -3.25em 0.25em 0.25em;
+		}
+
 	#main.archive {
-		margin-left: 15em;
+		margin-left: 18em;
 	}
 		#main.archive article {
 			float: left;
@@ -306,7 +324,8 @@ media queries
 			position: absolute;
 			top: 0;
 			z-index: 100;
-
+			
+			border-bottom-right-radius: 0.5em;
 			line-height: 1;
 
 			-webkit-transition	:background .5s;
@@ -342,7 +361,7 @@ media queries
 			}
 
 	#main.single {
-		margin-left: 32em;
+		margin-left: 35em;
 		max-width: 40em;
 	}
 		#main.single article > header {
