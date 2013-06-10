@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"border-ra",
+				"border-bottom-right-radius"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
 				"inl",
 				"inline-block"
 			]
@@ -15,7 +23,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 641,
+				"buffer_size": 824,
 				"line_ending": "Unix"
 			}
 		},
@@ -23,7 +31,7 @@
 			"file": "single.php",
 			"settings":
 			{
-				"buffer_size": 659,
+				"buffer_size": 745,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,7 +39,7 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 2487,
+				"buffer_size": 2680,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,15 +47,23 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 3712,
+				"buffer_size": 6441,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "update.json",
+			"settings":
+			{
+				"buffer_size": 143,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 564,
+				"buffer_size": 2059,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,8 +71,16 @@
 			"file": "footer.php",
 			"settings":
 			{
-				"buffer_size": 128,
+				"buffer_size": 115,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 475,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -66,6 +90,10 @@
 		"height": 110.0,
 		"selected_items":
 		[
+			[
+				"comm",
+				"Toggle Comment"
+			],
 			[
 				"close",
 				"Project: Close"
@@ -188,6 +216,22 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0044/opr0MNV3.tmp",
+		"/D/Dropbox/Public/publications.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0071/opr0KOGC.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/Users/Heracles/AppData/Local/Temp/7zO6A5F.tmp/followers.json",
+		"/D/www/tectgr/tect.gr/.htaccess",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/.gitignore",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0030/opr0IQUY.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr0IQJV.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002B/opr0IQCR.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002C/opr0IQDD.tmp",
+		"/C/Users/Heracles/Desktop/type.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0033/opr0IEG6.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002F/opr0IE3J.tmp",
+		"/C/Users/Heracles/Desktop/tect - Copy/style.css",
 		"/D/Dropbox/settings/software-list.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0053/opr0558A.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/temporary_downloads/configuration.php",
@@ -209,7 +253,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_007D/opr04WPK.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0022/opr04B3Q.tmp",
 		"/C/Users/Heracles/AppData/Roaming/FileZilla/filezilla.xml",
-		"/D/Dropbox/Public/publications.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0056/opr03R0A.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0065/opr03SFH.tmp",
 		"/C/Users/Heracles/Desktop/master.m3u8",
@@ -253,6 +296,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"arty2",
+			"Buenos_Aires",
+			"p {",
+			"<body",
+			"img",
+			"supp",
+			"thumb",
+			"300",
 			"#content",
 			"user",
 			"sql",
@@ -298,7 +349,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -306,15 +357,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 641,
+						"buffer_size": 824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								56,
-								56
+								85,
+								85
 							]
 						],
 						"settings":
@@ -333,15 +384,15 @@
 					"file": "single.php",
 					"settings":
 					{
-						"buffer_size": 659,
+						"buffer_size": 745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								544,
-								544
+								344,
+								225
 							]
 						],
 						"settings":
@@ -350,7 +401,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 100.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -360,71 +411,15 @@
 					"file": "functions.php",
 					"settings":
 					{
-						"buffer_size": 2487,
+						"buffer_size": 2680,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								553,
-								553
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 3712,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2151,
-								2151
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 449.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "header.php",
-					"settings":
-					{
-						"buffer_size": 564,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								149,
-								149
+								325,
+								325
 							]
 						],
 						"settings":
@@ -440,24 +435,132 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "footer.php",
+					"buffer": 3,
+					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 128,
+						"buffer_size": 6441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								89,
-								95
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "update.json",
+					"settings":
+					{
+						"buffer_size": 143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 2059,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1856,
+								1856
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 532.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "footer.php",
+					"settings":
+					{
+						"buffer_size": 115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								474,
+								474
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

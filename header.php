@@ -36,7 +36,7 @@
 			email: <a class="email" href="mailto://archi@tect.gr">archi@tect.gr</span></a>
 		</div>
 
-		<nav> <!-- use widget instead! -->
+		<nav role="navigation"> <!-- use widget instead! -->
 		<?php
 			wp_tag_cloud(array(
 				'smallest' => 0.75,

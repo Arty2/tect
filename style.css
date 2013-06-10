@@ -5,7 +5,7 @@ Description: n/a
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.0.5
+Version: 1.0.6
 Tags:
 License:
 License URI:
@@ -26,6 +26,7 @@ Transitions
  */
 
 /*
+replace with http://necolas.github.io/normalize.css/ ?
 reset styles
 */
 
@@ -199,6 +200,7 @@ body > header .vcard {
 				margin: 0.7em 0.5em 0.7em -0.5em;
 				padding: 0.3em 0.5em 0.3em 1.5em;
 
+				font-weight: 100;
 				color: #777;
 			}
 			#main article > a > header > p {
@@ -279,7 +281,7 @@ media queries
 		width: 2em;
 		margin: 0.5em -3em 0.5em 0.5em;
 
-		/*transition here once centered*/
+		/* scale and transition */
 	}
 		body > header .logo:hover {
 			width: 2.5em;

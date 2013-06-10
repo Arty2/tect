@@ -12,5 +12,6 @@ todo
 -----------------------------------
 * include appropriate FOSS license
 * theme settings page, move stuff there
+* decide upon header
 * media / <aside> sizes
 * accordion gallery

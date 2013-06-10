@@ -3,7 +3,7 @@ get_header();
 get_sidebar();
 ?>
 
-<section id="main" class="archive">
+<section id="main" class="archive" role="main">
 <?php
 #Start The Loop
 if ( have_posts() ) {
