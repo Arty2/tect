@@ -5,7 +5,7 @@ Description: n/a
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.0.6
+Version: 1.0.7
 Tags:
 License:
 License URI:
@@ -16,8 +16,9 @@ License URI:
 /*
 how CSS in this file is ordered:
 
-Display
 Positioning
+
+Display
 Box model
 
 Colors and Typography and Misc
@@ -95,10 +96,9 @@ a {
 	font-size: 100%;
 	text-decoration: none;
 
-	-webkit-transition	:border .3s;
-	-moz-transition		:border .3s;
-	-o-transition		:border .3s;
-	transition			:border .3s;
+	-webkit-transition	: border .3s;
+	-moz-transition		: border .3s;
+	transition			: border .3s;
 }
 
 small {
@@ -171,23 +171,20 @@ h1, h2, h3, h4, h5, h6 {
 specific styles
 */
 
-body > header .vcard {
+body > header {
 	font: 300 1em/1.5 "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
 }
-	body > header a:hover {
+	body > header > #colophon a:hover {
 		border-bottom-style: solid;
 		border-bottom-width: 4px;
 	}
-	body > header .vcard {
-		padding-bottom: 1em;
-		border-bottom: 1px dotted #000;
-	}
+
 
 #main { /* HTML5's future element */
 	
 }
 	#main article {
-		/*overflow: hidden;*/
+		vertical-align: bottom;
 	}		
 		#main article > footer {
 			margin: 1em;
@@ -197,24 +194,20 @@ body > header .vcard {
 			font: 1em/1.5 "Georgia", serif;
 		}
 			#main article > a > header > h1 {
-				margin: 0.7em 0.5em 0.7em -0.5em;
-				padding: 0.3em 0.5em 0.3em 1.5em;
-
 				font-weight: 100;
 				color: #777;
 			}
 			#main article > a > header > p {
 				margin: 1em;
 			}
-			#main article > header img {
+			#main article > a > header img {
 				height: 100%;
 				width: 100%;
-				margin: 0;
 			}
 
 		#main article p+p {
 			/*text-indent: 1em;*/
-			margin-bottom: 0.5em;
+			margin-bottom: 1em;
 		}
 
 		#main article > footer > .tags {
@@ -252,52 +245,56 @@ media queries
 */
 
 @media only screen and (min-width: 1024px) {
+
+	/*body *:hover { outline: 1px dashed gold; }*/ /*DEBUG*/
+
 	body {
-		padding: 1em;
+		padding: 2em 0 2em 2em;
 	}
 
 	body > header {
 		position: fixed;
-		top: 1em;
+		left: 0;
+		top: -11em;
+
+		padding: 2em 0 0 2em;
+		height: 16em;
 		width: 14em;
-	}
+		vertical-align: bottom;
 
-	body.single > header {
-		opacity: 0.3;
-
-		-webkit-transition	:opacity .5s;
-		-moz-transition		:opacity .5s;
-		-o-transition		:opacity .5s;
-		transition			:opacity .5s;
+		-webkit-transition	: top .5s;
+		-moz-transition		: top .5s;
+		transition			: top .5s;
 	}
-		body.single > header:hover {
-			opacity: 1;
+		body > header #colophon {
+			height: 9em;
+		}
+		body > header:hover {
+			top: 0;
+		}
+		body > header .logo {
+			height: 2em;
+			padding: 2em 0 0 0;
 		}
 
-	body > header .logo {
-		float: right;
+	body > footer {
+		position: fixed;
+		bottom: 1em;
+		left: 1em;
 
-		height: auto;
-		width: 2em;
-		margin: 0.5em -3em 0.5em 0.5em;
-
-		/* scale and transition */
+		font-size: 0.8em;
 	}
-		body > header .logo:hover {
-			width: 2.5em;
-			margin: 0.25em -3.25em 0.25em 0.25em;
-		}
 
 	#main.archive {
-		margin-left: 18em;
+		margin-left: 16em;
 	}
 		#main.archive article {
-			float: left;
 			position: relative;
+			float: left;
 
 			height: 16em;
 			width: 16em;
-			margin: 0 1em 1em 0;
+			margin: 0 2em 2em 0;
 		}
 			#main.archive article:last-child {
 				margin: 0;
@@ -310,10 +307,9 @@ media queries
 
 		#main.archive article > a > header > img+p,
 		#main.archive article > footer {
-			-webkit-transition	:opacity .5s, visibility .8s;
-			-moz-transition		:opacity .5s, visibility .8s;
-			-o-transition		:opacity .5s, visibility .8s;
-			transition			:opacity .5s, visibility .8s;
+			-webkit-transition	: opacity .5s, visibility .8s;
+			-moz-transition		: opacity .5s, visibility .8s;
+			transition			: opacity .5s, visibility .8s;
 		}
 			#main.archive article:hover > a > header > img+p,
 			#main.archive article:hover > footer {
@@ -322,22 +318,22 @@ media queries
 			}
 
 		#main.archive article > a > header > h1 {
-			display: block;
 			position: absolute;
-			top: 0;
-			z-index: 100;
-			
-			border-bottom-right-radius: 0.5em;
-			line-height: 1;
+			bottom: 0;
+			left: 0;
 
-			-webkit-transition	:background .5s;
-			-moz-transition		:background .5s;
-			-o-transition		:background .5s;
-			transition			:background .5s;
+			display: block;
+			z-index: 100;
+
+			-webkit-transform-origin: bottom left;
+			-moz-transform-origin	: bottom left;
+			transform-origin		: bottom left;
+			-webkit-transform	: rotate(-90deg);
+			-moz-transform		: rotate(-90deg);
+			transform			: rotate(-90deg);
 		}
 			#main.archive article:hover > a > header > h1 {
-				background: khaki;
-				color: #000;
+				
 			}
 
 		#main.archive article > a > header > p {
@@ -349,32 +345,34 @@ media queries
 			}
 
 		#main.archive article > a > header > img {
-			vertical-align: top;
-
 			opacity: 0.2;
 
-			-webkit-transition	:opacity .5s;
-			-moz-transition		:opacity .5s;
-			-o-transition		:opacity .5s;
-			transition			:opacity .5s;
+			-webkit-transition	: opacity .5s;
+			-moz-transition		: opacity .5s;
+			transition			: opacity .5s;
 		}
 			#main.archive article:hover > a > header > img {
 				opacity: 1;
 			}
 
 	#main.single {
-		margin-left: 35em;
+		margin: 0 2em 0 35em;
 		max-width: 40em;
 	}
-		#main.single article > header {
-			margin-bottom: 1em;
-			padding-bottom: 1em;
-			border-bottom: 1px dotted #000;
-		}
-		#main.single article aside {
-			float: left;
+		#main.single article {
 
-			margin-left: -17em;
-			width: 16em;
 		}
+			#main.single article > header {
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+
+				border-bottom: 1px dotted #000;
+			}
+			#main.single article aside,
+			#main.single article header {
+				float: left;
+
+				margin-left: -18em;
+				width: 16em;
+			}
 }

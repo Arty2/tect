@@ -22,7 +22,7 @@ if ( have_posts() ) {
 		echo '<footer>';
 			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
 			// use WP's date settings / show the_modified_time() ?
-			echo get_the_tag_list('<p class="tags"> # ',', ','</p>');
+			echo get_the_tag_list('<p class="tags"> ',' | ','</p>');
 		echo '</footer>';
 		echo '</article>';
 	}

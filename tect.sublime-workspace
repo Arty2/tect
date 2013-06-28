@@ -23,12 +23,20 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 824,
+				"buffer_size": 823,
 				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "single.php",
+			"settings":
+			{
+				"buffer_size": 745,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "page.php",
 			"settings":
 			{
 				"buffer_size": 745,
@@ -47,7 +55,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 6441,
+				"buffer_size": 6245,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,7 +71,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2059,
+				"buffer_size": 2193,
 				"line_ending": "Unix"
 			}
 		},
@@ -71,25 +79,29 @@
 			"file": "footer.php",
 			"settings":
 			{
-				"buffer_size": 115,
+				"buffer_size": 209,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 475,
-				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 110.0,
+		"height": 60.0,
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
 			[
 				"comm",
 				"Toggle Comment"
@@ -125,10 +137,6 @@
 			[
 				"hgh",
 				"Highlight Whitespaces: Toggle"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"inst",
@@ -199,7 +207,7 @@
 				"Preferences: Package Control Settings – Default"
 			]
 		],
-		"width": 386.0
+		"width": 402.0
 	},
 	"console":
 	{
@@ -216,10 +224,20 @@
 	},
 	"file_history":
 	[
+		"/D/Dropbox/Public/nintendo.gr/ACNL/index.html",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Browser Refresh/Default (Windows).sublime-keymap",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_006D/opr0QADA.tmp",
+		"/D/Dropbox/settings/software-list.html",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/README.md",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0069/opr0PKMJ.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0043/opr0PGVF.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_004C/opr0OFVL.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002F/opr0OD0Y.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0044/opr0MNV3.tmp",
 		"/D/Dropbox/Public/publications.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0071/opr0KOGC.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
 		"/C/Users/Heracles/AppData/Local/Temp/7zO6A5F.tmp/followers.json",
 		"/D/www/tectgr/tect.gr/.htaccess",
@@ -232,7 +250,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0033/opr0IEG6.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002F/opr0IE3J.tmp",
 		"/C/Users/Heracles/Desktop/tect - Copy/style.css",
-		"/D/Dropbox/settings/software-list.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0053/opr0558A.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/temporary_downloads/configuration.php",
 		"/C/Users/Heracles/Desktop/greek-olive-oil/greekoliveoil.sql",
@@ -296,6 +313,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"  (",
+			"header img",
+			"header imh",
+			"css",
+			"validate",
+			"   ",
+			"\n",
+			"\n\n",
+			"]\n",
 			"arty2",
 			"Buenos_Aires",
 			"p {",
@@ -338,6 +364,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\n",
+			" ",
 			"#main"
 		],
 		"reverse": false,
@@ -349,7 +377,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -357,15 +385,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 824,
+						"buffer_size": 823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								85,
-								85
+								517,
+								517
 							]
 						],
 						"settings":
@@ -391,8 +419,8 @@
 						"selection":
 						[
 							[
-								344,
-								225
+								34,
+								34
 							]
 						],
 						"settings":
@@ -408,6 +436,33 @@
 				},
 				{
 					"buffer": 2,
+					"file": "page.php",
+					"settings":
+					{
+						"buffer_size": 745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "functions.php",
 					"settings":
 					{
@@ -435,19 +490,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 6441,
+						"buffer_size": 6245,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								412,
-								412
+								4317,
+								4317
 							]
 						],
 						"settings":
@@ -457,13 +512,13 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 342.0,
+						"translation.y": 5016.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "update.json",
 					"settings":
 					{
@@ -489,19 +544,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 2059,
+						"buffer_size": 2193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1856,
-								1856
+								2125,
+								2125
 							]
 						],
 						"settings":
@@ -511,56 +566,30 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 532.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "footer.php",
-					"settings":
-					{
-						"buffer_size": 115,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								99
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "README.md",
+					"file": "footer.php",
 					"settings":
 					{
-						"buffer_size": 475,
+						"buffer_size": 209,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								474,
-								474
+								55,
+								55
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

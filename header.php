@@ -14,21 +14,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<title>
 	<?php
-		echo get_bloginfo('name').' // '.get_bloginfo('description');
+		echo get_bloginfo('name').' • '.get_bloginfo('description');
 	?>
 	</title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
 	<!-- WiiU & 3DS detection -> redirection -->
-	<!-- <script type="text/javascript" src="js/modernizr.custom-2.6.2.min.js"></script> -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> <!-- SublimeText's LiveReload stuff -->
 	 <?php wp_head(); ?> 
 </head>
 <body <?php body_class($body_class); ?>>
 <!-- http://codex.wordpress.org/Function_Reference/body_class -->
 	<header>
-		<div class="vcard"> <!-- move to settings page or just use a text widget → sidebar.php -->
-		<a class="url" href="http://archi.tect.gr/"><img class="logo" src="http://archi.tect.gr//monogram.png" alt="monogram" /></a>
+
+		<div id="colophon" class="vcard"> <!-- move to settings page or just use a text widget → sidebar.php -->
 			<h1><a class="url fn" href="http://archi.tect.gr/">Heracles Papatheodorou</a></h1>
 			<span class="title">licensed architect, <abbr title="Diploma in Architectural Engineering">dipl.</abbr> <a href="http://www.ntua.gr/index_en.html"><abbr title="National Technical University of Athens">NTUA</abbr></a></span>
 			<div class="adr">based in  <span class="locality">Athens</span>, <span class="country-name">Greece</span></div>
@@ -36,15 +36,17 @@
 			email: <a class="email" href="mailto://archi@tect.gr">archi@tect.gr</span></a>
 		</div>
 
+		<a class="url" href="http://archi.tect.gr/"><img class="logo" src="http://archi.tect.gr//monogram.png" alt="monogram" /></a>
+
 		<nav role="navigation"> <!-- use widget instead! -->
 		<?php
-			wp_tag_cloud(array(
-				'smallest' => 0.75,
-				'largest' => 1.1,
-				'unit' => 'em'
-			));
+			// wp_tag_cloud(array(
+			// 	'smallest' => 0.75,
+			// 	'largest' => 1.1,
+			// 	'unit' => 'em'
+			// ));
 		?>
-		</nav>	
+		</nav>
 		<?php
 			dynamic_sidebar('header');
 		?>

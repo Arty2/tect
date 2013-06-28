@@ -2,7 +2,11 @@
 	wp_footer();
 ?>
 <footer>
-	<mark>this website is under constant development~</mark>
+	website &amp; content herein is under development<br/>
+	latest update 20130628
+	<!--[if lt IE 9]>
+	<a target="_blank" href="http://browsehappy.com/">→ Psst! Update your browser.</a>
+	<![endif]-->
 </footer>
 </body>
 </html>
