@@ -20,9 +20,13 @@ if ( have_posts() ) {
 
 		echo '</header></a>';
 		echo '<footer>';
-			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
+			// echo '<p class="lang">
+			// 	<a href="" class="en" lang="en">en</a>
+			// 	<a href="" class="el" lang="el">ελ</a>
+			// 	</p>';
 			// use WP's date settings / show the_modified_time() ?
-			echo get_the_tag_list('<p class="tags"> ',' | ','</p>');
+			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
+			echo get_the_tag_list('<p class="tags"> ',' · ','</p>');
 		echo '</footer>';
 		echo '</article>';
 	}

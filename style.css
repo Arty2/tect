@@ -96,10 +96,26 @@ a {
 	font-size: 100%;
 	text-decoration: none;
 
-	-webkit-transition	: border .3s;
-	-moz-transition		: border .3s;
-	transition			: border .3s;
+	-webkit-transition	: background .3s, border .3s;
+	-moz-transition		: background .3s, border .3s;
+	transition			: background .3s, border .3s;
 }
+ 
+.lang > a {
+	display: inline-block;
+	height: 2em;
+	width: 2em;
+
+	color: #888;
+	text-align: center;
+}
+	.lang > a:hover {
+		color: #000;
+		text-decoration: underline;
+	}
+	.lang > a.disabled {
+		color: #ccc;
+	}
 
 small {
 	font-size: 0.75em;
@@ -168,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
-specific styles
+structure styles
 */
 
 body > header {
@@ -185,11 +201,7 @@ body > header {
 }
 	#main article {
 		vertical-align: bottom;
-	}		
-		#main article > footer {
-			margin: 1em;
-			color: #777;
-		}
+	}
 		#main article > header {
 			font: 1em/1.5 "Georgia", serif;
 		}
@@ -210,9 +222,19 @@ body > header {
 			margin-bottom: 1em;
 		}
 
-		#main article > footer > .tags {
-			font: 0.65em/1.5 "Georgia", serif;
+		#main article > footer {
+			color: #888;
 		}
+			#main article > footer > .lang {
+			}
+
+			#main article > footer > .tags a {
+				color: #888;
+			}
+				#main article > footer > .tags a:hover {
+					color: #000;
+					border-bottom: 3px solid #000;
+				}
 
 		#main.single article a {
 			border-bottom: 1px solid #ccc;
@@ -237,19 +259,21 @@ body > footer {
 	clear: both;
 }
 
-/*body *:hover {
-	outline: 1px dashed yellow;
-}*/
+
+
 /*
 media queries
 */
 
 @media only screen and (min-width: 1024px) {
 
-	/*body *:hover { outline: 1px dashed gold; }*/ /*DEBUG*/
+	/*body *:hover { outline: 1px dashed gold; }*/
+	/*DEBUG*/
 
 	body {
 		padding: 2em 0 2em 2em;
+		height: 100%;
+		/*border: 3px double #ccc;*/
 	}
 
 	body > header {
@@ -265,14 +289,16 @@ media queries
 		-webkit-transition	: top .5s;
 		-moz-transition		: top .5s;
 		transition			: top .5s;
+
 	}
-		body > header #colophon {
-			height: 9em;
-		}
 		body > header:hover {
 			top: 0;
 		}
+		body > header #colophon {
+			height: 9em;
+		}
 		body > header .logo {
+			display: block;
 			height: 2em;
 			padding: 2em 0 0 0;
 		}
@@ -281,8 +307,6 @@ media queries
 		position: fixed;
 		bottom: 1em;
 		left: 1em;
-
-		font-size: 0.8em;
 	}
 
 	#main.archive {
@@ -301,20 +325,51 @@ media queries
 			}
 		
 		#main.archive article > footer {
-			position: absolute;
-			bottom: 0;
-		}
+			margin: -1.5em 0 0 0;
 
-		#main.archive article > a > header > img+p,
-		#main.archive article > footer {
+			text-align: right;
+		}
+			#main.archive article:hover > footer > .tags,
+			#main.archive article:hover > footer > .lang,
+			#main.archive article:hover > footer > time {
+				opacity: 1;
+			}
+			#main.archive article > footer > .tags {
+				padding: 0.5em;
+
+				font-size: 0.6em;
+				opacity: 0;
+
+				-webkit-transition	: opacity 0.3s;
+				-moz-transition 	: opacity 0.3s;
+				transition 			: opacity 0.3s;
+				-webkit-transition-delay	: 0.3s;
+				-moz-transition-delay		: 0.3s;
+				transition-delay 			: 0.3s;
+			}
+			#main.archive article > footer > time {
+				position: absolute;
+				bottom: -1.2em;
+
+				opacity: 0;
+
+				-webkit-transition	: opacity 0.3s;
+				-moz-transition		: opacity 0.3s;
+				transition			: opacity 0.3s;
+				-webkit-transition-delay	: 0.5s;
+				-moz-transition-delay		: 0.5s;
+				transition-delay 			: 0.5s;
+			}
+
+		#main.archive article > a > header > img+p {
 			-webkit-transition	: opacity .5s, visibility .8s;
 			-moz-transition		: opacity .5s, visibility .8s;
 			transition			: opacity .5s, visibility .8s;
 		}
-			#main.archive article:hover > a > header > img+p,
-			#main.archive article:hover > footer {
+			#main.archive article:hover > a > header > img+p {
 				opacity: 0;
 				visibility: hidden;
+				text-decoration: none;
 			}
 
 		#main.archive article > a > header > h1 {
@@ -333,18 +388,27 @@ media queries
 			transform			: rotate(-90deg);
 		}
 			#main.archive article:hover > a > header > h1 {
-				
+				color: #000;
 			}
 
 		#main.archive article > a > header > p {
 			position: absolute;
-			top: 2em;
+			bottom: 0;
+
+			margin: 0;
+			padding: 1em;
 		}
 			#main.archive article:hover > a > header > p {
-
+				color: #000;
+				text-decoration: underline;
 			}
 
 		#main.archive article > a > header > img {
+			position: absolute;
+			
+			
+			border-top-left-radius: 1.5em;
+			/*border-bottom-right-radius: 1.5em;*/
 			opacity: 0.2;
 
 			-webkit-transition	: opacity .5s;
