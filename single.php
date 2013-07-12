@@ -17,13 +17,11 @@ if ( have_posts() ) {
 			// }
 			echo '<h1>' . get_the_title() . '</h1>';
 			echo '<p>' . get_the_excerpt() . '</p>';
-			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
-			echo get_the_tag_list('<p class="tags"> # ',', ','</p>');
-
 		echo '</header>';
 		the_content();
 		echo '<footer>';
-			
+			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
+			//echo get_the_tag_list('<p class="tags"> ',' · ','</p>'); //active tags appear in main <nav>
 		echo '</footer>';
 		echo '</article>';
 	}

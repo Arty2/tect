@@ -11,7 +11,8 @@ aim
 todo
 -----------------------------------
 * include appropriate FOSS license
+* include a [styleguide](http://oli.jp/2011/style-guide/) page 
 * theme settings page, move stuff there
-* decide upon header
+* media/post types, different archive sizes/display
 * media / <aside> sizes
 * accordion gallery

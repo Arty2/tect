@@ -23,7 +23,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 946,
+				"buffer_size": 958,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,7 +31,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 7154,
+				"buffer_size": 9598,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +39,7 @@
 			"file": "single.php",
 			"settings":
 			{
-				"buffer_size": 745,
+				"buffer_size": 739,
 				"line_ending": "Unix"
 			}
 		},
@@ -82,14 +82,34 @@
 				"buffer_size": 404,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 591,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 110.0,
 		"selected_items":
 		[
+			[
+				"upda",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -113,10 +133,6 @@
 			[
 				"close ",
 				"Project: Close"
-			],
-			[
-				"wra",
-				"Word Wrap: Toggle"
 			],
 			[
 				"whit",
@@ -224,6 +240,13 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0003/opr0ST03.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0050/opr0SNYE.tmp",
+		"/D/Dropbox/sitemanager.xml",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0012/opr0RSKC.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.css",
 		"/D/Dropbox/Public/nintendo.gr/ACNL/index.html",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Browser Refresh/Default (Windows).sublime-keymap",
@@ -315,6 +338,13 @@
 		"find_history":
 		[
 			"tags",
+			"h1",
+			"font",
+			"h1",
+			".mp3",
+			".pls",
+			"twitter",
+			"tags",
 			"  (",
 			"header img",
 			"header imh",
@@ -387,15 +417,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 946,
+						"buffer_size": 958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								544,
-								544
+								859,
+								803
 							]
 						],
 						"settings":
@@ -414,15 +444,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 7154,
+						"buffer_size": 9598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5507,
-								5507
+								7911,
+								7911
 							]
 						],
 						"settings":
@@ -431,7 +461,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5814.0,
+						"translation.y": 9060.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -441,15 +471,15 @@
 					"file": "single.php",
 					"settings":
 					{
-						"buffer_size": 745,
+						"buffer_size": 739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								525,
-								432
+								448,
+								448
 							]
 						],
 						"settings":
@@ -530,8 +560,8 @@
 						"selection":
 						[
 							[
-								22,
-								22
+								1,
+								1
 							]
 						],
 						"settings":
@@ -584,13 +614,40 @@
 						"selection":
 						[
 							[
-								5,
-								5
+								128,
+								128
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
