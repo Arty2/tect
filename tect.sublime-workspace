@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"sele",
+				"selection"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"fig",
+				"figcaption"
+			],
+			[
 				"border-ra",
 				"border-bottom-right-radius"
 			],
@@ -23,7 +35,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 958,
+				"buffer_size": 970,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,15 +43,24 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 9598,
+				"buffer_size": 13001,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styleguide-raw.html",
+			"settings":
+			{
+				"buffer_size": 3147,
+				"line_ending": "Windows",
+				"name": "<aside class=\"callout\">"
 			}
 		},
 		{
 			"file": "single.php",
 			"settings":
 			{
-				"buffer_size": 739,
+				"buffer_size": 778,
 				"line_ending": "Unix"
 			}
 		},
@@ -71,7 +92,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2193,
+				"buffer_size": 2598,
 				"line_ending": "Unix"
 			}
 		},
@@ -79,7 +100,7 @@
 			"file": "footer.php",
 			"settings":
 			{
-				"buffer_size": 404,
+				"buffer_size": 289,
 				"line_ending": "Unix"
 			}
 		},
@@ -87,7 +108,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 591,
+				"buffer_size": 1496,
 				"line_ending": "Windows"
 			}
 		}
@@ -95,7 +116,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 110.0,
+		"height": 160.0,
 		"selected_items":
 		[
 			[
@@ -223,7 +244,7 @@
 				"Preferences: Package Control Settings – Default"
 			]
 		],
-		"width": 386.0
+		"width": 498.0
 	},
 	"console":
 	{
@@ -240,6 +261,10 @@
 	},
 	"file_history":
 	[
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.css",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_007C/opr0THJW.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0021/opr0SVYR.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001F/opr0SVQG.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0003/opr0ST03.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0050/opr0SNYE.tmp",
 		"/D/Dropbox/sitemanager.xml",
@@ -247,7 +272,6 @@
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0012/opr0RSKC.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.css",
 		"/D/Dropbox/Public/nintendo.gr/ACNL/index.html",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Browser Refresh/Default (Windows).sublime-keymap",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_006D/opr0QADA.tmp",
@@ -337,6 +361,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ins",
+			"strong",
+			"em {",
+			"16em",
+			"blockqu",
+			"blockq",
+			"small",
+			"id",
+			"heading",
+			"&lt;",
+			"gt",
+			"header",
+			"url",
+			"ins",
+			"conte",
+			"aside",
+			"p {",
+			"p + p",
+			"clear",
+			"blockq",
+			"article a",
+			"header a",
+			"a header",
+			"blockq",
+			"content",
+			"ur",
+			"time",
+			"FF8080",
+			"#ccc",
+			"content",
+			"lang",
+			"ins",
 			"tags",
 			"h1",
 			"font",
@@ -417,15 +473,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 958,
+						"buffer_size": 970,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								859,
-								803
+								891,
+								891
 							]
 						],
 						"settings":
@@ -444,15 +500,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 9598,
+						"buffer_size": 13001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7911,
-								7911
+								11741,
+								11741
 							]
 						],
 						"settings":
@@ -461,25 +517,53 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9060.0,
+						"translation.y": 12967.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "single.php",
+					"file": "styleguide-raw.html",
 					"settings":
 					{
-						"buffer_size": 739,
+						"buffer_size": 3147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								448,
-								448
+								1643,
+								1643
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<aside class=\"callout\">",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 840.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
 							]
 						],
 						"settings":
@@ -488,13 +572,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "page.php",
 					"settings":
 					{
@@ -521,7 +605,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "functions.php",
 					"settings":
 					{
@@ -532,8 +616,8 @@
 						"selection":
 						[
 							[
-								325,
-								325
+								2677,
+								2677
 							]
 						],
 						"settings":
@@ -543,13 +627,13 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1080.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "update.json",
 					"settings":
 					{
@@ -560,8 +644,8 @@
 						"selection":
 						[
 							[
-								1,
-								1
+								22,
+								22
 							]
 						],
 						"settings":
@@ -575,19 +659,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 2193,
+						"buffer_size": 2598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2125,
-								2125
+								845,
+								845
 							]
 						],
 						"settings":
@@ -597,17 +681,17 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 95.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "footer.php",
 					"settings":
 					{
-						"buffer_size": 404,
+						"buffer_size": 289,
 						"regions":
 						{
 						},
@@ -624,25 +708,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 591,
+						"buffer_size": 1496,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								590,
-								590
+								913,
+								913
 							]
 						],
 						"settings":
@@ -699,6 +783,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"sty",
+				"style.css"
+			],
+			[
+				"rea",
+				"README.md"
+			]
 		],
 		"width": 0.0
 	},

@@ -20,7 +20,7 @@ if ( have_posts() ) {
 		echo '</header>';
 		the_content();
 		echo '<footer>';
-			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
+			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Y-m-d' ) . '</time>';
 			//echo get_the_tag_list('<p class="tags"> ',' · ','</p>'); //active tags appear in main <nav>
 		echo '</footer>';
 		echo '</article>';

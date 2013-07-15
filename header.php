@@ -21,7 +21,11 @@
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
 	<!-- WiiU & 3DS detection -> redirection -->
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> <!-- SublimeText's LiveReload stuff -->
+	<?php
+		if ( $_SERVER['HTTP_HOST'] == 'localhost' ) { //Sublime's LiveReload; really messes loading times when online
+		echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
+		}
+	?>
 	 <?php wp_head(); ?> 
 </head>
 <body <?php body_class($body_class); ?>>
@@ -51,3 +55,10 @@
 			dynamic_sidebar('header');
 		?>
 	</header>
+
+	<nav class="language" title="does not work, yet">
+		<ul><!--  hide non-available language in .single -->
+			<li><a href="#" hreflang="el"><abbr lang="en" title="ελληνικά">ελ</abbr></a></li>
+			<li><a href="#" hreflang="en" class="active"><abbr lang="de" title="english">en</abbr></a></li>
+		</ul>
+	</nav>
