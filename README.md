@@ -19,10 +19,12 @@ todo
 * fix header margin bug with Webkit
 * [better](http://writings.orangegnome.com/writes/improved-html5-wordpress-captions/) captions
 * style WordPress [image stuff](http://codex.wordpress.org/Wrapping_Text_Around_Images)
+* prevent posts not in default category from appearing in the front
+* shrink down Headings
 
 ### low priority
 * disable 'wpautop' per post
-* include appropriate FOSS license
+* include [appropriate](http://choosealicense.com/) FOSS license
 * where :hover, provide :active
 * pretty &s
 * a semantic HTML [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/)
@@ -30,6 +32,7 @@ todo
 
 
 ### even lower priority (production ready theme)
+* fine tune typographic rythm
 * move hardcoded bits into a theme settings page
 * add theming options (e.g. background, link colors)
 * separate some plugins from functions.php

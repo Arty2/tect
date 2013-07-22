@@ -16,7 +16,7 @@ if ( have_posts() ) {
 			if ( has_post_thumbnail() ) {
 				echo get_the_post_thumbnail($id, array(300,300));
 			}
-			echo '<p>' . strip_tags(get_the_excerpt()) . '</p>';
+			echo '<p class="entry-summary">' . preg_replace('#</?a(\s[^>]*)?>#i', '', get_the_excerpt()) . '</p>';
 
 		echo '</header></a>';
 		echo '<footer>';
@@ -34,7 +34,6 @@ if ( have_posts() ) {
 #End The Loop
 ?>
 </section>
-
 <?php
 
 get_footer();

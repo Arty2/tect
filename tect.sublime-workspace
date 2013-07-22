@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-style"
+			],
+			[
 				"sele",
 				"selection"
 			],
@@ -35,7 +39,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 970,
+				"buffer_size": 1019,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,7 +47,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 13001,
+				"buffer_size": 14033,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,16 +55,15 @@
 			"file": "styleguide-raw.html",
 			"settings":
 			{
-				"buffer_size": 3147,
-				"line_ending": "Windows",
-				"name": "<aside class=\"callout\">"
+				"buffer_size": 4742,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "single.php",
 			"settings":
 			{
-				"buffer_size": 778,
+				"buffer_size": 1092,
 				"line_ending": "Unix"
 			}
 		},
@@ -108,7 +111,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 1496,
+				"buffer_size": 1584,
 				"line_ending": "Windows"
 			}
 		}
@@ -116,16 +119,16 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 160.0,
+		"height": 35.0,
 		"selected_items":
 		[
 			[
-				"upda",
-				"Package Control: Upgrade/Overwrite All Packages"
-			],
-			[
 				"wrap",
 				"Word Wrap: Toggle"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade/Overwrite All Packages"
 			],
 			[
 				"wra",
@@ -244,7 +247,7 @@
 				"Preferences: Package Control Settings – Default"
 			]
 		],
-		"width": 498.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -261,6 +264,25 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Heracles/Desktop/test.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0075/opr0WA03.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/style.css",
+		"/D/www/myorchid/index.php",
+		"/D/www/myorchid/header.php",
+		"/D/www/myorchid/functions.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr0VMQH.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002D/opr0VDMI.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0038/opr0VEO9.tmp",
+		"/D/Dropbox/settings/software-list.html",
+		"/C/Users/Heracles/Downloads/130719fb.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0031/opr0VE0I.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0049/opr0UEH6.tmp",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/page-styleguide.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_005D/opr0TR63.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/page-child.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/styleguide-raw.html",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.css",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_007C/opr0THJW.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0021/opr0SVYR.tmp",
@@ -275,7 +297,6 @@
 		"/D/Dropbox/Public/nintendo.gr/ACNL/index.html",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Browser Refresh/Default (Windows).sublime-keymap",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_006D/opr0QADA.tmp",
-		"/D/Dropbox/settings/software-list.html",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/README.md",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0069/opr0PKMJ.tmp",
@@ -286,7 +307,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0044/opr0MNV3.tmp",
 		"/D/Dropbox/Public/publications.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0071/opr0KOGC.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
 		"/C/Users/Heracles/AppData/Local/Temp/7zO6A5F.tmp/followers.json",
 		"/D/www/tectgr/tect.gr/.htaccess",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/.gitignore",
@@ -361,6 +381,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"blockq",
+			"credits",
+			"identity",
+			"-right: 2em",
+			"	",
+			"post_meta",
+			"footer",
+			"weight",
+			"famil",
+			"ソリティ馬",
+			"static artic",
 			"ins",
 			"strong",
 			"em {",
@@ -452,6 +483,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"\n",
 			" ",
 			"#main"
@@ -473,97 +505,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 970,
+						"buffer_size": 1019,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								891,
-								891
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 13001,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11741,
-								11741
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 12967.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "styleguide-raw.html",
-					"settings":
-					{
-						"buffer_size": 3147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1643,
-								1643
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<aside class=\"callout\">",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 840.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "single.php",
-					"settings":
-					{
-						"buffer_size": 778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								196,
-								196
+								458,
+								445
 							]
 						],
 						"settings":
@@ -573,6 +523,87 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 14033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12501,
+								12501
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13807.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styleguide-raw.html",
+					"settings":
+					{
+						"buffer_size": 4742,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								682,
+								682
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 269.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 1092,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1038,
+								1038
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -589,8 +620,8 @@
 						"selection":
 						[
 							[
-								344,
-								344
+								373,
+								373
 							]
 						],
 						"settings":
@@ -718,15 +749,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 1496,
+						"buffer_size": 1584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								913,
-								913
+								859,
+								859
 							]
 						],
 						"settings":
@@ -744,7 +775,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 38.0
 	},
 	"input":
 	{

@@ -101,7 +101,7 @@ blockquote {
 	padding: 0 0 0 2em;
 
 	border-left: 1px dashed navy;
-	color: darkcyan;
+	color: teal;
 	font-size: 0.8em;
 }
 	/*better add with javascript*/
@@ -184,7 +184,7 @@ ins {
 			top: 0;
 			left: 0;
 
-			padding: 0.5em;
+			padding: 0.5em 0;
 			
 			font-size: 0.8em;
 			line-height: 1em;
@@ -216,7 +216,7 @@ del {
 			top: 0;
 			left: 0;
 
-			padding: 0.5em;
+			padding: 0.5em 0;
 			
 			font-size: 0.8em;
 			line-height: 1em;
@@ -266,10 +266,13 @@ input, select {
 	vertical-align: middle;
 }
 
-p { /*look into http://kingdesk.com/projects/wp-typography/*/
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
+p {
+	/*text-align: justify;*/
+	
+	-moz-hyphens 	: auto;
+	-webkit-hyphens	: auto;
+	-ms-hyphens		: auto;
+	hyphens			: auto;
 }
 
 html {
@@ -336,6 +339,29 @@ hr {
 	opacity: .4;
 }
 
+.group {
+	clear: both;
+}
+
+.column {
+	-moz-column-count	: 2;
+	-webkit-column-count: 2;
+	column-count		: 2;
+}
+
+.columns {
+	-moz-column-count	: 3;
+	-webkit-column-count: 3;
+	column-count		: 3;
+}
+
+.smaller {
+	font-size: 0.8em;
+}
+
+.bigger {
+	font-size: 1.1em;
+}
 
 /*
 structural styles
@@ -375,9 +401,29 @@ body > header {
 				width: 100%;
 			}
 
-		#main article p {
-			margin-bottom: 1em;
+		#main article p + p,
+		#main article div + p,
+		#main article aside + p,
+		#main article ul + p,
+		#main article ol + p,
+		#main article figure + p {
+			margin-top: 1.5em;
 		}
+
+		#main article > header > .attribution {
+			padding: 1em 0;
+			margin: 0 0 1em 0;
+
+			/*border-bottom: 1px dashed #000;*/
+			font-size: 0.75em;
+			font-family: "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
+		}
+			#main article > header > .attribution dt {
+				font-variant: small-caps;
+				text-align: right;
+			}
+			article > header > .attribution dd {
+			}
 
 		#main article > footer {
 			color: #888;
@@ -550,7 +596,7 @@ media queries
 			-moz-transition		: opacity .5s, visibility .8s;
 			transition			: opacity .5s, visibility .8s;
 		}
-			#main.archive article:hover > a > header > img+p {
+			#main.archive article:hover > a > header > img+p.entry-summary {
 				opacity: 0;
 				visibility: hidden;
 				text-decoration: none;
@@ -577,14 +623,14 @@ media queries
 				color: #000;
 			}
 
-		#main.archive article > a > header > p {
+		#main.archive article > a > header > p.entry-summary {
 			position: absolute;
 			bottom: 0;
 
 			margin: 0;
 			padding: 1em;
 		}
-			#main.archive article:hover > a > header > p {
+			#main.archive article:hover > a > header > p.entry-summary {
 				color: #000;
 				text-decoration: underline;
 			}
@@ -606,7 +652,7 @@ media queries
 			}
 
 	#main.single {
-		margin: 2em 2em 0 20em;
+		margin: 2em 4em 0 20em;
 		max-width: 40em;
 	}
 		#main.single article *[id]:hover:before { /* move to javascript so that it contains a link? */
@@ -650,8 +696,19 @@ media queries
 					#main.single article > header:hover > h1 {
 						opacity: 1;
 					}
+				#main.single article > header > time {
+					position: absolute;
+					top: 0;
+					left: 0;
 
-				#main.single article > header > p {
+					-webkit-transform-origin: top left;
+					-moz-transform-origin	: top left;
+					transform-origin		: top left;
+					-webkit-transform	: rotate(90deg);
+					-moz-transform		: rotate(90deg);
+					transform			: rotate(90deg);
+				}
+				#main.single article > header > p.entry-summary {
 					margin: 0 0 1em 0;
 
 					font-size: 0.8em;
@@ -661,7 +718,7 @@ media queries
 			#main.single article > header,
 			#main.single article > footer {
 				float: left;
-				clear: left;
+				clear: auto;
 
 				margin-left: -18em;
 				width: 16em;
@@ -671,10 +728,10 @@ media queries
 				clear: right;
 
 				margin: 0 -2em 0 0;
-				padding: 0;
+				padding: 0.5em 0 0.5em 1em;
 			}
 				#main.single article aside.callout blockquote {
-					margin: 0.5em 0.1em 0.5em 0.5em;
+					margin: 0;
 					padding: 0;
 
 					border: none;
@@ -683,9 +740,9 @@ media queries
 			#main.single article aside.marginalia {
 				position: absolute;
 				
-				padding: 0.5em;
+				padding: 0.1em 2em;
 				margin: 0;
-				width: 100%;
+				width: auto;
 
 				font-size: 0.8em;
 				line-height: 1em;
@@ -698,22 +755,8 @@ media queries
 				-moz-transform		: rotate(90deg);
 				transform			: rotate(90deg);
 			}
-				#main.single article aside.marginalia:hover {
-					opacity: 1;
-				}
 
 		#main.single article > footer {
-			position: absolute;
-			top: 0;
-			left: 0;
-			
-
-			-webkit-transform-origin: top left;
-			-moz-transform-origin	: top left;
-			transform-origin		: top left;
-			-webkit-transform	: rotate(90deg);
-			-moz-transform		: rotate(90deg);
-			transform			: rotate(90deg);
 		}
 }
 
@@ -763,8 +806,3 @@ media queries
 		left: 0;
 	}
 }
-
-
-/*
-common classes
-*/
