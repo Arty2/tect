@@ -1,6 +1,6 @@
 <!--
 
-http://www.gutenberg.org/files/120/120-h/120-h.htm
+http://www.gutenberg.org/files/27780/27780-h/27780-h.htm
 http://oli.jp/2011/style-guide/
 http://necolas.github.io/normalize.css/latest/test.html
 
@@ -20,6 +20,7 @@ http://necolas.github.io/normalize.css/latest/test.html
 </dl>
 
 wpautop is so broken… http://core.trac.wordpress.org/ticket/2691
+http://www.netmagazine.com/tutorials/getting-wordpress-play-nice-responsive-images
 <!-- -->
 
 At first I had supposed <strong>the dead man's chest</strong> to be that identical big box of his upstairs in the front room, and the thought had been mingled in my <a href="http://en.wikipedia.org/wiki/Nightmare">nightmares</a> with that of the one-legged seafaring man <ins datetime="2013-07-15T01:02EET">with the <a href="http://en.wikipedia.org/wiki/Laser">laser</a> equipped pet <del>shark</del> parrot</ins>.
@@ -39,10 +40,18 @@ But by this time we had all long ceased to pay any particular notice to the <b>s
 </aside>
  <p class="column">In one way, indeed, he bade fair to ruin us, for he kept on staying week after week, and at last month after month, so that all the money had been long exhausted, and still my father never plucked up the heart to insist on having more. If ever he mentioned it, the captain blew through his nose so loudly that you might say he roared, and stared my poor father out of the room. I have seen him wringing his hands after such a rebuff, and I am sure the annoyance and the terror he lived in must have greatly hastened his early and unhappy death.</p>
 
-<aside class="marginalia">some marginalia<br/>use with caution</aside>
+<aside class="note gutter">some gutter marginalia<br/>use with caution</aside>
  <p class="columns smaller">All the time he lived with us the captain made no change whatever in his dress but to buy some stockings from a hawker. One of the cocks of his hat having fallen down, he let it hang from that day forth, though it was a great annoyance when it blew. I remember the appearance of his coat, which he patched himself upstairs in his room, and which, before the end, was nothing but patches. He never wrote or received a letter, and he never spoke with any but the neighbours, and with these, for the most part, only when drunk on rum. The great sea-chest none of us had ever seen open.</p>
 
-<figure id="reference">
+<hr />
+
+<figure class="spread">
+	<img class="placeholder" src="http://upload.wikimedia.org/wikipedia/en/d/d0/Clear.gif" height="300" alt="description" />
+	<figcaption>And here a fresh alarm brought me to a standstill with a thumping heart.</figcaption>
+</figure>
+
+<aside class="note">Quite obviously, Treasure Island is a very dear book of mine. What is more, it's much more interesting than boring old <cite>Lorem Ipsum</cite>.</aside>
+<figure>
 	<blockquote cite="http://www.gutenberg.org/files/120/120-h/120-h.htm">
 	Tall tree, Spy-glass shoulder, bearing a point to
 	the N. of N.N.E.
@@ -63,10 +72,28 @@ But by this time we had all long ceased to pay any particular notice to the <b>s
 	<figcaption>Robert Louis Stevenson, <cite>Treasure Island</cite></figcaption>
 </figure>
 
+<ul class="references marginalia">
+	<li><a id="ref-1" href="#mark-1">1</a> an unnamed Andalusian</li>
+	<li><a id="ref-2" href="#mark-2">2</a> Captain Smollet</li>
+</ul>
+
+<div class="group">
+	<img class="half right placeholder" src="http://upload.wikimedia.org/wikipedia/en/d/d0/Clear.gif" height="300" alt="description" />	Soon after Doctor Livesey's horse<sup><a id="mark-1" href="#ref-1">1</a></sup> came to the door and he rode away, but the captain<sup><a id="mark-2" href="#ref-2">2</a></sup> held his peace that evening, and for many evenings to come.
+
+	Then followed a battle of looks between them; but the captain soon knuckled under, put up his weapon, and resumed his seat, grumbling like a beaten dog.
+</div>
 
 <del class="section" datetime="2013-07-15">The captain glared at him for a while, flapped his hand again, glared still harder, and at last broke out with a <em>villainous</em>, low oath, <q>Silence, <q>there</q>, between decks!</q></del>
 
 <ins class="section" datetime="2008-01-22" lang="el">Ο καπετάνιος τον αγριοκοίταξε για λίγο, τίναξε το χέρι του, τον κοίταξε ακόμα πιο άγρια, και εντέλει ξέσπασε με μια αχρεία, χαμηλόφωνη βλασφήμια, <q>Ησυχία, <q>εκεί</q>, κάτω στα καταστρώματα!</q></del>
+
+<pre><code>
+&lt;?php
+	if ( $pirate == true ) {
+		echo 'Arrr!';
+	}
+?&gt;
+</code></pre>
 
 <hr />
 
@@ -84,3 +111,25 @@ But by this time we had all long ceased to pay any particular notice to the <b>s
 	<p>this was a &lt;h6&gt; heading title</p>
 
 <small>To S.L.O., an American gentleman in accordance with whose classic taste the following narrative has been designed, it is now, in return for numerous delightful hours, and with the kindest wishes, dedicated by his affectionate friend, the author.</small>
+
+<ul>
+	<li>The stranger kept hanging about just inside the inn door</li>
+	<li>peering round the corner like a cat waiting for a mouse
+	<ul>
+		<li>Once I stepped out myself into the road</li>
+		<li>but he immediately called me back</li>
+		<li>and, as I did not obey quick enough for his fancy</li>
+	</ul></li>
+	<li>a most horrible change came over his tallowy face</li>
+</ul>
+
+<ol>
+	<li>and he ordered me in with an oath that made me jump</li>
+	<li>As soon as I was back again he returned to his former manner
+	<ol>
+		<li>half-fawning, half-sneering, patted me on the shoulder</li>
+		<li>told me I was a good boy</li>
+		<li>and he had taken quite a fancy to me</li>
+	</ol></li>
+	<li>"I have a son of my own," said he</li>
+</ol>

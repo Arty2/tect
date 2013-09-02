@@ -23,10 +23,13 @@
 	<!-- WiiU & 3DS detection -> redirection -->
 	<?php
 		if ( $_SERVER['HTTP_HOST'] == 'localhost' ) { //Sublime's LiveReload; really messes loading times when online
-		echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
+		echo "
+		<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>
+		";
 		}
 	?>
-	 <?php wp_head(); ?> 
+	<base href="<?php echo 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/'; ?>" />
+	<?php wp_head(); ?> 
 </head>
 <body <?php body_class($body_class); ?>>
 <!-- http://codex.wordpress.org/Function_Reference/body_class -->

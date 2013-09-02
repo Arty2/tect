@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"page",
+				"page-break-after"
+			],
+			[
+				"list",
+				"list-c	list-style-type: circle;"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border-ra",
+				"border-radius"
+			],
+			[
 				"font",
 				"font-style"
 			],
@@ -12,16 +32,8 @@
 				"selection"
 			],
 			[
-				"text",
-				"text-decoration"
-			],
-			[
 				"fig",
 				"figcaption"
-			],
-			[
-				"border-ra",
-				"border-bottom-right-radius"
 			],
 			[
 				"inline",
@@ -39,7 +51,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 1019,
+				"buffer_size": 1131,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,7 +59,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 14033,
+				"buffer_size": 16786,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,15 +67,18 @@
 			"file": "styleguide-raw.html",
 			"settings":
 			{
-				"buffer_size": 4742,
+				"buffer_size": 6802,
 				"line_ending": "Windows"
 			}
 		},
 		{
+			"contents": "<?php\nget_header();\nget_sidebar();\n\n?>\n\n<section id=\"main\" class=\"single\">\n<?php\n#Start The Loop\nif ( have_posts() ) {\n	while ( have_posts() ) {\n		the_post();\n		$id = get_the_ID();\n		$attribution = get_post_meta($id, 'meta', true);\n\n		echo '<article class=\"hentry\">';\n		echo '<header>';\n			echo '<h1 class=\"entry-title\">/' . get_the_title() . '</h1>';\n			echo '<p class=\"entry-summary\">' . get_the_excerpt() . '</p>';\n			echo '<time class=\"published\" datetime=\"' . get_the_time( 'r' ) . '\">' . get_the_time( 'Y-m-d' ) . '</time>';\n			if ( $attribution ) {\n				echo '<div class=\"attribution\">' . $attribution . '</div>';\n			}\n		echo '</header>';\n		//echo '<div class=\"entry-content\">';\n			the_content();\n		//echo '</div>';\n		echo '<footer>';\n			//echo '<time class=\"updates\" datetime=\"' . get_the_time( 'r' ) . '\">' . get_the_time( 'Y-m-d' ) . '</time>';\n			//echo get_the_tag_list('<p class=\"tags\"> ',' · ','</p>'); //active tags appear in main <nav>\n		echo '</footer>';\n		echo '</article>';\n	}\n}\n#End The Loop\n?>\n</section>\n\n<?php\nget_footer();\n?>",
 			"file": "single.php",
+			"file_size": 1141,
+			"file_write_time": 130220927725130706,
 			"settings":
 			{
-				"buffer_size": 1092,
+				"buffer_size": 1048,
 				"line_ending": "Unix"
 			}
 		},
@@ -79,7 +94,15 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 2680,
+				"buffer_size": 5881,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "magnific-popup/jquery.magnific-init.js",
+			"settings":
+			{
+				"buffer_size": 257,
 				"line_ending": "Unix"
 			}
 		},
@@ -87,7 +110,7 @@
 			"file": "update.json",
 			"settings":
 			{
-				"buffer_size": 143,
+				"buffer_size": 144,
 				"line_ending": "Windows"
 			}
 		},
@@ -108,10 +131,13 @@
 			}
 		},
 		{
+			"contents": "tect • yet another WordPress theme\n===================================\n\n> auto-updating! [via](http://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/)\n> feature incomplete; not safe to deploy yet\n\naim\n-----------------------------------\n* make an unobtrusive, comptemporary & responsive theme suitable for visual designers and writers as well\n* try and deal with WordPress' template–like PHP and awful output code\n\nto study\n-----------------------------------\nhttp://benword.com/how-to-hide-that-youre-using-wordpress/\nhttp://microformats.org/wiki/hAtom\nhttp://www.readability.com/developers/guidelines\nhttp://markboulton.co.uk/journal/five-simple-steps-to-better-typography\nhttps://help.github.com/articles/github-flavored-markdown\nhttp://codex.wordpress.org/WordPress_Coding_Standards\n\n\n\n\nto do\n-----------------------------------\n\n### top priority\n* tidy To-Do list\n* media/post types (or use categories instead?) → different archive sizes / display\n* print styles(all available ones, suck.)\n* rewrite style.css\n* move hardcoded bits into a theme [customizer](https://codex.wordpress.org/Theme_Customization_API)\n	* main page categories\n	* header > about\n	* time display\n\n### low priority\n* cleaner [gallery] code\n* remove need for width in caption shortcodes\n* [adaptive images](http://windcompanionwebdesign.com/articles/wordpress-articles/using-adaptive-images-in-a-wordpress-responsive-design/)\n* improve on styleguide\n* custom css per post\n* syntax highlighter, maybe [PRISM](http://prismjs.com/)?\n* pretty &s\n* a semantic HTML [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/)\n* add more meta to posts\n	* creation time\n	* \"meta\" (project info)\n	* location\n* share links (not buttons)\n* singled out page for print only (hard copy creation purposes)\n* old browser warning\n\n\n### even lower priority (production ready theme)\n* proper [i18n](http://wordpress.org/support/topic/plugin-polylang-how-to-internationalize-a-theme)\n* CSS3 external link pseudo classes\n* write a code styleguide\n* print links as appendix\n* [cleaner URLs](http://benword.com/how-to-hide-that-youre-using-wordpress/)\n* allow for theming via customizer\n	* link colors\n	* background\n	* text colors\n* fine tune typographic rythm\n* add theming options (e.g. background, link colors)\n* separate some plugins from functions.php\n* add buttons and proper display styles for original classes to visual editor\n\nplugins (to select or write)\n-----------------------------------\n* endless scroll\n* lightbox plugin\n* accompagnying footnote plugin\n* try Polylang\n* language switcher\n* accordion gallery\n* tag filter navigation\n\n\na pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)",
 			"file": "README.md",
+			"file_size": 2729,
+			"file_write_time": 130224595467510158,
 			"settings":
 			{
-				"buffer_size": 1584,
+				"buffer_size": 2754,
 				"line_ending": "Windows"
 			}
 		}
@@ -119,12 +145,56 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 35.0,
+		"height": 160.0,
 		"selected_items":
 		[
 			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Sort Lines (Case Sensitive)"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"insa",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Start Docblock"
+			],
+			[
 				"wrap",
 				"Word Wrap: Toggle"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"live",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
 			],
 			[
 				"upda",
@@ -135,24 +205,12 @@
 				"Word Wrap: Toggle"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Remove Package"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
+				"close",
+				"Project: Close"
 			],
 			[
 				"comm",
 				"Toggle Comment"
-			],
-			[
-				"close",
-				"Project: Close"
 			],
 			[
 				"close ",
@@ -177,10 +235,6 @@
 			[
 				"hgh",
 				"Highlight Whitespaces: Toggle"
-			],
-			[
-				"inst",
-				"Package Control: Install Package"
 			],
 			[
 				"packa",
@@ -217,10 +271,6 @@
 			[
 				"css",
 				"Set Syntax: CSS"
-			],
-			[
-				"pack",
-				"Package Control: Add Repository"
 			],
 			[
 				"pack re",
@@ -264,6 +314,25 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0063/opr13LRG.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0026/opr13FNL.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0061/opr13LKL.tmp",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Section Comment.sublime-snippet",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr12QSI.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002B/opr12QW1.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
+		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001F/opr120HO.tmp",
+		"/C/Users/Heracles/Desktop/Signup Question v1.1/Upload/inc/languages/english/signupquestions.lang.php",
+		"/C/Users/Heracles/Desktop/Signup Question v1.1/Upload/inc/plugins/signupquestions.php",
+		"/C/Users/Heracles/Desktop/TPEL_pub/tpel.txt",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr0ZL0L.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0017/opr0ZJ51.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0042/opr0ZAT5.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0079/opr0YQVD.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_005C/opr0YO0A.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0045/opr0WUL0.tmp",
 		"/C/Users/Heracles/Desktop/test.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0075/opr0WA03.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/style.css",
@@ -293,7 +362,6 @@
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/LiveReload/LiveReload.sublime-settings",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/LiveReload.sublime-settings",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0012/opr0RSKC.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
 		"/D/Dropbox/Public/nintendo.gr/ACNL/index.html",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Browser Refresh/Default (Windows).sublime-keymap",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_006D/opr0QADA.tmp",
@@ -330,8 +398,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0038/opr052LO.tmp",
 		"/D/www/tectgr/archi.tect.gr/.htaccess",
 		"/D/www/tectgr/archi.tect.gr/.htaccess.orig",
-		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/JSON.sublime-settings",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0003/opr04XDH.tmp",
 		"/D/www/tectgr/archi.tect.gr/index.php",
@@ -381,6 +447,63 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"initialize",
+			"magnif",
+			"jQuery",
+			"$",
+			"pop",
+			"url",
+			"pll_translation_url",
+			"url",
+			"slug",
+			"permalink",
+			"url",
+			"div class=\"marginalia\"",
+			"orangegnome",
+			"caption",
+			"img",
+			" dd",
+			"visibi",
+			"1.7",
+			"thumb",
+			"testtest",
+			"red",
+			"blue",
+			"T_PAAMAYIM_NEKUDOTAYIM",
+			"figca",
+			"caption",
+			"a ",
+			"img",
+			"margin",
+			"ul",
+			"margina",
+			"aside",
+			"marginal",
+			"sup",
+			"aside",
+			"code",
+			"url(",
+			"capti",
+			"Japanese",
+			"japanese",
+			"Japanese",
+			"radius",
+			"code",
+			"aside",
+			"code",
+			"hr",
+			"before",
+			"blockq",
+			"img",
+			"tim",
+			"teal",
+			"em",
+			".pdf",
+			"margin-left",
+			"blockq",
+			"blockq	",
+			"article > p",
+			"p+p",
 			"blockq",
 			"credits",
 			"identity",
@@ -451,31 +574,7 @@
 			"300",
 			"#content",
 			"user",
-			"sql",
-			"font",
-			"herac",
-			"ease-in",
-			"single",
-			"body",
-			"small",
-			"padding",
-			"');\n",
-			"wampser",
-			"favico",
-			"sku",
-			"BottomFragment",
-			"imglangdir",
-			"rtmp",
-			"remove",
-			"outdated",
-			"contents",
-			"Contents",
-			"contents",
-			"replaceURLWithHTMLLinks",
-			"7zi",
-			"launch",
-			"lau",
-			"soda"
+			"sql"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -483,6 +582,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"rem",
 			"",
 			"\n",
 			" ",
@@ -497,7 +597,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -505,15 +605,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 1019,
+						"buffer_size": 1131,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								458,
-								445
+								464,
+								464
 							]
 						],
 						"settings":
@@ -522,7 +622,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 60.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -532,24 +632,25 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 14033,
+						"buffer_size": 16786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12501,
-								12501
+								1636,
+								1636
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 13807.0,
+						"translation.y": 258.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -559,15 +660,15 @@
 					"file": "styleguide-raw.html",
 					"settings":
 					{
-						"buffer_size": 4742,
+						"buffer_size": 6802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								682,
-								682
+								4,
+								4
 							]
 						],
 						"settings":
@@ -576,7 +677,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 269.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -586,15 +687,15 @@
 					"file": "single.php",
 					"settings":
 					{
-						"buffer_size": 1092,
+						"buffer_size": 1048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1038,
-								1038
+								35,
+								35
 							]
 						],
 						"settings":
@@ -620,8 +721,8 @@
 						"selection":
 						[
 							[
-								373,
-								373
+								721,
+								721
 							]
 						],
 						"settings":
@@ -640,15 +741,15 @@
 					"file": "functions.php",
 					"settings":
 					{
-						"buffer_size": 2680,
+						"buffer_size": 5881,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2677,
-								2677
+								5596,
+								5554
 							]
 						],
 						"settings":
@@ -658,25 +759,53 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 2420.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "update.json",
+					"file": "magnific-popup/jquery.magnific-init.js",
 					"settings":
 					{
-						"buffer_size": 143,
+						"buffer_size": 257,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22,
-								22
+								6,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "update.json",
+					"settings":
+					{
+						"buffer_size": 144,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
 							]
 						],
 						"settings":
@@ -690,7 +819,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "header.php",
 					"settings":
 					{
@@ -701,8 +830,8 @@
 						"selection":
 						[
 							[
-								845,
-								845
+								389,
+								389
 							]
 						],
 						"settings":
@@ -712,13 +841,13 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "footer.php",
 					"settings":
 					{
@@ -745,19 +874,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 1584,
+						"buffer_size": 2754,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								859,
-								859
+								2753,
+								2725
 							]
 						],
 						"settings":
@@ -765,7 +894,7 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1060.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
