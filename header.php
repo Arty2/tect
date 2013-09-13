@@ -7,61 +7,71 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo tect_lang_current(); ?>">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
-	<?php
-		echo get_bloginfo('name').' • '.get_bloginfo('description');
-	?>
+<?php
+	wp_title('•', true, 'right');
+	bloginfo('name');
+	if ( is_home() || is_front_page() ) {
+		echo ' • ';
+		bloginfo('description');
+	}
+?>
 	</title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+	<base href="<?php echo 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/'; ?>" />
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
-	<!-- WiiU & 3DS detection -> redirection -->
-	<?php
-		if ( $_SERVER['HTTP_HOST'] == 'localhost' ) { //Sublime's LiveReload; really messes loading times when online
-		echo "
-		<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>
-		";
-		}
-	?>
-	<base href="<?php echo 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/'; ?>" />
-	<?php wp_head(); ?> 
+	<!-- WiiU & 3DS detection -> redirection to be placed here -->
+
+<?php
+
+	//Sublime's LiveReload; really messes loading times when online
+	if ( $_SERVER['HTTP_HOST'] == 'localhost' ) {
+	//echo '<script src="http://localhost:35729/livereload.js?snipver=1"></script>';
+	}
+
+	wp_head();
+
+	//http://codex.wordpress.org/Function_Reference/body_class
+?> 
 </head>
 <body <?php body_class($body_class); ?>>
-<!-- http://codex.wordpress.org/Function_Reference/body_class -->
-	<header>
-
-		<div id="colophon" class="vcard"> <!-- move to settings page or just use a text widget → sidebar.php -->
-			<h1><a class="url fn" href="http://archi.tect.gr/">Heracles Papatheodorou</a></h1>
-			<span class="title">licensed architect, <abbr title="Diploma in Architectural Engineering">dipl.</abbr> <a href="http://www.ntua.gr/index_en.html"><abbr title="National Technical University of Athens">NTUA</abbr></a></span>
-			<div class="adr">based in  <span class="locality">Athens</span>, <span class="country-name">Greece</span></div>
-			twitter: <a class="url" rel="me" href="http://twitter.com/Arty2">@<span class="nickname">Arty2</span></a><br />
-			email: <a class="email" href="mailto://archi@tect.gr">archi@tect.gr</span></a>
-		</div>
-
-		<a class="url" href="http://archi.tect.gr/"><img class="logo" src="http://archi.tect.gr//monogram.png" alt="monogram" /></a>
-
-		<nav role="navigation"> <!-- use widget instead! -->
-		<?php
-			// wp_tag_cloud(array(
-			// 	'smallest' => 0.75,
-			// 	'largest' => 1.1,
-			// 	'unit' => 'em'
-			// ));
-		?>
-		</nav>
-		<?php
-			dynamic_sidebar('header');
-		?>
-	</header>
-
-	<nav class="language" title="does not work, yet">
-		<ul><!--  hide non-available language in .single -->
-			<li><a href="#" hreflang="el"><abbr lang="en" title="ελληνικά">ελ</abbr></a></li>
-			<li><a href="#" hreflang="en" class="active"><abbr lang="de" title="english">en</abbr></a></li>
-		</ul>
+<header>
+<!--[if lt IE 9]>
+	<p class="oldbrowser">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>
+	Do yourself a favor and <a href="http://browsehappy.com/">download a better one</a>.
+	</p>
+<![endif]-->
+	<div id="about">
+<?php
+	if (!dynamic_sidebar('sidebar-about')) { 
+		bloginfo('description');
+	}
+?>
+	</div>
+	<nav role="navigation">
+<?php
+	if (!dynamic_sidebar('sidebar-nav')) { 
+		echo '<ul class="tags"><li>';
+		wp_tag_cloud(array(
+			'smallest' => 0.8,
+			'largest' => 1.1,
+			'unit' => 'rem',
+			'separator' => '</li><li>',
+		));
+		echo '</ul>';
+	}
+?>
 	</nav>
+<?php	
+	//echo tect_lang_switcher();
+
+	echo '<div id="logo"><a href="' . get_bloginfo('url') . '"><img src="' . get_header_image() . '" alt="' . get_bloginfo('name') . '" /></a></div>'
+?>
+
+</header>
+<?php echo tect_lang_switcher(); ?>

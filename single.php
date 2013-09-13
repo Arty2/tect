@@ -2,43 +2,41 @@
 get_header();
 get_sidebar();
 
-/*
-	http://microformats.org/wiki/hAtom
-	http://www.readability.com/developers/guidelines
-*/
 ?>
 
-<section id="main" class="single">
+<main class="single">
 <?php
 #Start The Loop
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
 		$id = get_the_ID();
-		$attribution = get_post_meta($id, 'meta', true);
 
-		echo '<article class="hentry">';
+		echo '<article class="hentry" lang="' . tect_lang_current() . '">';
 		echo '<header>';
-			echo '<h1 class="entry-title">/' . get_the_title() . '</h1>';
-			echo '<p class="entry-summary">' . get_the_excerpt() . '</p>';
-			echo '<time class="published" datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Y-m-d' ) . '</time>';
-			if ( $attribution ) {
-				echo '<div class="attribution">' . $attribution . '</div>';
+			echo '<h1 class="entry-title"><a href="' . get_permalink() . '">/' . get_the_title() . '</a></h1>';
+			echo '<div class="entry-summary">' . get_the_excerpt() . '</div>';
+			echo '<p class="time">↳ <time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __('published', 'tect') . '">' . get_the_date() . '</time></p>';
+			if ( get_the_date() != get_the_modified_date() ) {
+				echo '<p class="time">↺ <time class="modified" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __('modified', 'tect') . '">' . get_the_modified_date() . '</time></p>';
 			}
+
+			echo get_the_tag_list('<ul class="tags"><li>','</li><li>','</li></ul>');
 		echo '</header>';
+
+		$footer = get_post_meta($id, 'footer', true);
+		if ( $footer ) {
+			echo '<footer>' . $footer . '</footer>';
+		}
 		//echo '<div class="entry-content">';
 			the_content();
 		//echo '</div>';
-		echo '<footer>';
-			//echo '<time class="updates" datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Y-m-d' ) . '</time>';
-			//echo get_the_tag_list('<p class="tags"> ',' · ','</p>'); //active tags appear in main <nav>
-		echo '</footer>';
 		echo '</article>';
 	}
 }
 #End The Loop
 ?>
-</section>
+</main>
 
 <?php
 get_footer();

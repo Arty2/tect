@@ -1,92 +1,105 @@
-tect • a solid foundation WordPress theme
+tect • an architect's WordPress theme
 ===================================
 
-> feature incomplete; not safe to deploy yet
+> Safe to deploy, but still experimental!
 
-aim
+
+
+
+This theme aims to:
 -----------------------------------
-* make an unobtrusive, comptemporary & responsive theme suitable for visual designers and writers as well
-* try and deal with WordPress' template–like PHP and awful output code
+* Be an unobtrusive, contemporary and responsive theme, suitable for visual designers and writers.
+* Be a deployable ecosystem with own plugin functions and style classes.
+* An HTML5 and CSS3 snob experiment, that degrades (almost) gracefully for older browsers.
+* Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
 
-features
+Included enhancements
 -----------------------------------
-* Responsive layout.
-* [Adaptive Images](http://adaptive-images.com/) included.
-* [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup) included.
+These "plugins" cannot are currently always on.
+* [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
+* [Prism.js](http://www.prismjs.com)
+
+Suggested plugins & settings
+-----------------------------------
+* [Magic Widgets](http://wordpress.org/plugins/magic-widgets/)
+* [Polylang](http://wordpress.org/plugins/polylang/) (theme uses own language switcher when plugin is enabled)
+	* ☑ Hide URL language information for default language.
+	* ☐ Activate languages and translations for media. (poorly applied)
+	* ☐ Synchronization: Custom fields. (they may be translatable)
+
+Known bugs / Undocumented behaviors
+-----------------------------------
+* Caption shortcode requires width=1 for fluid width.
+* It is suggested to use full-size for images if you want them to be fluid, filesize will be addressed with a plugin in the future.
+* RSS feeds have not been tested thus they may not work as expected.
+* If your blog already contains media, they may not work as expected.
+* Visual editor calls for images in the wrong directory resulting in 404.
 
 
-
-to do
+To-do
 -----------------------------------
 
-### top priority
-* tidy README (insert infinite loop here)
-* rewrite style.css
-* media/post types (or use categories instead?) → different archive sizes / display
-* print styles(all available ones, suck.)
-* move hardcoded bits into a theme [customizer](https://codex.wordpress.org/Theme_Customization_API)
-	* main page categories
-	* header > about
-	* time display
+### high priority
+* Style archive / homepage view.
+* Add share to Twitter and Facebook links. (custom, not their widget, because we don't like them tracking us)
+* Add project date custom field.
+* Print links as appendix.
+* Rename .note → .comment and reserve .note for sidenotes or references.
+* Clean useless code WordPress includes in the header by default.
 
 ### low priority
-* cleaner [gallery] code
-* remove need for width in caption shortcodes
-* improve on styleguide
-* custom css per post
-* syntax highlighter, maybe [PRISM](http://prismjs.com/)?
-* pretty &s
-* a semantic HTML [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/)
-* add more meta to posts
-	* creation time
-	* "meta" (project info)
-	* location
-* share links (not buttons)
-* singled out page for print only (hard copy creation purposes)
-* old browser warning
+* Add Location custom field.
+* I18n everywhere and proper support for Greek.
+* Enable and make use of [Post Formats](http://codex.wordpress.org/Post_Formats)
+* Theme options:
+	* Categories that are displayed in homepage. (default: all)
+	* Media directory → /media (default: true)
+	* Hyper-relative links toggle. (default: true)
+	* Prism.js and Magnific Popup toggle. (default: true)
+	* Google Analytics
+* Turn styleguide-raw.html into a proper accompanying page. (you can currently Copy & Paste the code into a post)
+* Pretty ampersands and perhaps Twitter, Facebook icons via (custom font)[http://www.heydonworks.com/article/font-hacking].
+* Test and work on RSS feeds.
+* Better theme logo. (SVG?)
 
-
-### even lower priority (production ready theme)
-* proper [i18n](http://wordpress.org/support/topic/plugin-polylang-how-to-internationalize-a-theme)
-* CSS3 external link pseudo classes
-* write a code styleguide
-* print links as appendix
-* [cleaner URLs](http://benword.com/how-to-hide-that-youre-using-wordpress/)
-* allow for theming via customizer
-	* link colors
-	* background
+### even lower priority
+* Singled-out page template for cleaner .html (offline) copies of content.
+* Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
+* Write documentation on styles and custom fields.
+* Add style options to Customizer:
+	* custom background
+	* logo height
 	* text colors
-	* wordpress <img> dir
-* make relative links optional
-* fine tune typographic rythm
-* add theming options (e.g. background, link colors)
-* separate some plugins from functions.php
-* add buttons and proper display styles for original classes to visual editor
+	* link colors
 
-plugins (to select or write)
+### may never happen priority
+* Add buttons and proper display styles for original classes to the Visual editor.
+
+
+Plugins to select or write in functions.php
 -----------------------------------
-* endless scroll
-* lightbox plugin
-* accompagnying footnote plugin
-* vCard widget
-* try Polylang
-* language switcher
-* accordion gallery
-* tag filter navigation
+* Adaptive images using alternate sizes as already generated by WordPress.
+* Improved wpautop() (currently breaks custom HTML, WordPress "bug")
+* Endless scroll.
+* Footnote / sidenote plugin.
+* vCard widget.
+* Tag filter navigation.
 
 
-
-references
+References
 -----------------------------------
-http://benword.com/how-to-hide-that-youre-using-wordpress/
-http://microformats.org/wiki/hAtom
-http://microformats.org/wiki/hnews
-http://www.readability.com/developers/guidelines
-http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
-https://help.github.com/articles/github-flavored-markdown
-http://codex.wordpress.org/WordPress_Coding_Standards
-http://ia.net/blog/responsive-typography-the-basics/
-http://roots.io/
+* [Github flavored markdown](https://help.github.com/articles/github-flavored-markdown)
+* [hAtmo microformat](http://microformats.org/wiki/hAtom)
+* [hnews microformat](http://microformats.org/wiki/hnews)
+* [Readability™ developer guidelines](http://www.readability.com/developers/guidelines)
+* [Normalize.css](http://necolas.github.io/normalize.css/)
+* [ARIA roles](http://alistapart.com/article/aria-and-progressive-enhancement)
+* [Common HTML idioms W3C draft](http://www.w3.org/html/wg/drafts/html/master/common-idioms.html#footnotes)
+* [Roots Theme](http://roots.io/)
+* [How to Hide The Fact That You're Using WordPress](http://benword.com/how-to-hide-that-youre-using-wordpress/)
+* [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) (not sticking to them, but close enough)
+* [I18n for WordPress developers](http://codex.wordpress.org/I18n_for_WordPress_Developers)
+* [WordPress Theme Customization API](https://codex.wordpress.org/Theme_Customization_API)
 
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)

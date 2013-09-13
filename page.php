@@ -3,7 +3,7 @@ get_header();
 get_sidebar();
 ?>
 
-<section id="main" class="single">
+<main class="single">
 <?php
 #Start The Loop
 if ( have_posts() ) {
@@ -30,7 +30,7 @@ if ( have_posts() ) {
 }
 #End The Loop
 ?>
-</section>
+</main>
 
 <?php
 get_footer();

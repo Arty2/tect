@@ -3,11 +3,11 @@ get_header();
 get_sidebar();
 ?>
 
-<section id="main" class="archive" role="main">
+<main class="archive">
 <?php
 #Get posts only from the default category on homepage
 if ( is_home() ) {
-	query_posts('cat=' . get_option('default_category'));
+	//query_posts('cat=' . get_option('default_category'));
 }
 #Start The Loop
 if ( have_posts() ) {
@@ -29,15 +29,18 @@ if ( have_posts() ) {
 			// 	<a href="" class="el" lang="el">ελ</a>
 			// 	</p>';
 			// use WP's date settings / show the_modified_time() ?
-			echo '<time datetime="' . get_the_time( 'r' ) . '">' . get_the_time( 'Ymd' ) . '</time>';
-			echo get_the_tag_list('<p class="tags"> ',' · ','</p>');
+			echo '<p class="time">↳ <time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __('published', 'tect') . '">' . get_the_date() . '</time></p>';
+			if ( get_the_date() != get_the_modified_date() ) {
+				echo '<p class="time">↺ <time class="modified" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __('modified', 'tect') . '">' . get_the_modified_date() . '</time></p>';
+			}
+			echo get_the_tag_list('<ul class="tags"><li>','</li><li>','</li></ul>');
 		echo '</footer>';
 		echo '</article>';
 	}
 }
 #End The Loop
 ?>
-</section>
+</main>
 <?php
 
 get_footer();
