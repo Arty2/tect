@@ -59,7 +59,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 1436,
+				"buffer_size": 1108,
 				"line_ending": "Unix"
 			}
 		},
@@ -72,18 +72,10 @@
 			}
 		},
 		{
-			"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
-			"settings":
-			{
-				"buffer_size": 3223,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 14874,
+				"buffer_size": 13836,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,7 +83,7 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 11664,
+				"buffer_size": 11630,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,7 +91,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2077,
+				"buffer_size": 2085,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +99,7 @@
 			"file": "scripts/core.js",
 			"settings":
 			{
-				"buffer_size": 2318,
+				"buffer_size": 1446,
 				"line_ending": "Windows"
 			}
 		},
@@ -340,18 +332,14 @@
 	},
 	"file_history":
 	[
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
-		"/C/Users/Heracles/Desktop/work.txt",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/404.php",
-		"/C/Users/Heracles/Desktop/404.png",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/wp-config.php",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/includes/magnific-popup/jquery.magnific-init.js",
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.old.css",
 		"/C/Users/Heracles/Desktop/TPEL_pub/en.html",
 		"/D/www/tectgr/archi.tect.gr/wp-config.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003E/opr1598V.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0025/opr156TS.tmp",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.old.css",
 		"/D/www/tectgr/archi.tect.gr/.htaccess",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr1562Z.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr1561X.tmp",
@@ -397,6 +385,7 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr14FUT.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr14FT0.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/404.php",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/_404.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0054/opr149J9.tmp",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/CSS outline.sublime-snippet",
@@ -467,7 +456,10 @@
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0069/opr0PKMJ.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0043/opr0PGVF.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_004C/opr0OFVL.tmp"
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_004C/opr0OFVL.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002F/opr0OD0Y.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0044/opr0MNV3.tmp",
+		"/D/Dropbox/Public/publications.html"
 	],
 	"find":
 	{
@@ -485,22 +477,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"language",
-			"logo",
-			"window.pageYOffset",
-			"$(window).scrollTop()",
-			"logo",
-			"$(window).scrollTop()",
-			"scroll",
-			"$(window).scrollTop()",
-			"upper",
-			"lang",
-			"string",
-			"text",
-			"replaceString",
-			"find",
-			"this",
-			"justi",
 			"fixed_img_caption_shortcode",
 			"tect_img_caption_shortcode_filter",
 			"fixed_img_caption_shortcode",
@@ -612,7 +588,23 @@
 			"main.single article > a",
 			"main",
 			"#main",
-			"mark"
+			"mark",
+			"start",
+			"start.offset().top",
+			"$('#logo')",
+			"$('html, body')",
+			"block",
+			"section",
+			"block",
+			"section",
+			"delay",
+			"transi",
+			"placehol",
+			"blockq",
+			"./archi.tect.gr",
+			"http://localhost/tectgr",
+			"img",
+			"img {|"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -639,7 +631,7 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -647,15 +639,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 1436,
+						"buffer_size": 1108,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								643,
-								639
+								1030,
+								1030
 							]
 						],
 						"settings":
@@ -681,8 +673,8 @@
 						"selection":
 						[
 							[
-								67,
-								67
+								915,
+								915
 							]
 						],
 						"settings":
@@ -698,44 +690,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
-					"settings":
-					{
-						"buffer_size": 3223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								840,
-								840
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 14874,
+						"buffer_size": 13836,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9083,
-								9083
+								11305,
+								11305
 							]
 						],
 						"settings":
@@ -744,25 +710,53 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 11266.0,
+						"translation.y": 13336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "functions.php",
+					"settings":
+					{
+						"buffer_size": 11630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11630,
+								11630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6696.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "functions.php",
+					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 11664,
+						"buffer_size": 2085,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10205,
-								10205
+								1599,
+								1599
 							]
 						],
 						"settings":
@@ -772,53 +766,25 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5778.0,
+						"translation.y": 627.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "header.php",
-					"settings":
-					{
-						"buffer_size": 2077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								410,
-								410
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 15.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "scripts/core.js",
 					"settings":
 					{
-						"buffer_size": 2318,
+						"buffer_size": 1446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								834,
-								835
+								667,
+								667
 							]
 						],
 						"settings":
@@ -827,13 +793,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 522.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "footer.php",
 					"settings":
 					{
@@ -860,7 +826,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "page.php",
 					"settings":
 					{
@@ -887,7 +853,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "README.md",
 					"settings":
 					{
@@ -914,7 +880,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "update.json",
 					"settings":
 					{
@@ -940,7 +906,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "styleguide-raw.html",
 					"settings":
 					{
@@ -961,7 +927,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
+						"translation.y": 472.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
