@@ -14,14 +14,20 @@ if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
 		$id = get_the_ID();
+		$slug = basename(get_permalink());
+
 		echo '<article>'; //lang="??" per article
 		echo '<a href="' . get_permalink() . '"><header>';
-			echo '<h1>/' . get_the_title() . '</h1>';
+			echo '<h1>/' . basename(get_permalink()) . '</h1>';
 			if ( has_post_thumbnail() ) {
 				echo get_the_post_thumbnail();
 			}
-			echo '<p class="entry-summary">' . preg_replace('#</?a(\s[^>]*)?>#i', '', get_the_excerpt()) . '</p>';
-
+			echo '<div class="entry-summary">';
+			if ( get_the_title() != $slug ) {
+				echo get_the_title() .'<br />';
+			}
+			echo preg_replace('#</?a(\s[^>]*)?>#i', '', get_the_excerpt());
+			echo '</div>';
 		echo '</header></a>';
 		echo '<footer>';
 			// echo '<p class="lang">

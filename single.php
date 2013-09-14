@@ -11,11 +11,17 @@ if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
 		$id = get_the_ID();
+		$slug = basename(get_permalink());
 
 		echo '<article class="hentry" lang="' . tect_lang_current() . '">';
 		echo '<header>';
-			echo '<h1 class="entry-title"><a href="' . get_permalink() . '">/' . get_the_title() . '</a></h1>';
-			echo '<div class="entry-summary">' . get_the_excerpt() . '</div>';
+			echo '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">/' . $slug . '</a></h1>';
+			echo '<div class="entry-summary">';
+			if ( get_the_title() != $slug ) {
+				echo get_the_title() .'<br />';
+			}
+			echo get_the_excerpt();
+			echo '</div>';
 			echo '<p class="time">↳ <time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __('published', 'tect') . '">' . get_the_date() . '</time></p>';
 			if ( get_the_date() != get_the_modified_date() ) {
 				echo '<p class="time">↺ <time class="modified" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __('modified', 'tect') . '">' . get_the_modified_date() . '</time></p>';

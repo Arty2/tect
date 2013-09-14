@@ -200,17 +200,6 @@
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue_magnific_popup' );
 
 /**
-* Allow Twitter embeds
-* ! remove when this is built into the core
-*/
-
-	// add_filter('oembed_providers','tect_twitter_oembed');
-	// function tect_twitter_oembed($a) {
-	// 	$a['#http(s)?://(www\.)?twitter.com/.+?/status(es)?/.*#i'] = array('http://api.twitter.com/1/statuses/oembed.{format}', true);
-	// 	return $a;
-	// }
-
-/**
 * Admin Bar mofications
 */
 		//simple collapse to top, opens on :hover

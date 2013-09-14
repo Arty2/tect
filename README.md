@@ -8,9 +8,9 @@ tect • an architect's WordPress theme
 
 This theme aims to:
 -----------------------------------
-* Be an unobtrusive, contemporary and responsive theme, suitable for visual designers and writers.
+* Be an unobtrusive, contemporary and responsive, suitable for visual designers and writers.
 * Be a deployable ecosystem with own plugin functions and style classes.
-* An HTML5 and CSS3 snob experiment, that degrades (almost) gracefully for older browsers.
+* Pose as a semantic HTML5 and CSS3 snob experiment, which degrades (almost) gracefully for older browsers.
 * Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
 
 Included enhancements
