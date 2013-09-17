@@ -5,7 +5,7 @@ Description: an architect's WordPress theme
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.1.1
+Version: 1.1.2
 Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
@@ -102,6 +102,7 @@ mark {
 ol,
 ul {
 	padding: 0;
+	word-wrap: break-word;
 }
 
 ol ul,
@@ -410,16 +411,16 @@ html {
 }
 
 body > header,
+body > footer,
 h1,
-figcaption,
-.languages,
-.tags,
-.time,
+time,
+.languages, .tags, .share,
+#appendix, .ref,
 main.single article footer {
 	font-family: "Segoe UI", "Ubuntu", "Verdana", "Helvetica", sans-serif;
 }
 
-.note {
+.annotation {
 	font-family: "Segoe Script", "Pilgi", "Papyrus", serif;
 }
 
@@ -441,7 +442,7 @@ a {
 	transition          : background .3s, border .3s, color .3s;
 }
 
-a img {
+main a img {
 	border: none !important;
 	cursor: -webkit-zoom-in;
 	cursor: -moz-zoom-in;
@@ -473,13 +474,17 @@ main.single article a {
 		border-bottom-width: 4px;
 	}
 
-main.single article > a { /* block level links */
+main.single .entry-content > a { /* block level links */
 	border: none !important;
 }
 
-main.single article header h1 a {
+main.single article header h1 a,
+.share a {
 	border: none !important;
+	color: #333 !important;
 }
+
+
 
 a[id^='ref-'],
 a[id^='mark-'] {
@@ -491,33 +496,34 @@ a[id^='mark-'] {
 * Less common classes and structures
 */
 
-.oldbrowser {
+.notice {
 	padding: 1em;
 
 	border: 1em solid;
 	font-weight: bold;
 }
-	.oldbrowser a {
+	.notice a {
 		color: blue;
 		text-decoration: underline;
 	}
 
-.note {
+.annotation {
 	color: rgba(0,0,0,.4);
 	font-size: 0.8rem;
 	line-height: 0.8rem;
 }
-	.note:before {
-		content: '✁ ';
+	.annotation:before {
+		content: '\u2701 ';
 		float: left;
 		font-size: 1.5rem;
 	}
-	.note.gutter {
+	.annotation.gutter {
 		position: absolute;
 		right: 2rem;
 		
-		margin: 0 0 0 2rem;
-		padding: 0.2rem;
+		width: auto !important;
+		margin: 0 0 0 2rem !important;
+		padding: 0.2rem !important;
 		
 		border: none;
 		text-align: right;
@@ -533,6 +539,8 @@ a[id^='mark-'] {
 
 .peekaboo {
 	max-height: 1rem;
+
+	cursor: help;
 	overflow: hidden;
 
 	-webkit-transition: margin .5s, max-height .5s;
@@ -581,9 +589,6 @@ a[id^='mark-'] {
 	display: block;
 
 	border: none !important;
-/*	cursor: -webkit-zoom-in;
-	cursor: -moz-zoom-in;
-	cursor: zoom-in;*/
 
 	-webkit-box-shadow: -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
 	-moz-box-shadow   : -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
@@ -603,6 +608,14 @@ a[id^='mark-'] {
 		transform        : scale(1.2);
 	}
 
+
+time.published:before {
+	content: '— ';
+}
+time.updated:before {
+	content: ' \21bb  ';
+}
+
 /**
 * More specific structure styles
 */
@@ -614,7 +627,7 @@ body {
 body > footer {
 	clear: both;
 
-	padding: 2rem;
+	margin: 2rem;
 }
 
 body > header {
@@ -660,20 +673,38 @@ body > header > nav {
 .tags {
 	margin: 0;
 
-	font-size: 0.8rem;
 	list-style: none;
+	font-size: 0.8rem;
+
+	font-variant: small-caps;
+	text-transform: uppercase;
 }
 
 .tags li {
 	display: inline-block;
 	padding: 0.3rem;
-
-	font-variant: small-caps;
-	text-transform: uppercase;
 }
 	.tags a:before {
 		content: '#';
 	}
+
+.share {
+	margin: 0;
+
+	list-style: none;
+	font-size: 0.8rem;
+}
+	.share:before {
+		content: '\21CC'; /* \2573   */
+
+		font-size: 1.5rem;
+		vertical-align: middle;		
+	}
+
+.share li {
+	display: inline-block;
+	padding: 0.3rem 0 0.3rem 1rem;
+}
 
 .languages {
 	float: right;
@@ -729,6 +760,10 @@ body > header > nav {
 			font-weight: 600;
 		}
 
+main {
+	margin: 0 0 4rem 0;
+}
+
 main.archive article {
 	margin: 2rem;
 }
@@ -737,44 +772,12 @@ main.archive article header {
 	position: relative;
 }
 
-main.archive article header h1 {
-	position: absolute;
-	top: 0.5rem;
-	left: 0;
-
-	margin: 0;
-	padding: 0;
-
-	font-size: 1rem;
-	font-weight: normal;
-	line-height: 2rem;
-
-	-webkit-transform-origin: top left;
-	-moz-transform-origin	: top left;
-	transform-origin		: top left;
-
-	-webkit-transform	: rotate(90deg);
-	-moz-transform		: rotate(90deg);
-	transform			: rotate(90deg);
-}
-
-
-main.single article {
-	
-}
-
-main.single article > * {
-	display: block;
-
-	margin: 2rem;
-}
-
 main.single article header {
 	position: relative;
-	margin-top: 0;
+	margin: 0 2rem 1rem 2rem;
 }
 
-main.single article header h1 {
+main article header h1 {
 	position: absolute;
 	top: 0.5rem;
 	left: 0;
@@ -795,18 +798,28 @@ main.single article header h1 {
 	transform			: rotate(90deg);
 }
 
-main.single article header .time {
-	display: inline-block;
-	margin: 0.3rem;
+main article header h2 {
+	margin: 0;
+	padding: 0;
 
-	font-size: 0.8rem;
+	font-size: 1rem;
+	line-height: 2rem;
+}
+
+main article header time {
+	display: inline-block;
+	margin: 0.3rem 0;
+
+	font-size: 0.9rem;
+	opacity: .5;
 }
 /*	main.single article header time:hover {
 		content: attr(title);
 	}*/
 
-main.single article header .time,
-main.single article header .tags {
+main article header time.published,
+main article header time.updated,
+main article header .tags {
 	opacity: 0;
 	visibility: hidden;
 
@@ -814,29 +827,50 @@ main.single article header .tags {
 	-moz-transition   : visibility .5s, opacity .5s;
 	transition        : visibility .5s, opacity .5s;
 
-	-webkit-transition-delay: .5s;
-	-moz-transition-delay   : .5s;
-	transition-delay        : .5s;
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay   : .3s;
+	transition-delay        : .3s;
 }
-	main.single article header:hover .time {
+	main article header:hover time.published,
+	main article header:hover time.updated {
 		opacity: .5;
 		visibility: visible;
 
-		-webkit-transition-delay: .5s;
-		-moz-transition-delay   : .5s;
-		transition-delay        : .5s;
+		-webkit-transition-delay: .6s;
+		-moz-transition-delay   : .6s;
+		transition-delay        : .6s;
 	}
-	main.single article header:hover .tags {
+	main article header:hover time.updated {
+		-webkit-transition-delay: 1.2s;
+		-moz-transition-delay   : 1.2s;
+		transition-delay        : 1.2s;
+	}
+	main article header:hover .tags {
 		opacity: 1;
 		visibility: visible;
 
-		-webkit-transition-delay: 1s;
-		-moz-transition-delay   : 1s;
-		transition-delay        : 1s;
+		-webkit-transition-delay: .3s;
+		-moz-transition-delay   : .3s;
+		transition-delay        : .3s;
+	}
+
+main.single article .share {
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: visibility .5s, opacity .5s;
+	-moz-transition   : visibility .5s, opacity .5s;
+	transition        : visibility .5s, opacity .5s;
+}
+	main.single article:hover .share {
+		opacity: 1;
+		visibility: visible;
 	}
 
 main.single article footer {
 	float: right;
+
+	margin: 0 2rem;
 
 	font-size: 0.75rem;
 	line-height: 1.5;
@@ -846,14 +880,12 @@ main.single article footer {
 	-webkit-column-count: 2;
 	column-count        : 2;*/
 }
-	/*main.single article footer:after {
-		content: "";
 
-		display: table; 
-		clear: both;
-	}*/
-	main.single article footer + * {
-		clear: both;
+main.single article footer + * {
+	clear: right;
+}
+	main.single article footer:empty + * {
+		clear: none;
 	}
 
 
@@ -864,14 +896,15 @@ main.single article footer .group {
 
 	display: inline-block;
 	margin: 0 2rem 2rem 0;
+	padding:;
 
 	break-inside: avoid;
 }
-	main.single article footer dl:last-child,
-	main.single article footer .group:last-child {
-		margin-right: 0;
+	main.single article footer > dl:last-child,
+	main.single article footer .group:last-child,
+	main.single article footer .group dl:last-child {
+		margin: 0;
 	}
-
 
 main.single article footer h2 {
 	margin: 0;
@@ -883,47 +916,82 @@ main.single article footer h2 {
 }
 
 main.single article footer dt {
-	padding: 1rem 0 0.5rem 0;
+	padding: 0 0 0.3rem 0;
 
 	font-variant: small-caps;
 	text-transform: uppercase;
 }
 
+main.single article footer dd + dt {	
+	padding: 0.7rem 0 0.5rem 0;
+}
+
 
 main.single article footer dd {
 	margin: 0;
+	padding: 0;
 }
 
-main.single article .spread {
+
+main.single .entry-content {
+	margin: 0;
+	padding: 1px 0 0 0; /* deals with unexpected margin collapse */
+}
+
+main.single .entry-content > * {
+	display: block;
+
+	margin: 2rem;
+}
+
+main.single .entry-content .spread {
 	clear: both;
 	margin: 2rem 0;
 }
 
-main.single article aside {
+main.single .entry-content aside {
 	margin: 2rem 0;
 	padding: 2rem 2rem;
 	clear: both;
 }
-	main.single article aside.callout {
+	main.single .entry-content aside.callout {
 		float: right;
 		margin: -1rem 0.5rem;
 		padding: 0;
 	}
-	main.single article aside.peekaboo {
-		margin: -2em 0;
+	main.single .entry-content aside.peekaboo {
+		margin: -2rem 0;
 		padding-top: 0;
 	}
-	main.single article aside.callout blockquote {
+	main.single .entry-content aside.callout blockquote {
 		padding: 0;
 
 		border: none;
 		font-size: 1.5rem;
 	}
 
+#appendix {
+	clear: both;
+
+	margin: 2rem;
+}
+	#appendix h1 {
+		display: none;
+		font-size: 1.5rem;
+
+		page-break-before: always;
+	}
+	#appendix button {
+		border: none;
+		background: none;
+	}
+	#appendix ol {
+		font-size: 0.8rem;
+	}
 
 @media only screen and (max-width: 1023px) {
 
-	main.single article aside {
+	main.single .entry-content aside {
 		clear: both;
 
 		border-top: 1px dotted rgba(0,0,0,.25);
@@ -933,8 +1001,8 @@ main.single article aside {
 		-moz-box-shadow   : inset 0 0 1rem rgba(0,0,0,.5);
 		box-shadow        : inset 0 0 1rem rgba(0,0,0,.5);
 	}
-		main.single article aside.callout,
-		main.single article aside.note {
+		main.single .entry-content aside.callout,
+		main.single .entry-content aside.annotation {
 			clear: right;
 
 			border: none;
@@ -955,6 +1023,7 @@ main.single article aside {
 	body > header > nav {
 		float: right;
 	}
+
 	main.single {
 		max-width: 70rem;
 	}
@@ -966,24 +1035,12 @@ main.single article aside {
 		margin: 0 2rem 2rem 2rem;
 	}
 
-	main.single article footer {
-		margin: 0 2rem 2rem 2rem;
-		
-/*		-moz-column-count   : 3;
-		-webkit-column-count: 3;
-		column-count        : 3;*/
-	}
-
-	main.single article > * {
+	main.single .entry-content > * {
 		margin-right: 4rem;
 		margin-left: 20rem;
 	}
 
-	main.single article > .spread {
-		margin: 2rem 0;
-	}
-
-	main.single article aside {
+	main.single .entry-content > aside {
 		float: left;
 		clear: left;
 
@@ -991,13 +1048,6 @@ main.single article aside {
 		margin: 0rem;
 		padding: 0 2rem;
 	}
-
-	.note.gutter {
-		right: 4rem;
-
-		width: auto;
-	}
-
 }
 
 
@@ -1022,9 +1072,6 @@ main.single article aside {
 	main.single article {
 		position: static;
 	}
-	main.single article > * {
-		margin-left: 15rem;
-	}
 
 	main.single article header {
 		float: right;
@@ -1033,7 +1080,11 @@ main.single article aside {
 		margin: 20cm 2rem 0 2rem;
 	}
 
-	main.single article aside {
+	main.single .entry-content > * {
+		margin-left: 15rem;
+	}
+
+	main.single .entry-content aside {
 		float: left;
 		clear: left;
 
@@ -1050,10 +1101,17 @@ main.single article aside {
 		page-break-after: always;
 	}
 
+	code, pre {
+		background: none !important;
+		color: #000 !important;
+	}
+
 	body > header,
 	body > footer,
 	.languages,
-	.note {
+	.share,
+	.annotation,
+	.entry-unrelated  {
 		display: none !important;
 	}
 }

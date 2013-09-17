@@ -14,25 +14,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
 <?php
-	wp_title('•', true, 'right');
-	bloginfo('name');
+	$tect_page_title = wp_title('•', false, 'right');
+	$tect_page_title .= get_bloginfo('name');
 	if ( is_home() || is_front_page() ) {
-		echo ' • ';
-		bloginfo('description');
+		$tect_page_title .= ' • ' . get_bloginfo('description');
 	}
+
+	echo $tect_page_title;
 ?>
 	</title>
-	<base href="<?php echo 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/'; ?>" />
+	<meta name="description" content="
+<?php if ( (is_home()) || (is_front_page()) ) {
+	//fix that bit of code
+    echo ('Your main description goes here');
+} elseif(is_category()) {
+    echo category_description();
+} elseif(is_tag()) {
+    echo '-tag archive page for this blog' . single_tag_title();
+} elseif(is_month()) {
+    echo 'archive page for this blog' . the_time('F, Y');
+} else {
+    echo get_post_meta($post->ID, "Metadescription", true);
+}?>">
+	<base href="<?php echo TECT_DOMAIN; ?>" />
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
 	<!-- WiiU & 3DS detection -> redirection to be placed here -->
 
 <?php
-
-	//Sublime's LiveReload; really messes loading times when online
-	if ( $_SERVER['HTTP_HOST'] == 'localhost' ) {
-	//echo '<script src="http://localhost:35729/livereload.js?snipver=1"></script>';
-	}
 
 	wp_head();
 
@@ -42,7 +51,7 @@
 <body <?php body_class($body_class); ?>>
 <header>
 <!--[if lt IE 9]>
-	<p class="oldbrowser">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>
+	<p class="notice">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>
 	Do yourself a favor and <a href="http://browsehappy.com/">download a better one</a>.
 	</p>
 <![endif]-->

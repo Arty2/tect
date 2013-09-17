@@ -13,30 +13,51 @@ if ( have_posts() ) {
 		$id = get_the_ID();
 		$slug = basename(get_permalink());
 
-		echo '<article class="hentry" lang="' . tect_lang_current() . '">';
+		echo '<article class="hnews hentry" lang="' . tect_lang_current() . '">';
 		echo '<header>';
-			echo '<h1 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">/' . $slug . '</a></h1>';
+			echo '<h1><a href="' . get_permalink() . '" rel="bookmark">/' . $slug . '</a></h1>';
 			echo '<div class="entry-summary">';
 			if ( get_the_title() != $slug ) {
-				echo get_the_title() .'<br />';
+				echo '<h2 class="entry-title">' . get_the_title() . '</h2>';
 			}
 			echo get_the_excerpt();
 			echo '</div>';
-			echo '<p class="time">↳ <time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __('published', 'tect') . '">' . get_the_date() . '</time></p>';
+
+			// post datetimes 
+			echo tect_get_meta( $id, 'tect_time', true, '<time datetime="' . tect_get_meta( $id, 'tect_time') . '">','</time> ');
+			echo '<time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __( 'published', 'tect' ) . '">' . get_the_date() . '</time>';
 			if ( get_the_date() != get_the_modified_date() ) {
-				echo '<p class="time">↺ <time class="modified" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __('modified', 'tect') . '">' . get_the_modified_date() . '</time></p>';
+				echo ' <time class="updated" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __( 'updated', 'tect' ) . '">' . get_the_modified_date() . '</time>';
 			}
 
+			// share buttons 
+			echo '
+			<ul class="share" title="' . __( 'share', 'tect' ) . '">
+				<li>
+				<a class="share-twitter" href="https://twitter.com/intent/tweet?original_referer=&source=tweetbutton&text='
+				. urlencode( strip_tags(get_the_excerpt()) . ' → ' )
+				. '&url=' . urlencode( get_permalink() )
+				. '" target="_blank">twitter</a>
+				</li>
+				<li>
+				<a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?s=100'
+				. '&amp;p[title]='. urlencode( get_the_title() . ' • ' . get_bloginfo('name') )
+				. '&amp;p[summary]=' . urlencode( strip_tags(get_the_excerpt()) )
+				. '&amp;p[url]=' . get_permalink()
+				. '&amp;&amp;p[images][0]=' . urlencode( wp_get_attachment_url( get_post_thumbnail_id() ) )
+				. '" target="_blank">facebook</a>
+				</li>
+			</ul>';	//https://plus.google.com/share?url=' . urlencode( get_permalink() ) . '
+
+			//tags
 			echo get_the_tag_list('<ul class="tags"><li>','</li><li>','</li></ul>');
 		echo '</header>';
-
-		$footer = get_post_meta($id, 'footer', true);
-		if ( $footer ) {
-			echo '<footer>' . $footer . '</footer>';
-		}
-		//echo '<div class="entry-content">';
+		echo '<footer>';
+			echo tect_get_meta( $id, 'tect_credits', true);
+		echo '</footer>';
+		echo '<div class="entry-content">';
 			the_content();
-		//echo '</div>';
+		echo '</div>';
 		echo '</article>';
 	}
 }

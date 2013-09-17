@@ -2,16 +2,20 @@
 /**
 * Utilities
 */
-	function add_filters( $tags, $function ) {
-		foreach( $tags as $tag ) {
-			add_filter( $tag, $function );
+	function tect_get_meta( $id, $key, $single = true, $before = false, $after = false ) {
+		$meta = get_post_meta($id, $key, $single);
+		if ( $meta ) {
+			return ( $before ? $before : '' ) . $meta . ( $after ? $after : '' );
+		} else {
+			return false;
 		}
 	}
 
 /**
 * Wordpress settings
 */
-
+	define('TECT_DOMAIN', 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/');
+	
 	function tect_excerpt_length( $length ) {
 		return 20;
 	}
@@ -26,6 +30,27 @@
 	if ( !is_multisite() ) {
 		update_option( 'upload_path', 'media' );
 	}
+
+	//LEFT JOIN the meta table so that we can sort by it
+	function tect_query_join($join) {
+		global $wp_query, $wpdb;
+		if ( is_home() || is_archive() ) { 
+			$join .= "LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id AND meta_key = 'tect_time' ";
+			//custom categories to display here?
+		}
+		return $join;
+	}
+
+	add_filter('posts_join', 'tect_query_join');
+
+	function tect_query_order( $orderby ) {
+		if ( is_home() || is_archive() ) { //sort by custom field by key of 'tect_time' or post_date if it doesn't exist
+			$orderby = "COALESCE(meta_value, post_date) DESC";
+		}
+		return $orderby;
+	}
+
+	add_filter('posts_orderby', 'tect_query_order' );
 
 /**
 * Internationalization
@@ -100,27 +125,100 @@
 		'after_title' => '',
 	));
 
-	//add_action( 'widgets_init', array ( 'Text Unfiltered', 'register' ), 20 );
-
 /**
-* Register theme shortcodes
+* Custom fields and meta boxes
+* based on http://wp.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/
 */
 
-	add_action( 'init', 'tect_shortcodes' );
-	function tect_shortcodes() {
-		add_shortcode( '@', 'tect_at' );
-		add_shortcode( 'page', 'tect_page' );
+	add_action( 'load-post.php', 'tect_meta_boxes_setup' );
+	add_action( 'load-post-new.php', 'tect_meta_boxes_setup' );
+
+	function tect_meta_boxes_setup() {
+		add_action( 'add_meta_boxes', 'tect_post_meta_boxes_add' );
+		add_action( 'save_post', 'tect_post_credits_meta_box_save', 10, 2 );
+		add_action( 'save_post', 'tect_post_time_meta_box_save', 10, 2 );
 	}
-		//shortcode / get page content by slug
-		function tect_page( $atts ) {
-			extract( shortcode_atts( array(
-				'slug' => 'colophon',
-			), $atts));
-			$post = get_page_by_path( $slug );
-			//watch for infinite inclusion loop here!
-			$content = apply_filters( 'the_content', $post->post_content );
-			return $content;
+
+	function tect_post_meta_boxes_add() {
+		add_meta_box(
+			'tect-post-credits',
+			esc_html__( 'Credits', 'tect' ),
+			'tect_post_credits_meta_box',
+			'post',
+			'normal',
+			'default'
+		);
+		add_meta_box(
+			'tect-post-time',
+			esc_html__( 'Project time', 'tect' ),
+			'tect_post_time_meta_box',
+			'post',
+			'side',
+			'default'
+		);
+	}
+
+	function tect_post_credits_meta_box( $object, $box ) {
+		wp_nonce_field( basename( __FILE__ ), 'tect_post_credits_nonce' );
+		echo '<label for="tect-post-credits">' .
+		__( 'Add post related credits.', 'tect' ) . '</label><br />
+			<textarea class="widefat" type="text" name="tect-post-credits" id="tect-post-credits" rows="10">' .
+			esc_attr( get_post_meta( $object->ID, 'tect_credits', true ) ) . '</textarea>';
+	}
+
+	function tect_post_credits_meta_box_save( $post_id, $post ) { //make this a generic meta_box save function
+		if ( !isset( $_POST['tect_post_credits_nonce'] ) || !wp_verify_nonce( $_POST['tect_post_credits_nonce'], basename( __FILE__ ) ) ) {
+			return $post_id;
 		}
+
+		$post_type = get_post_type_object( $post->post_type );
+		if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+			return $post_id;
+		}
+
+		$new_meta_value = ( isset( $_POST['tect-post-credits'] ) ? $_POST['tect-post-credits'] : '' );
+		$meta_key = 'tect_credits';
+		$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+		if ( $new_meta_value && $meta_value === '' ) {
+			add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+		} elseif ( $new_meta_value && $new_meta_value != $meta_value ) {
+			update_post_meta( $post_id, $meta_key, $new_meta_value );
+		} elseif ( $new_meta_value === '' && $meta_value ) {
+			delete_post_meta( $post_id, $meta_key, $meta_value );
+		}
+	}
+
+	function tect_post_time_meta_box( $object, $box ) {
+		wp_nonce_field( basename( __FILE__ ), 'tect_post_time_nonce' );
+		echo '<p><label for="tect-post-time">' .
+		__( 'Project time by <a href="http://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 6801</a>.', 'tect' ) . '</label><br />
+			<input class="widefat" type="text" name="tect-post-time" id="tect-post-time" size="30" value="' .
+			esc_attr( get_post_meta( $object->ID, 'tect_time', true ) ) . '" /></p>';
+	}
+
+	function tect_post_time_meta_box_save( $post_id, $post ) { //make this a generic meta_box save function
+		if ( !isset( $_POST['tect_post_time_nonce'] ) || !wp_verify_nonce( $_POST['tect_post_time_nonce'], basename( __FILE__ ) ) ) {
+			return $post_id;
+		}
+
+		$post_type = get_post_type_object( $post->post_type );
+		if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+			return $post_id;
+		}
+
+		$new_meta_value = ( isset( $_POST['tect-post-time'] ) ? $_POST['tect-post-time'] : '' );
+		$meta_key = 'tect_time';
+		$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+		if ( $new_meta_value && $meta_value === '' ) {
+			add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+		} elseif ( $new_meta_value && $new_meta_value != $meta_value ) {
+			update_post_meta( $post_id, $meta_key, $new_meta_value );
+		} elseif ( $new_meta_value === '' && $meta_value ) {
+			delete_post_meta( $post_id, $meta_key, $meta_value );
+		}
+	}
 
 /**
 * Custom header image (#logo)
@@ -143,7 +241,7 @@
 
 	//make it run after ashortcodes
 	remove_filter( 'the_content', 'wpautop' );
- 	add_filter( 'the_content', 'wpautop' , 12);
+	add_filter( 'the_content', 'wpautop' , 12);
 
 	//remove <p>'s around lone images
 	//need to replace this with something that doesn't filter the whole content…
@@ -163,6 +261,9 @@
 
 		wp_register_script( 'core', get_stylesheet_directory_uri() . '/scripts/core.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'core' );
+
+		wp_register_script( 'popup', get_stylesheet_directory_uri() . '/scripts/jquery.popupWindow.js', array( 'jquery' ), true );
+		wp_enqueue_script( 'popup' );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue' );
@@ -368,16 +469,18 @@
 
 
 /**
-* Make WordPress URLs hyper-relative!
-* this isn't bug free, but will work for now
+* Make WordPress URLs hyper-relative! (domain agnostic)
+* may cause bugs
 */
 	function tect_buffer_filter( $buffer ) {
 		return preg_replace(
 			array(
-			'@' . get_bloginfo( 'url' ) . '@',
+			'@' . get_bloginfo( 'url' ) . '/@',
+			'@="./@',
 			),
 		array(
-			'.',
+			TECT_DOMAIN, //change to . for true relative links
+			'="' . TECT_DOMAIN,
 			),
 		$buffer );
 	}

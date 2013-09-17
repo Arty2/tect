@@ -31,44 +31,56 @@ jQuery(document).ready(function($) {
 /**
 * Better Greek small-caps 
 * until browsers decide to fix it…
+* ref: https://bugzilla.mozilla.org/show_bug.cgi?id=307039
 */
-String.prototype.replaceArray = function(search, replace) {
-	var text = this;
-	for (var i = 0; i < search.length; i++) {
-		text = text.replace(search[i], replace[i]);
+	function greek_small_caps(selectors) {  //you should not be greedy with your selectors
+		String.prototype.replaceArray = function(search, replace) {
+			var text = this;
+			for (var i = 0; i < search.length; i++) {
+				text = text.replace(search[i], replace[i]);
+			}
+			return text;
+		};
+		var greek_search = ['άι', 'έι', 'όι', 'ύι', 'άυ', 'έυ', 'ήυ', 'όυ', 'ά', 'έ', 'ή', 'ί', 'ΐ', 'ό', 'ύ', 'ΰ', 'ώ', ' η '];
+		var greek_replace = ['αϊ', 'εϊ', 'οϊ', 'υϊ', 'αϊ', 'εϋ', 'ηϋ', 'οϋ', 'α', 'ε', 'η', 'ι', 'ϊ', 'ο', 'υ', 'ϋ', 'ω', ' ή '];
+
+		$(selectors).each(function() {
+			if ($(this).css("text-transform") == 'uppercase' || $(this).css("fontVariant") == 'small-caps') {
+				var text = $(this).text();
+				text = text.replaceArray(greek_search, greek_replace);
+				$(this).text(text);
+			}
+		});
 	}
-	return text;
-};
-var greek_search = ['άι', 'έι', 'όι', 'ύι', 'άυ', 'έυ', 'ήυ', 'όυ', 'ά', 'έ', 'ή', 'ί', 'ΐ', 'ό', 'ύ', 'ΰ', 'ώ', ' η '];
-var greek_replace = ['αϊ', 'εϊ', 'οϊ', 'υϊ', 'αϊ', 'εϋ', 'ηϋ', 'οϋ', 'α', 'ε', 'η', 'ι', 'ϊ', 'ο', 'υ', 'ϋ', 'ω', ' ή '];
 
-$('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)').each(function() { //do not be very greedy here
-	if ($(this).css("text-transform") == 'uppercase' || $(this).css("fontVariant") == 'small-caps') {
-		var text = $(this).text();
-		text = text.replaceArray(greek_search, greek_replace);
-		$(this).text(text);
-	}
-}); 
+	greek_small_caps('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)');
+
+/**
+* Hyperlink index
+*/
+	$('#appendix button').one( "click", function() {
+		var ref = 1;
+
+		$('article q[cite], article blockquote[cite], article a[href]:not(a[href^="#"])').each(function() {
+			$(this).after('<sup class="ref">{' + ref + '}</sup>');
+			var url = $(this).attr('cite') || $(this).attr('href');
+			$('#appendix ol').append('<li>' + url +'</li>');
+			ref++;
+		});
+
+		$('#appendix h1').css( "display", "block");
+
+		$('html, body').animate({ scrollTop: $('#appendix').offset().top }, 500);
+	});
+
+	$('.share-twitter, .share-facebook, .share-plus').popupWindow({
+		width: 550,
+		height: 250,
+		centerScreen: 1 
+	});
 
 
-// http://www.w3.org/html/wg/drafts/html/master/common-idioms.html#footnotes
-// $(document).ready(function(){
-// 	$('html').addClass('noted');
-// 	$('#page').append('<h2 id="contentlinks" class="print-only">Link index - '+document.location.href+'</h2>');
-// 	$('#page').append('<ol id="footnotes" class="print-only"></ol>');
-// 	footnote = 1;
-// 	$('div#content q[cite],div#content blockquote[cite],div#content a[href]').addClass('footnote');
-// 	$('.footnote').each(function() {
-// 	$(this).after('<sup class="print-only">'+footnote+'</sup>');
-// 	url=$(this).attr('cite');
-// 	href=$(this).attr('href');
-// 		if(href) {
-// 		cite ='<li>'+href+'</li>';
-// 		} else if(url) {
-// 		cite ='<li>'+url+'</li>';
-// 		}
-// 	$('#footnotes').append(cite);
-// 	footnote++;
-// 	});
-// });
+
+
+
 });

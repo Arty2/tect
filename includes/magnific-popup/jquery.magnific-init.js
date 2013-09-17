@@ -21,5 +21,5 @@ jQuery(document).ready(function($) {
 			type: 'image',
 			gallery: {enabled:true}
 		});
-	}); 
+	});
 });

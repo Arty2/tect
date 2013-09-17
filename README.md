@@ -41,17 +41,15 @@ To-do
 
 ### high priority
 * Style archive / homepage view.
-* Add share to Twitter and Facebook links. (custom, not their widget, because we don't like them tracking us)
-* Add project date custom field.
-* Print links as appendix.
-* Rename .note → .comment and reserve .note for sidenotes or references.
-* Clean useless code WordPress includes in the header by default.
+* Add download related media link and field. ↳
 
 ### low priority
-* Add Location custom field.
-* I18n everywhere and proper support for Greek.
+* Clean useless code WordPress includes in the header by default.
+* I18n everywhere.
+* Greek l10n.
 * Enable and make use of [Post Formats](http://codex.wordpress.org/Post_Formats)
 * Theme options:
+	* twitter handle
 	* Categories that are displayed in homepage. (default: all)
 	* Media directory → /media (default: true)
 	* Hyper-relative links toggle. (default: true)
@@ -60,7 +58,9 @@ To-do
 * Turn styleguide-raw.html into a proper accompanying page. (you can currently Copy & Paste the code into a post)
 * Pretty ampersands and perhaps Twitter, Facebook icons via (custom font)[http://www.heydonworks.com/article/font-hacking].
 * Test and work on RSS feeds.
+* Test if sticky posts work.
 * Better theme logo. (SVG?)
+* Add Location custom field. ([Google Maps](http://bigsaturday.net/oembed-google-maps-wordpress/) / OpenStreetMaps oEmbed?)
 
 ### even lower priority
 * Singled-out page template for cleaner .html (offline) copies of content.

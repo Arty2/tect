@@ -54,7 +54,7 @@
 				count++;
 			}
 			else {
-				output.innerHTML += '1 <br/> <a onclick="history.go(-1);"><?php _e( 'Not what you expected?', 'tect' ); ?></a>';
+				output.innerHTML += '1 <a onclick="history.go(-1);"><?php _e( 'Not what you expected?', 'tect' ); ?></a>';
 				window.clearInterval(timer);
 			}
 		}
