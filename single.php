@@ -24,36 +24,39 @@ if ( have_posts() ) {
 			echo '</div>';
 
 			// post datetimes 
+			echo '<p class="time">';
 			echo tect_get_meta( $id, 'tect_time', true, '<time datetime="' . tect_get_meta( $id, 'tect_time') . '">','</time> ');
-			echo '<time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __( 'published', 'tect' ) . '">' . get_the_date() . '</time>';
+			echo '<time class="published" datetime="' . get_the_time( 'r' ) . '" title="' . __('published', 'tect') . '">' . get_the_date() . '</time>';
 			if ( get_the_date() != get_the_modified_date() ) {
-				echo ' <time class="updated" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __( 'updated', 'tect' ) . '">' . get_the_modified_date() . '</time>';
+				echo ' <time class="updated" datetime="' . get_the_modified_time( 'r' ) . '" title="' . __('updated', 'tect') . '">' . get_the_modified_date() . '</time>';
 			}
+			echo '</p>';
 
+			if (!dynamic_sidebar('share') ) {
 			// share buttons 
 			echo '
-			<ul class="share" title="' . __( 'share', 'tect' ) . '">
-				<li>
-				<a class="share-twitter" href="https://twitter.com/intent/tweet?original_referer=&source=tweetbutton&text='
-				. urlencode( strip_tags(get_the_excerpt()) . ' → ' )
-				. '&url=' . urlencode( get_permalink() )
-				. '" target="_blank">twitter</a>
-				</li>
-				<li>
-				<a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?s=100'
-				. '&amp;p[title]='. urlencode( get_the_title() . ' • ' . get_bloginfo('name') )
-				. '&amp;p[summary]=' . urlencode( strip_tags(get_the_excerpt()) )
-				. '&amp;p[url]=' . get_permalink()
-				. '&amp;&amp;p[images][0]=' . urlencode( wp_get_attachment_url( get_post_thumbnail_id() ) )
-				. '" target="_blank">facebook</a>
-				</li>
-			</ul>';	//https://plus.google.com/share?url=' . urlencode( get_permalink() ) . '
+				<p class="share">
+					<a class="share-twitter" href="https://twitter.com/intent/tweet?original_referer=&source=tweetbutton&text='
+					. urlencode( strip_tags( get_the_excerpt() ) . ' → ' )
+					. '&url=' . urlencode( get_permalink() )
+					. '" target="_blank" title="' . __( 'tweet', 'tect' ) . '"><span>twitter</span></a>
+					<a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?s=100'
+					. '&amp;p[title]='. urlencode( get_the_title() . ' • ' . get_bloginfo( 'name' ) )
+					. '&amp;p[summary]=' . urlencode( strip_tags(get_the_excerpt()) )
+					. '&amp;p[url]=' . get_permalink()
+					. '&amp;&amp;p[images][0]=' . urlencode( wp_get_attachment_url( get_post_thumbnail_id() ) )
+					. '" target="_blank" title="' . __( 'share on facebook', 'tect' ) . '"><span>facebook</span></a>
+					<!--<a id="appendix-hyperlinks" title="' . __('Make a Hyperlink index and print.', 'tect') . '"><span>' . __('print', 'tect') . '</span></a>-->
+				</p>';	//https://plus.google.com/share?url=' . urlencode( get_permalink() ) . '
+			}
 
 			//tags
 			echo get_the_tag_list('<ul class="tags"><li>','</li><li>','</li></ul>');
+
+
 		echo '</header>';
 		echo '<footer>';
-			echo tect_get_meta( $id, 'tect_credits', true);
+			echo tect_get_meta( $id, 'tect_credits', true );
 		echo '</footer>';
 		echo '<div class="entry-content">';
 			the_content();

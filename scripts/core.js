@@ -23,10 +23,11 @@ jQuery(document).ready(function($) {
 		//unless the user has scrolled down already
 		function() {
 			body.stop(true);
-			if (window.pageYOffset < 30) {
+			if (window.pageYOffset < target.offset().top) {
 				body.animate({ scrollTop: target.offset().top }, 500);
 			}
-	})
+		}
+	);
 
 /**
 * Better Greek small-caps 
@@ -55,13 +56,41 @@ jQuery(document).ready(function($) {
 
 	greek_small_caps('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)');
 
+
+/**
+* Masonry
+* via http://masonry.desandro.com/methods.html
+*/
+
+	$('main.archive').masonry({
+		// columnWidth: 200,
+		itemSelector: 'article'
+	});
+
+	setTimeout( function(){
+		$('main.archive').masonry('reloadItems');
+	}, 2000);
+
+/**
+* Slide thumbnails on archive view
+* should be applied on figure:hover
+*/
+	$('main.archive article figure > img').hover(
+		function() {
+			$(this).css('transform', 'translate(-' + ($(this).width() - $(this).parent().width()) + 'px, 0)');
+		},
+		function() {
+			$(this).css('transform', 'translate(0, 0)');
+		}
+	);
+
 /**
 * Hyperlink index
 */
-	$('#appendix button').one( "click", function() {
+	/*$('#appendix-hyperlinks').one( "click", function() {
 		var ref = 1;
 
-		$('article q[cite], article blockquote[cite], article a[href]:not(a[href^="#"])').each(function() {
+		$('article q[cite], article blockquote[cite], article a[href]:not(a[href^="#"]):not(a[class*="share-"]):not(.tags a):not(header h1 a)').each(function() {
 			$(this).after('<sup class="ref">{' + ref + '}</sup>');
 			var url = $(this).attr('cite') || $(this).attr('href');
 			$('#appendix ol').append('<li>' + url +'</li>');
@@ -70,17 +99,17 @@ jQuery(document).ready(function($) {
 
 		$('#appendix h1').css( "display", "block");
 
-		$('html, body').animate({ scrollTop: $('#appendix').offset().top }, 500);
-	});
+		window.print();
+	});*/
 
-	$('.share-twitter, .share-facebook, .share-plus').popupWindow({
+/**
+* Popup windows
+*/
+	$('.share-twitter, .share-facebook').popupWindow({
 		width: 550,
 		height: 250,
 		centerScreen: 1 
 	});
-
-
-
 
 
 });

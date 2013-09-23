@@ -4,14 +4,13 @@ tect • an architect's WordPress theme
 > Safe to deploy, but still experimental!
 
 
-
-
 This theme aims to:
 -----------------------------------
 * Be an unobtrusive, contemporary and responsive, suitable for visual designers and writers.
 * Be a deployable ecosystem with own plugin functions and style classes.
 * Pose as a semantic HTML5 and CSS3 snob experiment, which degrades (almost) gracefully for older browsers.
 * Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
+* Be suitable for bilingual users. English & Greek localization included.
 
 Included enhancements
 -----------------------------------
@@ -40,14 +39,13 @@ To-do
 -----------------------------------
 
 ### high priority
-* Style archive / homepage view.
-* Add download related media link and field. ↳
+* Always complete Greek l10n.
 
 ### low priority
-* Clean useless code WordPress includes in the header by default.
-* I18n everywhere.
-* Greek l10n.
+* Fix visual editor bug.
+* Rethink archive view and work it from scratch.
 * Enable and make use of [Post Formats](http://codex.wordpress.org/Post_Formats)
+* Clean useless code WordPress includes in the header by default.
 * Theme options:
 	* twitter handle
 	* Categories that are displayed in homepage. (default: all)
@@ -55,17 +53,25 @@ To-do
 	* Hyper-relative links toggle. (default: true)
 	* Prism.js and Magnific Popup toggle. (default: true)
 	* Google Analytics
+* Flexbox CSS at .gallery.
 * Turn styleguide-raw.html into a proper accompanying page. (you can currently Copy & Paste the code into a post)
-* Pretty ampersands and perhaps Twitter, Facebook icons via (custom font)[http://www.heydonworks.com/article/font-hacking].
+* Resolve issues with Hyperlink index.
+* Test and work on Pagination.
 * Test and work on RSS feeds.
 * Test if sticky posts work.
+* Test if what works for Posts, works for Pages as well.
 * Better theme logo. (SVG?)
 * Add Location custom field. ([Google Maps](http://bigsaturday.net/oembed-google-maps-wordpress/) / OpenStreetMaps oEmbed?)
+* Simplify CSS selectors and remove redundant !importants
+* Add download related media link and field. (?)
+* Ensure output code has better linebreaks.
+* Fine tune .gallery: caption instead of title, link to file by default.
 
 ### even lower priority
 * Singled-out page template for cleaner .html (offline) copies of content.
+* Pretty ampersands and perhaps Twitter, Facebook icons via (custom font)[http://www.heydonworks.com/article/font-hacking].
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
-* Write documentation on styles and custom fields.
+* Write documentation on styles.
 * Add style options to Customizer:
 	* custom background
 	* logo height

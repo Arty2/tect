@@ -15,6 +15,12 @@
 * Wordpress settings
 */
 	define('TECT_DOMAIN', 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/');
+
+	function tect_l10n_setup(){
+		load_theme_textdomain('tect', get_template_directory() . '/languages');
+	}
+
+	add_action('after_setup_theme', 'tect_l10n_setup');
 	
 	function tect_excerpt_length( $length ) {
 		return 20;
@@ -23,7 +29,8 @@
 	add_filter( 'excerpt_length', 'tect_excerpt_length' );
 
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size( 600 );
+	set_post_thumbnail_size( 0 , 600 );
+	//need another size for width = 600
 
 	//change upload directory
 	//add this to theme options
@@ -95,6 +102,17 @@
 	}
 
 /**
+* Allow Twitter embeds
+* ! remove when this is built into the core
+*/
+
+	// add_filter('oembed_providers','tect_twitter_oembed');
+	// function tect_twitter_oembed($a) {
+	// 	$a['#http(s)?://(www\.)?twitter.com/.+?/status(es)?/.*#i'] = array('http://api.twitter.com/1/statuses/oembed.{format}', true);
+	// 	return $a;
+	// }
+
+/**
 * Register widget areas
 */
 
@@ -117,6 +135,15 @@
 	));
 
 	register_sidebar(array(
+		'name' => 'share',
+		'id' => 'share',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	));
+
+	register_sidebar(array(
 		'name' => 'footer',
 		'id' => 'sidebar-footer',
 		'before_widget' => '',
@@ -130,16 +157,24 @@
 * based on http://wp.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/
 */
 
-	add_action( 'load-post.php', 'tect_meta_boxes_setup' );
-	add_action( 'load-post-new.php', 'tect_meta_boxes_setup' );
-
-	function tect_meta_boxes_setup() {
-		add_action( 'add_meta_boxes', 'tect_post_meta_boxes_add' );
-		add_action( 'save_post', 'tect_post_credits_meta_box_save', 10, 2 );
-		add_action( 'save_post', 'tect_post_time_meta_box_save', 10, 2 );
+	//based on http://wpsnipp.com/index.php/excerpt/add-a-character-counter-to-excerpt-metabox/
+	function excerpt_count() {
+	echo '<script>jQuery(document).ready(function($){ $("#excerpt").after(\'<div id="excerpt_counter"></div>\'); function excerpt_count() { var count = $("#excerpt").val(); $("#excerpt_counter").text($("<p>"+count+"</p>").text().length); } excerpt_count(); $("#excerpt").keyup( function() { excerpt_count(); }); }); </script>';
 	}
 
+	add_action( 'admin_head-post.php', 'excerpt_count');
+	add_action( 'admin_head-post-new.php', 'excerpt_count');
+
+
 	function tect_post_meta_boxes_add() {
+		add_meta_box(
+			'tect-post-time',
+			esc_html__( 'Project time', 'tect' ),
+			'tect_post_time_meta_box',
+			'post',
+			'side',
+			'default'
+		);
 		add_meta_box(
 			'tect-post-credits',
 			esc_html__( 'Credits', 'tect' ),
@@ -149,25 +184,73 @@
 			'default'
 		);
 		add_meta_box(
-			'tect-post-time',
-			esc_html__( 'Project time', 'tect' ),
-			'tect_post_time_meta_box',
+			'tect-post-css',
+			esc_html__( 'Custom post CSS', 'tect' ),
+			'tect_post_css_meta_box',
 			'post',
-			'side',
+			'normal',
 			'default'
 		);
+		add_meta_box(
+			'tect-post-javascript',
+			esc_html__( 'Custom post JavaScript', 'tect' ),
+			'tect_post_javascript_meta_box',
+			'post',
+			'normal',
+			'default'
+		);
+	}
+
+	function tect_meta_boxes_setup() {
+		add_action( 'add_meta_boxes', 'tect_post_meta_boxes_add' );
+		add_action( 'save_post', 'tect_post_credits_meta_box_save', 10, 2 );
+		add_action( 'save_post', 'tect_post_time_meta_box_save', 10, 2 );
+		add_action( 'save_post', 'tect_post_css_meta_box_save', 10, 2 );
+		add_action( 'save_post', 'tect_post_javascript_meta_box_save', 10, 2 );
+	}
+
+	add_action( 'load-post.php', 'tect_meta_boxes_setup' );
+	add_action( 'load-post-new.php', 'tect_meta_boxes_setup' );
+
+	function tect_post_time_meta_box( $object, $box ) {
+		wp_nonce_field( basename( __FILE__ ), 'tect_post_time_nonce' );
+		echo '<p><label for="tect-post-time">' .
+		__( 'Project completion time by <a href="http://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 6801</a>.', 'tect' ) . '</label><br />
+			<input class="widefat" type="text" name="tect-post-time" id="tect-post-time" size="30" value="' .
+			esc_attr( get_post_meta( $object->ID, 'tect_time', true ) ) . '" /></p>';
 	}
 
 	function tect_post_credits_meta_box( $object, $box ) {
 		wp_nonce_field( basename( __FILE__ ), 'tect_post_credits_nonce' );
 		echo '<label for="tect-post-credits">' .
-		__( 'Add post related credits.', 'tect' ) . '</label><br />
+		__( 'Refer to the guidelines for accepted structures.', 'tect' ) . '</label><br />
 			<textarea class="widefat" type="text" name="tect-post-credits" id="tect-post-credits" rows="10">' .
 			esc_attr( get_post_meta( $object->ID, 'tect_credits', true ) ) . '</textarea>';
 	}
 
-	function tect_post_credits_meta_box_save( $post_id, $post ) { //make this a generic meta_box save function
-		if ( !isset( $_POST['tect_post_credits_nonce'] ) || !wp_verify_nonce( $_POST['tect_post_credits_nonce'], basename( __FILE__ ) ) ) {
+	function tect_post_css_meta_box( $object, $box ) {
+		wp_nonce_field( basename( __FILE__ ), 'tect_post_css_nonce' );
+		echo '<label for="tect-post-css">' .
+		__( 'Caution: not validated automagically.', 'tect' ) . '</label><br />
+			<textarea class="widefat" type="text" name="tect-post-css" id="tect-post-css" rows="10">' .
+			esc_attr( get_post_meta( $object->ID, 'tect_css', true ) ) . '</textarea>';
+	}
+
+	function tect_post_javascript_meta_box( $object, $box ) {
+		wp_nonce_field( basename( __FILE__ ), 'tect_post_javascript_nonce' );
+		echo '<label for="tect-post-javascript">' .
+		__( 'Caution: not validated automagically.', 'tect' ) . '</label><br />
+			<textarea class="widefat" type="text" name="tect-post-javascript" id="tect-post-javascript" rows="10">' .
+			esc_attr( get_post_meta( $object->ID, 'tect_javascript', true ) ) . '</textarea>';
+	}
+
+	function tect_post_time_meta_box_save( $post_id, $post ) { tect_post_meta_box_save( 'time', $post_id, $post ); }
+	function tect_post_credits_meta_box_save( $post_id, $post ) { tect_post_meta_box_save( 'credits', $post_id, $post ); }
+	function tect_post_css_meta_box_save( $post_id, $post ) { tect_post_meta_box_save( 'css', $post_id, $post ); }
+	function tect_post_javascript_meta_box_save( $post_id, $post ) { tect_post_meta_box_save( 'javascript', $post_id, $post ); }
+
+	function tect_post_meta_box_save( $field, $post_id, $post ) {
+		if ( !isset( $_POST[ 'tect_post_' . $field . '_nonce' ] ) || !wp_verify_nonce( $_POST[ 'tect_post_' . $field . '_nonce' ], basename( __FILE__ ) ) ) {
 			return $post_id;
 		}
 
@@ -176,39 +259,8 @@
 			return $post_id;
 		}
 
-		$new_meta_value = ( isset( $_POST['tect-post-credits'] ) ? $_POST['tect-post-credits'] : '' );
-		$meta_key = 'tect_credits';
-		$meta_value = get_post_meta( $post_id, $meta_key, true );
-
-		if ( $new_meta_value && $meta_value === '' ) {
-			add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-		} elseif ( $new_meta_value && $new_meta_value != $meta_value ) {
-			update_post_meta( $post_id, $meta_key, $new_meta_value );
-		} elseif ( $new_meta_value === '' && $meta_value ) {
-			delete_post_meta( $post_id, $meta_key, $meta_value );
-		}
-	}
-
-	function tect_post_time_meta_box( $object, $box ) {
-		wp_nonce_field( basename( __FILE__ ), 'tect_post_time_nonce' );
-		echo '<p><label for="tect-post-time">' .
-		__( 'Project time by <a href="http://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 6801</a>.', 'tect' ) . '</label><br />
-			<input class="widefat" type="text" name="tect-post-time" id="tect-post-time" size="30" value="' .
-			esc_attr( get_post_meta( $object->ID, 'tect_time', true ) ) . '" /></p>';
-	}
-
-	function tect_post_time_meta_box_save( $post_id, $post ) { //make this a generic meta_box save function
-		if ( !isset( $_POST['tect_post_time_nonce'] ) || !wp_verify_nonce( $_POST['tect_post_time_nonce'], basename( __FILE__ ) ) ) {
-			return $post_id;
-		}
-
-		$post_type = get_post_type_object( $post->post_type );
-		if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-			return $post_id;
-		}
-
-		$new_meta_value = ( isset( $_POST['tect-post-time'] ) ? $_POST['tect-post-time'] : '' );
-		$meta_key = 'tect_time';
+		$new_meta_value = ( isset( $_POST[ 'tect-post-' . $field ] ) ? $_POST[ 'tect-post-' . $field ] : '' );
+		$meta_key = 'tect_' . $field;
 		$meta_value = get_post_meta( $post_id, $meta_key, true );
 
 		if ( $new_meta_value && $meta_value === '' ) {
@@ -261,6 +313,9 @@
 
 		wp_register_script( 'core', get_stylesheet_directory_uri() . '/scripts/core.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'core' );
+
+		wp_register_script( 'masonry', get_stylesheet_directory_uri() . '/scripts/masonry.min.js', false, true );
+		wp_enqueue_script( 'masonry' );
 
 		wp_register_script( 'popup', get_stylesheet_directory_uri() . '/scripts/jquery.popupWindow.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'popup' );
@@ -455,15 +510,16 @@
 		return preg_replace(
 			array(
 			'@' . get_bloginfo( 'url' ) . '@', // make src and href relative, borks visual editor!
-			//'/(width|height)="\d*"\s/', // remove width & height
+			'/(width|height)="\d*"\s/', // remove width & height
 			),
 		array(
 			'.',
-			//'',
+			'',
 			),
 		$html );
 	}
 
+	add_filter( 'post_thumbnail_html', 'tect_image_tag', 10, 4 );
 	add_filter( 'get_image_tag', 'tect_image_tag', 10, 4 );
 	add_filter( 'image_send_to_editor', 'tect_image_tag', 10, 4 ); // 'post_thumbnail_html' too ?
 
@@ -476,7 +532,7 @@
 		return preg_replace(
 			array(
 			'@' . get_bloginfo( 'url' ) . '/@',
-			'@="./@',
+			'@="\./@',
 			),
 		array(
 			TECT_DOMAIN, //change to . for true relative links
@@ -491,4 +547,5 @@
 
 	add_action( 'wp_head', 'tect_buffer_start', 1 );
 	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+
 ?>

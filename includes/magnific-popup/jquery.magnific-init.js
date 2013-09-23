@@ -1,6 +1,6 @@
 //http://dimsemenov.com/plugins/magnific-popup/documentation.html
 jQuery(document).ready(function($) {
-	$('a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]').each(function(){
+	$('.entry-content a[href*=".jpg"], .entry-content a[href*=".jpeg"], .entry-content a[href*=".png"], .entry-content a[href*=".gif"]').each(function(){
 		//single image popup
 		if ($(this).parents('.gallery').length == 0) {
 			$(this).magnificPopup({

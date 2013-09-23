@@ -44,11 +44,15 @@
 <?php
 
 	wp_head();
+	
+	if ( is_single() ) {
+		//add custom post CSS
+		echo tect_get_meta( get_the_ID(), 'tect_css', true, '<style type="text/css" media="screen">','</style> ');
+	}
+?>
 
-	//http://codex.wordpress.org/Function_Reference/body_class
-?> 
 </head>
-<body <?php body_class($body_class); ?>>
+<body <?php body_class($body_class); //http://codex.wordpress.org/Function_Reference/body_class ?>>
 <header>
 <!--[if lt IE 9]>
 	<p class="notice">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>
