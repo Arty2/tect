@@ -60,16 +60,12 @@ jQuery(document).ready(function($) {
 /**
 * Masonry
 * via http://masonry.desandro.com/methods.html
+* but it causes more display issues than it solves…
 */
-
-	$('main.archive').masonry({
-		// columnWidth: 200,
-		itemSelector: 'article'
-	});
-
-	setTimeout( function(){
-		$('main.archive').masonry('reloadItems');
-	}, 2000);
+	// $('main.archive').masonry();
+	// setTimeout( function(){
+	// 	$('main.archive').masonry();
+	// }, 3000);
 
 /**
 * Slide thumbnails on archive view

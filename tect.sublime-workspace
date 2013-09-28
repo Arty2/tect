@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"border-bot",
+				"border-bottom-style"
+			],
+			[
 				"border-r",
 				"border-top-left-radius"
 			],
@@ -63,7 +67,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 1653,
+				"buffer_size": 1715,
 				"line_ending": "Unix"
 			}
 		},
@@ -79,15 +83,23 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 20970,
+				"buffer_size": 22273,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Heracles/Desktop/experiments.html",
+			"settings":
+			{
+				"buffer_size": 1600,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 16021,
+				"buffer_size": 17854,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,7 +107,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2363,
+				"buffer_size": 2521,
 				"line_ending": "Unix"
 			}
 		},
@@ -103,7 +115,7 @@
 			"file": "scripts/core.js",
 			"settings":
 			{
-				"buffer_size": 2363,
+				"buffer_size": 2934,
 				"line_ending": "Windows"
 			}
 		},
@@ -111,7 +123,7 @@
 			"file": "footer.php",
 			"settings":
 			{
-				"buffer_size": 686,
+				"buffer_size": 799,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,8 +139,16 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 4855,
+				"buffer_size": 5113,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/www/tectgr/tect.gr/.htaccess",
+			"settings":
+			{
+				"buffer_size": 627,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -137,6 +157,14 @@
 			{
 				"buffer_size": 143,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
+			"settings":
+			{
+				"buffer_size": 3223,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -151,9 +179,21 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 160.0,
+		"height": 85.0,
 		"selected_items":
 		[
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"tabs",
 				"Indentation: Convert to Tabs"
@@ -173,10 +213,6 @@
 			[
 				"low",
 				"Convert Case: Lower Case"
-			],
-			[
-				"html",
-				"Set Syntax: HTML"
 			],
 			[
 				"wrap",
@@ -331,7 +367,7 @@
 				"Preferences: Package Control Settings – Default"
 			]
 		],
-		"width": 402.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -348,7 +384,33 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001C/opr18OCL.tmp",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/tect.pot",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/el.mo",
+		"/D/Dropbox/settings/software-list.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0046/opr1838N.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/sidebar-header.php",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/page.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0025/opr17ZY3.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001A/opr17YW6.tmp",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/functions.php",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/header.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0025/opr17ZY1.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001A/opr17YW4.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YRI.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YR3.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YQG.tmp",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr17X64.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr17X68.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0073/opr17V0C.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_004C/opr17R51.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0064/opr17TJF.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0064/opr17TIZ.tmp",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr17RBM.tmp",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/styles/normalize.css",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0035/opr17OW1.tmp",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/includes/magnific-popup/jquery.magnific-init.js",
 		"/C/Users/Heracles/Desktop/font/fontawesome.css",
 		"/C/Users/Heracles/Desktop/font/fontawesome-ie7.css",
@@ -360,7 +422,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003C/opr17091.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003B/opr1705F.tmp",
 		"/C/Users/Heracles/Desktop/test.html",
-		"/D/Dropbox/settings/software-list.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0070/opr16STS.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0042/opr16OAG.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr16JK5.tmp",
@@ -378,7 +439,6 @@
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.old.css",
 		"/C/Users/Heracles/Desktop/TPEL_pub/en.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003E/opr1598V.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0025/opr156TS.tmp",
 		"/D/www/tectgr/archi.tect.gr/.htaccess",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr1562Z.tmp",
@@ -399,7 +459,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0052/opr14LZT.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0072/opr14P3I.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0070/opr14OX1.tmp",
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/styles/normalize.css",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/style.css",
 		"/D/www/tectgr/archi.tect.gr/wp-settings.php",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/includes/magnific-popup/magnific-popup.css",
@@ -452,30 +511,7 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002B/opr12QW1.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001F/opr120HO.tmp",
-		"/C/Users/Heracles/Desktop/Signup Question v1.1/Upload/inc/languages/english/signupquestions.lang.php",
-		"/C/Users/Heracles/Desktop/Signup Question v1.1/Upload/inc/plugins/signupquestions.php",
-		"/C/Users/Heracles/Desktop/TPEL_pub/tpel.txt",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr0ZL0L.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0017/opr0ZJ51.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0042/opr0ZAT5.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0079/opr0YQVD.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_005C/opr0YO0A.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0045/opr0WUL0.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0075/opr0WA03.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/style.css",
-		"/D/www/myorchid/index.php",
-		"/D/www/myorchid/header.php",
-		"/D/www/myorchid/functions.php",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr0VMQH.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002D/opr0VDMI.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0038/opr0VEO9.tmp",
-		"/C/Users/Heracles/Downloads/130719fb.html",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0031/opr0VE0I.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0049/opr0UEH6.tmp",
-		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/page-styleguide.php",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_005D/opr0TR63.tmp"
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001F/opr120HO.tmp"
 	],
 	"find":
 	{
@@ -493,6 +529,93 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"oscillator",
+			"Oscillator",
+			"oscillator",
+			"osc",
+			"Osc",
+			"osc",
+			"\n",
+			".js",
+			"	",
+			"content",
+			"writeNext",
+			"times",
+			"figca",
+			"figcap",
+			"</li>",
+			"page-bre",
+			"=1",
+			"rotate",
+			"tags",
+			"columns",
+			"colums",
+			".entry-c",
+			"my_theme",
+			"domain",
+			"  ",
+			" \n",
+			"spread",
+			"twitter",
+			"-",
+			"  ",
+			"   ",
+			" \n",
+			"-\n",
+			"abbr",
+			"rgba",
+			"body",
+			"no work",
+			"$author",
+			"author",
+			"core",
+			"ins",
+			"red",
+			"css",
+			"asd",
+			"kavascript",
+			"css",
+			"time",
+			"credits",
+			"time",
+			"maze",
+			"popup",
+			"languag",
+			" all",
+			"all",
+			"galle",
+			"lang",
+			"14.5",
+			".lang",
+			"langua",
+			".archive",
+			"archive",
+			"main",
+			"main.single",
+			"main.archive",
+			"single",
+			"$(this)",
+			"\"",
+			"100",
+			"transition",
+			"edge.",
+			"outlin",
+			"10",
+			"transition",
+			"origin",
+			"transform",
+			"trans",
+			"tect_",
+			"length",
+			"excerpt_length",
+			"jQuery",
+			"'",
+			"\\'",
+			"\"",
+			"\\'",
+			"\"",
+			"\\\"",
+			"excerpt_count_js",
 			"overf",
 			"tags",
 			".tags",
@@ -533,94 +656,7 @@
 			"share",
 			"appendix",
 			".ref",
-			"button",
-			"article",
-			"share",
-			"button",
-			"FontAwesome",
-			"v=3.0.1",
-			".gallery",
-			"aside",
-			"call",
-			";\n",
-			".galle",
-			"gallery",
-			".entry-c",
-			"outl",
-			"		",
-			".share",
-			"appe",
-			"append",
-			"appenx",
-			"header a",
-			"share",
-			".js",
-			"outline: 1px dotted red;",
-			"/>';\n",
-			"twiitte",
-			"encodedurl",
-			"spin",
-			"share",
-			"spin",
-			"share",
-			".tags",
-			"antialia",
-			"print",
-			"		",
-			"sign",
-			"url('",
-			"fontawesome",
-			".tags",
-			"body > header",
-			"body > headd",
-			"content:",
-			"content",
-			"publis",
-			"main ",
-			"main",
-			"appendix",
-			"page",
-			"paper",
-			"print",
-			"printer",
-			"ol",
-			"ref",
-			"page",
-			"cite",
-			"fix_greek_small_caps",
-			"greek2me",
-			"gloss_alphabetical",
-			"AIOThemes_joinPOSTMETA_to_WPQuery",
-			"new_meta_value",
-			"save",
-			"wpse_55791",
-			"custom_order",
-			"</a><br />",
-			"\">",
-			"opener",
-			"holder",
-			"Malamar",
-			"malamar",
-			"entry-summary",
-			"header h1",
-			"group",
-			".group",
-			",group",
-			".group",
-			"gutter",
-			"article foot",
-			"article > footer",
-			"article foo",
-			"article > a",
-			"article {",
-			"revision",
-			"ins",
-			"modified",
-			"tect_date",
-			"date",
-			".tags",
-			"single",
-			".time"
+			"button"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -628,6 +664,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"=\"1\"",
+			" ",
+			"",
+			".home",
+			"\"",
+			"'",
+			"\"",
+			"'",
+			"\"",
 			"[/url]",
 			"]",
 			"modified",
@@ -650,7 +695,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -658,15 +703,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 1653,
+						"buffer_size": 1715,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								457,
-								457
+								664,
+								664
 							]
 						],
 						"settings":
@@ -675,7 +720,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -692,8 +737,8 @@
 						"selection":
 						[
 							[
-								1130,
-								1130
+								154,
+								166
 							]
 						],
 						"settings":
@@ -702,7 +747,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 111.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -712,15 +757,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 20970,
+						"buffer_size": 22273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13601,
-								13601
+								19256,
+								19256
 							]
 						],
 						"settings":
@@ -730,53 +775,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15442.0,
+						"translation.y": 22937.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "functions.php",
+					"file": "/C/Users/Heracles/Desktop/experiments.html",
 					"settings":
 					{
-						"buffer_size": 16021,
+						"buffer_size": 1600,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10212,
-								10212
+								1140,
+								1140
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5514.0,
+						"translation.y": 684.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "header.php",
+					"file": "functions.php",
 					"settings":
 					{
-						"buffer_size": 2363,
+						"buffer_size": 17854,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2327,
-								2327
+								16227,
+								16227
 							]
 						],
 						"settings":
@@ -786,25 +830,53 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 936.0,
+						"translation.y": 8759.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "scripts/core.js",
+					"file": "header.php",
 					"settings":
 					{
-						"buffer_size": 2363,
+						"buffer_size": 2521,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2333,
-								2333
+								1408,
+								1408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scripts/core.js",
+					"settings":
+					{
+						"buffer_size": 2934,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2384,
+								2384
 							]
 						],
 						"settings":
@@ -813,25 +885,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 385.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "footer.php",
 					"settings":
 					{
-						"buffer_size": 686,
+						"buffer_size": 799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52,
-								52
+								772,
+								772
 							]
 						],
 						"settings":
@@ -846,7 +918,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "page.php",
 					"settings":
 					{
@@ -873,19 +945,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 4855,
+						"buffer_size": 5113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2797,
-								2797
+								1831,
+								1831
 							]
 						],
 						"settings":
@@ -895,13 +967,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
+					"file": "/D/www/tectgr/tect.gr/.htaccess",
+					"settings":
+					{
+						"buffer_size": 627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
 					"file": "update.json",
 					"settings":
 					{
@@ -927,7 +1025,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
+					"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
+					"settings":
+					{
+						"buffer_size": 3223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1068,
+								1081
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
 					"file": "styleguide-raw.html",
 					"settings":
 					{
@@ -938,8 +1062,8 @@
 						"selection":
 						[
 							[
-								0,
-								6806
+								3358,
+								3370
 							]
 						],
 						"settings":
@@ -948,7 +1072,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1836.0,
+						"translation.y": 639.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

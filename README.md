@@ -40,6 +40,7 @@ To-do
 
 ### high priority
 * Always complete Greek l10n.
+* Work on Pagination.
 
 ### low priority
 * Fix visual editor bug.
@@ -56,7 +57,6 @@ To-do
 * Flexbox CSS at .gallery.
 * Turn styleguide-raw.html into a proper accompanying page. (you can currently Copy & Paste the code into a post)
 * Resolve issues with Hyperlink index.
-* Test and work on Pagination.
 * Test and work on RSS feeds.
 * Test if sticky posts work.
 * Test if what works for Posts, works for Pages as well.

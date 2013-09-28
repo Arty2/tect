@@ -17,6 +17,7 @@
 	<style>
 		body {
 			margin: 4em;
+			background: #ccc;
 		}
 		a {
 			border-bottom: 1px solid #ccc;
