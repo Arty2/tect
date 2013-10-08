@@ -41,8 +41,10 @@ To-do
 ### high priority
 * Always complete Greek l10n.
 * Work on Pagination.
+* print .annotation, do not print .screen
 
 ### low priority
+* pick a semantic alternative to <aside>
 * Fix visual editor bug.
 * Rethink archive view and work it from scratch.
 * Enable and make use of [Post Formats](http://codex.wordpress.org/Post_Formats)

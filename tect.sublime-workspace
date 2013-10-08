@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"up",
+				"up_left"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
 				"border-bot",
 				"border-bottom-style"
 			],
@@ -83,16 +91,24 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 22273,
+				"buffer_size": 22504,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/Heracles/Desktop/experiments.html",
+			"file": "/D/Dropbox/Public/beep.html",
 			"settings":
 			{
-				"buffer_size": 1600,
+				"buffer_size": 3615,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Dropbox/Public/chessds.html",
+			"settings":
+			{
+				"buffer_size": 5002,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -115,7 +131,7 @@
 			"file": "scripts/core.js",
 			"settings":
 			{
-				"buffer_size": 2934,
+				"buffer_size": 2930,
 				"line_ending": "Windows"
 			}
 		},
@@ -139,7 +155,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 5113,
+				"buffer_size": 5114,
 				"line_ending": "Windows"
 			}
 		},
@@ -160,14 +176,6 @@
 			}
 		},
 		{
-			"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
-			"settings":
-			{
-				"buffer_size": 3223,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "styleguide-raw.html",
 			"settings":
 			{
@@ -179,16 +187,20 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 85.0,
+		"height": 210.0,
 		"selected_items":
 		[
 			[
-				"lowe",
-				"Convert Case: Lower Case"
+				"mark",
+				"Set Syntax: Markdown"
 			],
 			[
 				"html",
 				"Set Syntax: HTML"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
 			],
 			[
 				"java",
@@ -384,6 +396,10 @@
 	},
 	"file_history":
 	[
+		"/D/www/tectgr/archi.tect.gr/wp-config.php",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0056/opr18U1S.tmp",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
+		"/C/Users/Heracles/Desktop/experiments.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001C/opr18OCL.tmp",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/tect.pot",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/el.mo",
@@ -401,7 +417,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YRI.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YR3.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0019/opr17YQG.tmp",
-		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr17X64.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0009/opr17X68.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0073/opr17V0C.tmp",
@@ -431,7 +446,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr16K2I.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0069/opr16FGY.tmp",
 		"/D/Dropbox/Public/publications.html",
-		"/D/www/tectgr/archi.tect.gr/wp-config.php",
 		"/C/Users/Heracles/Desktop/work.txt",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/404.php",
 		"/C/Users/Heracles/Desktop/404.png",
@@ -509,9 +523,7 @@
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr12QSI.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002B/opr12QW1.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php",
-		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001F/opr120HO.tmp"
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php"
 	],
 	"find":
 	{
@@ -529,6 +541,49 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"class=\"\"",
+			" \n",
+			"  ",
+			".entry-content",
+			"mp",
+			" \n",
+			"  ",
+			"});\n",
+			"000",
+			"2",
+			"10",
+			"exponential",
+			"Gain",
+			"gain",
+			"g",
+			"G",
+			"g",
+			"myAudioContext",
+			"rows",
+			"osc.base",
+			"0000FF",
+			"00FF00",
+			"000",
+			"0000FF",
+			"200",
+			"0000FF",
+			"FF0000",
+			"items",
+			"count",
+			"-webkit-",
+			"count",
+			"items",
+			"width",
+			"span",
+			"osc.",
+			"osc",
+			"Osc",
+			"osc",
+			"Osc",
+			"osc",
+			"osc.gain",
+			"disconnect",
+			"noteOff",
 			"oscillator",
 			"Oscillator",
 			"oscillator",
@@ -613,50 +668,7 @@
 			"\\'",
 			"\"",
 			"\\'",
-			"\"",
-			"\\\"",
-			"excerpt_count_js",
-			"overf",
-			"tags",
-			".tags",
-			"16rem",
-			".time",
-			"relative",
-			"figca",
-			"figure",
-			"entry-c",
-			"figure",
-			"archive",
-			"figure",
-			"import",
-			"main.single .entry-content",
-			"share",
-			"#appendix",
-			"\\u",
-			"clear: both",
-			".entry-content",
-			".grou",
-			".lang",
-			"1px",
-			"border-sty",
-			"share",
-			".ref",
-			".ρεφ",
-			".share",
-			"font",
-			"webfont",
-			"FontAwesome",
-			"fontawesome",
-			".ref",
-			"figure",
-			".ref",
-			".spread",
-			".single",
-			"botto",
-			"share",
-			"appendix",
-			".ref",
-			"button"
+			"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -664,6 +676,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" ",
 			"=\"1\"",
 			" ",
 			"",
@@ -695,7 +708,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -747,7 +760,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 111.0,
+						"translation.y": 34.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -757,15 +770,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 22273,
+						"buffer_size": 22504,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19256,
-								19256
+								230,
+								230
 							]
 						],
 						"settings":
@@ -775,25 +788,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 22937.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/C/Users/Heracles/Desktop/experiments.html",
+					"file": "/D/Dropbox/Public/beep.html",
 					"settings":
 					{
-						"buffer_size": 1600,
+						"buffer_size": 3615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1140,
-								1140
+								771,
+								771
 							]
 						],
 						"settings":
@@ -802,13 +815,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 684.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "/D/Dropbox/Public/chessds.html",
+					"settings":
+					{
+						"buffer_size": 5002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								27
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "functions.php",
 					"settings":
 					{
@@ -836,7 +876,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "header.php",
 					"settings":
 					{
@@ -847,8 +887,8 @@
 						"selection":
 						[
 							[
-								1408,
-								1408
+								412,
+								340
 							]
 						],
 						"settings":
@@ -858,25 +898,25 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "scripts/core.js",
 					"settings":
 					{
-						"buffer_size": 2934,
+						"buffer_size": 2930,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2384,
-								2384
+								2306,
+								2306
 							]
 						],
 						"settings":
@@ -891,7 +931,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "footer.php",
 					"settings":
 					{
@@ -918,7 +958,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "page.php",
 					"settings":
 					{
@@ -945,19 +985,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 5113,
+						"buffer_size": 5114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1831,
-								1831
+								1856,
+								1856
 							]
 						],
 						"settings":
@@ -967,13 +1007,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "/D/www/tectgr/tect.gr/.htaccess",
 					"settings":
 					{
@@ -999,7 +1039,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "update.json",
 					"settings":
 					{
@@ -1025,32 +1065,6 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "/D/www/tectgr/archi.tect.gr/wp-config.php",
-					"settings":
-					{
-						"buffer_size": 3223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1068,
-								1081
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 13,
 					"file": "styleguide-raw.html",
 					"settings":
@@ -1062,8 +1076,8 @@
 						"selection":
 						[
 							[
-								3358,
-								3370
+								2720,
+								2730
 							]
 						],
 						"settings":
@@ -1072,7 +1086,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 639.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
