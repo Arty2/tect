@@ -5,7 +5,7 @@ Description: an architect's WordPress theme
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.1.6
+Version: 1.1.7
 Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
@@ -911,14 +911,15 @@ main.archive {
 
 main.archive article {
 	position: relative;
-	float: left;
-	display: inline-block;
+	/*float: left;*/
+	display: block;
 
 	margin: 0 1rem 2rem 1rem;
 	padding: 0;
 
 	background: url('./graphics/hatch-dot-b.png') fixed 50% 50%;
 	border-bottom-left-radius: 1rem;
+	vertical-align: top;
 
 	/*flex-grow: 1;
 	flex-basis: 16rem;*/
@@ -928,13 +929,15 @@ main.archive article {
 	}
 	@media only screen and (min-width: 39rem) {
 		main.archive article {
-			width: 16rem;
+			display: inline-block;
+
+			width: 15rem;
 			padding: 0;
 		}
 		main.archive article figure > img {
 			max-width: none;
 			width: auto !important;
-			height: 16rem !important;
+			height: 20rem !important;
 		}
 	}
 
@@ -966,9 +969,9 @@ main.archive article figure > img {
 
 	opacity: 0.3;
 
-	-webkit-transition: -webkit-transform 1s, opacity .5s;
-	-moz-transition   :    -moz-transform 1s, opacity .5s;
-	transition        :         transform 1s, opacity .5s;
+	-webkit-transition: -webkit-transform 1s ease-out, opacity .5s;
+	-moz-transition   :    -moz-transform 1s ease-out, opacity .5s;
+	transition        :         transform 1s ease-out, opacity .5s;
 }
 	main.archive article:hover figure > img {
 		z-index: 1;
@@ -979,6 +982,15 @@ main.archive article figure > img {
 		-webkit-transform: translateX(-100%);
 		-moz-transform   : translateX(-100%);
 		transform        : translateX(-100%);*/
+	}
+	main.archive article.illustrated:hover figcaption,
+	main.archive article.illustrated:hover .tags {		
+		color: transparent;
+		text-shadow: 0 0 4px rgba(0,0,0,0.5);
+
+		-webkit-transition: all .3s;
+		-moz-transition   : all .3s;
+		transition        : all .3s;
 	}
 
 main.archive article figcaption {
@@ -996,10 +1008,6 @@ main.archive article figcaption {
 main.archive article img + figcaption {
 
 }
-	main.archive article:hover img + figcaption {
-		color: transparent;
-		text-shadow: 0 0 5px rgba(0,0,0,0.5);
-	}
 
 main.archive article header .time {
 	visibility: visible;

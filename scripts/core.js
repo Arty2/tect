@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 		//ease to top on target mouseenter
 		function() {
 			if (window.pageYOffset != 0) {
-				body.delay(500).animate({ scrollTop: 0 }, 500);
+				body.delay(1000).animate({ scrollTop: 0 }, 500);
 			}
 		},
 		//ease back to target on mouseleave

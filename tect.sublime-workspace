@@ -91,7 +91,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 22504,
+				"buffer_size": 22888,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,7 +115,7 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 17854,
+				"buffer_size": 17880,
 				"line_ending": "Unix"
 			}
 		},
@@ -131,7 +131,7 @@
 			"file": "scripts/core.js",
 			"settings":
 			{
-				"buffer_size": 2930,
+				"buffer_size": 2931,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,7 +155,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 5114,
+				"buffer_size": 5150,
 				"line_ending": "Windows"
 			}
 		},
@@ -541,6 +541,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"linear",
+			"article footer",
+			"aside",
+			"article foo",
 			"class=\"\"",
 			" \n",
 			"  ",
@@ -664,11 +668,7 @@
 			"length",
 			"excerpt_length",
 			"jQuery",
-			"'",
-			"\\'",
-			"\"",
-			"\\'",
-			"\""
+			"'"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -708,7 +708,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -770,15 +770,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 22504,
+						"buffer_size": 22888,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								230,
-								230
+								14373,
+								14373
 							]
 						],
 						"settings":
@@ -788,7 +788,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 16578.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -852,15 +852,15 @@
 					"file": "functions.php",
 					"settings":
 					{
-						"buffer_size": 17854,
+						"buffer_size": 17880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16227,
-								16227
+								12380,
+								12380
 							]
 						],
 						"settings":
@@ -870,7 +870,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8759.0,
+						"translation.y": 6352.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -908,15 +908,15 @@
 					"file": "scripts/core.js",
 					"settings":
 					{
-						"buffer_size": 2930,
+						"buffer_size": 2931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2306,
-								2306
+								2213,
+								2213
 							]
 						],
 						"settings":
@@ -925,7 +925,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 918.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -989,15 +989,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 5114,
+						"buffer_size": 5150,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1856,
-								1856
+								1942,
+								1942
 							]
 						],
 						"settings":
@@ -1007,7 +1007,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
