@@ -5,7 +5,7 @@ Description: an architect's WordPress theme
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Github Theme URI: https://github.com/Arty2/tect
-Version: 1.1.5
+Version: 1.1.6
 Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
@@ -1062,6 +1062,9 @@ main.single article footer .group {
 }
 	main.single article footer .group:last-child {
 		margin: 0;
+	}
+	main.single article footer .group dl {
+		margin-bottom: 0;
 	}
 
 main.single article footer h2 {

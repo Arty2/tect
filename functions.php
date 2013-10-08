@@ -365,6 +365,7 @@
 		}
 
 		//toggle between localhost and www
+		//add to theme settings
 		function tect_admin_bar_host() {
 			global $wp_admin_bar;
 
