@@ -91,7 +91,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 22888,
+				"buffer_size": 22899,
 				"line_ending": "Unix"
 			}
 		},
@@ -155,7 +155,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 5150,
+				"buffer_size": 5314,
 				"line_ending": "Windows"
 			}
 		},
@@ -396,6 +396,10 @@
 	},
 	"file_history":
 	[
+		"/D/Dropbox/settings/software-list.html",
+		"/C/Users/Heracles/Desktop/test.html",
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0072/opr1AO13.tmp",
+		"/C/Users/Heracles/Desktop/WIP/DOS/ΑΡΧΙΤΕΚΤΟΝΙΚΟΣ ΔΙΑΓΩΝΙΣΜΟΣ DOS GROUP _ DOS GROUP.html",
 		"/D/www/tectgr/archi.tect.gr/wp-config.php",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0056/opr18U1S.tmp",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
@@ -403,7 +407,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_001C/opr18OCL.tmp",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/tect.pot",
 		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/el.mo",
-		"/D/Dropbox/settings/software-list.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0046/opr1838N.tmp",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/sidebar-header.php",
 		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/index.php",
@@ -436,7 +439,6 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003E/opr170IP.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003C/opr17091.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_003B/opr1705F.tmp",
-		"/C/Users/Heracles/Desktop/test.html",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0070/opr16STS.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0042/opr16OAG.tmp",
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/sesn/opr16JK5.tmp",
@@ -521,9 +523,7 @@
 		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_0061/opr13LKL.tmp",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Section Comment.sublime-snippet",
 		"/C/Users/Heracles/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr12QSI.tmp",
-		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002B/opr12QW1.tmp",
-		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/contact.php"
+		"/C/Users/Heracles/AppData/Local/Opera/Opera/cache/g_002A/opr12QSI.tmp"
 	],
 	"find":
 	{
@@ -541,6 +541,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border-top",
 			"linear",
 			"article footer",
 			"aside",
@@ -667,8 +668,7 @@
 			"tect_",
 			"length",
 			"excerpt_length",
-			"jQuery",
-			"'"
+			"jQuery"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -708,7 +708,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -770,15 +770,15 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 22888,
+						"buffer_size": 22899,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14373,
-								14373
+								230,
+								230
 							]
 						],
 						"settings":
@@ -788,7 +788,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 16578.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -989,15 +989,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 5150,
+						"buffer_size": 5314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1942,
-								1942
+								3961,
+								3961
 							]
 						],
 						"settings":
@@ -1007,7 +1007,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 1273.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
