@@ -91,7 +91,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 22899,
+				"buffer_size": 22953,
 				"line_ending": "Unix"
 			}
 		},
@@ -541,6 +541,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"article footer",
 			"border-top",
 			"linear",
 			"article footer",
@@ -667,8 +668,7 @@
 			"trans",
 			"tect_",
 			"length",
-			"excerpt_length",
-			"jQuery"
+			"excerpt_length"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -770,7 +770,7 @@
 					"file": "style.css",
 					"settings":
 					{
-						"buffer_size": 22899,
+						"buffer_size": 22953,
 						"regions":
 						{
 						},
