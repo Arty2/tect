@@ -1,3 +1,5 @@
+->![tect logo](https://raw.github.com/Arty2/tect/master/graphics/tect.svg)<-
+
 tect • an architect’s WordPress theme
 ===================================
 
@@ -108,6 +110,5 @@ References
 * [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) (not sticking to them, but close enough)
 * [I18n for WordPress developers](http://codex.wordpress.org/I18n_for_WordPress_Developers)
 * [WordPress Theme Customization API](https://codex.wordpress.org/Theme_Customization_API)
-
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)
