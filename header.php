@@ -83,7 +83,13 @@
 <?php	
 	//echo tect_lang_switcher();
 
-	echo '<div id="logo"><a href="' . get_bloginfo('url') . '"><img src="' . get_header_image() . '" alt="' . get_bloginfo('name') . '" /></a></div>'
+	echo '<div id="logo"><a href="' . get_bloginfo('url') . '">';
+	if ( get_header_image() != '' ) {
+		echo '<img src="' . get_header_image() . '" alt="' . get_bloginfo('name') . '" />';
+	} else {
+		bloginfo('name');
+	}
+	echo '</a></div>'
 ?>
 
 </header>

@@ -277,12 +277,12 @@
 */
 	$args = array(
 		'header-text'   => false,
-		'default-image' => get_template_directory_uri() . '/graphics/logo.png',
+		'default-image' => get_template_directory_uri() . '/graphics/tect.svg',
 		'uploads'       => true,
 		'flex-width'    => true,
-		'width'         => 250,
+		'width'         => 100,
 		'flex-height'    => true,
-		'height'        => 250,
+		'height'        => 100,
 	);
 	add_theme_support( 'custom-header', $args );
 
