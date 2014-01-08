@@ -1,4 +1,4 @@
-->![tect logo](https://raw.github.com/Arty2/tect/master/graphics/tect.svg)<-
+![tect logo](https://rawgithub.com/Arty2/tect/master/graphics/tect.svg)
 
 tect • an architect’s WordPress theme
 ===================================
