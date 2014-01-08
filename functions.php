@@ -395,11 +395,11 @@
 * ! tentantive
 */
 
-	require( 'includes/theme-updates/theme-update-checker.php' );
-	$tect_update_checker = new ThemeUpdateChecker(
-		'tect',
-		'https://raw.github.com/Arty2/tect/master/update.json'
-	);
+	// require( 'includes/theme-updates/theme-update-checker.php' );
+	// $tect_update_checker = new ThemeUpdateChecker(
+	// 	'tect',
+	// 	'https://raw.github.com/Arty2/tect/master/update.json'
+	// );
 
 /**
 * HTML5 captions

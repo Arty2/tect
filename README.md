@@ -1,4 +1,4 @@
-tect • an architect's WordPress theme
+tect • an architect’s WordPress theme
 ===================================
 
 > Safe to deploy, but still experimental!
@@ -39,9 +39,13 @@ To-do
 -----------------------------------
 
 ### high priority
+* Remove files that should be ignored
 * Always complete Greek l10n.
 * Work on Pagination.
-* print .annotation, do not print .screen
+* Print .annotation, do not print .screen
+* Fix theme updater (has trouble width "-master" from GitHub)
+* List & credit what stuff this theme makes use of.
+* [GitHub Updater](https://github.com/afragen/github-updater) enabled!
 
 ### low priority
 * pick a semantic alternative to <aside>
