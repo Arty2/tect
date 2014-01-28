@@ -27,6 +27,9 @@ Suggested plugins & settings
 	* ☑ Hide URL language information for default language.
 	* ☐ Activate languages and translations for media. (poorly applied)
 	* ☐ Synchronization: Custom fields. (they may be translatable)
+* [Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
+* [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
+* [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
 
 Known bugs / Undocumented behaviors
 -----------------------------------
@@ -45,7 +48,12 @@ To-do
 * Make use of [Gentium](scripts.sil.org/gentium) → [FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
 * Rethink archive view and work it from scratch.
 * Work on Pagination.
-* Print .annotation, do not print .screen
+* [Better](http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory) [thumbnail](https://github.com/markjaquith/WordPress/blob/master/wp-includes/media.php) [filenames](http://wordpress.stackexchange.com/questions/51920/set-custom-name-for-generated-thumbnails).
+* Fix errors with long and UTF8 titles.
+* Tets page display.
+* Hidden pages should not appear as 404
+* Move generated images to alternate directories [1](https://github.com/markjaquith/WordPress/blob/master/wp-includes/class-wp-image-editor.php) (2)[http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory]
+* Fine tune .gallery: caption instead of title, link to file by default.
 
 ### low priority
 * Pick a semantic alternative to <aside>
@@ -64,9 +72,8 @@ To-do
 * Test and work on RSS feeds.
 * Test if sticky posts work.
 * Test if what works for Posts, works for Pages as well.
-* Add Location custom field. ([Google Maps](http://bigsaturday.net/oembed-google-maps-wordpress/) / OpenStreetMaps oEmbed?)
+* Add Location custom field. ([OSM](http://wordpress.org/plugins/osm/)
 * Add download related media link and field. (?)
-* Fine tune .gallery: caption instead of title, link to file by default.
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
 
 ### even lower priority
@@ -94,6 +101,7 @@ Plugins to select or write in functions.php
 * Footnote / sidenote plugin.
 * vCard widget.
 * Tag filter navigation.
+* Remove revisions.
 
 
 References
@@ -110,5 +118,12 @@ References
 * [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) (not sticking to them, but close enough)
 * [I18n for WordPress developers](http://codex.wordpress.org/I18n_for_WordPress_Developers)
 * [WordPress Theme Customization API](https://codex.wordpress.org/Theme_Customization_API)
+* [FontSquirel webfont generator](http://www.fontsquirrel.com/tools/webfont-generator)
+
+
+
+Site that do similar things to what tect aims to
+-----------------------------------
+* [Wired.co.uk](http://www.wired.co.uk/magazine/archive/2013/03/features/up) articles [dev post](http://views.fromthe7th.com/posts/2013/04/wired-uk-website-launches-new-articles) or [CQ](http://www.gq-magazine.co.uk/entertainment/articles/2013-04/09/steve-martin-david-walliams-in-conversation/viewall)
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)

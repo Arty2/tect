@@ -549,4 +549,10 @@
 	add_action( 'wp_head', 'tect_buffer_start', 1 );
 	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
 
+/**
+* test stuff
+*/
+
+//http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
+
 ?>
