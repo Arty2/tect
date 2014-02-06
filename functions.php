@@ -363,31 +363,6 @@
 			echo '<style type="text/css" media="screen">html{margin-top:0!important}#wpadminbar{top:-28px;border-bottom:28px solid transparent;-moz-background-clip:padding;-webkit-background-clip:padding;background-clip:padding-box;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
 #wpadminbar:hover{top:0}</style>';
 		}
-
-		//toggle between localhost and www
-		//add to theme settings
-		function tect_admin_bar_host() {
-			global $wp_admin_bar;
-
-			if ( $_SERVER['HTTP_HOST'] == 'localhost' ) {
-				$href = 'http://archi.tect.gr' . str_replace( '/tectgr/archi.tect.gr', '', $_SERVER['REQUEST_URI'] );
-				$title = 'offline';
-			} else {
-				$href = 'http://localhost/tectgr/archi.tect.gr' . $_SERVER['REQUEST_URI'];
-				$title = 'www';
-			}
-
-			$wp_admin_bar->add_menu(array(
-				'id' => 'host',
-				'title' => $title,
-				'href' => $href
-			) );
-		}
-
-		if ( is_admin_bar_showing() ) {
-			add_action( 'wp_head', 'tect_adminbar_collapse', 99 );
-			add_action( 'admin_bar_menu', 'tect_admin_bar_host', 25 );
-		}
 	
 /**
 * WordPress-like update mechanism
@@ -485,7 +460,8 @@
 		$selector = "gallery-{$instance}";
 		$output = "<div id='$selector' class='gallery'>";
 		foreach ( $attachments as $id => $attachment ) {
-			$output .= isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false) : wp_get_attachment_link($id, $size, true);
+			//$output .= isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false) : wp_get_attachment_link($id, $size, true);
+			$output .= isset($attr['link']) && 'file' == $attr['link'] ? '<a href="'. wp_get_attachment_url($id) .'" title="'. get_post($id)->post_excerpt .'">'. wp_get_attachment_image($id, $size) .'</a>' : wp_get_attachment_link($id, $size, true);
 			//on column count, echo <br />
 		}
 		$output .= "</div>\n";

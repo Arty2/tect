@@ -14,11 +14,12 @@ This theme aims to:
 * Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
 * Be suitable for bilingual users. English & Greek localization included.
 
-Included enhancements
+Included enhancements / Credits
 -----------------------------------
 * [GitHub Updater](https://github.com/afragen/github-updater) enabled.
 * [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
 * [Prism.js](http://www.prismjs.com)
+* bits and pieces from [roots.io](http://roots.io/starter-theme/)
 
 Suggested plugins & settings
 -----------------------------------
@@ -27,9 +28,10 @@ Suggested plugins & settings
 	* ☑ Hide URL language information for default language.
 	* ☐ Activate languages and translations for media. (poorly applied)
 	* ☐ Synchronization: Custom fields. (they may be translatable)
-* [Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
 * [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
 * [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
+* [Stage switcher](http://roots.io/plugins/stage-switcher/)
+* ?[Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
 
 Known bugs / Undocumented behaviors
 -----------------------------------
@@ -46,14 +48,13 @@ To-do
 ### high priority
 * Always complete Greek l10n.
 * Make use of [Gentium](scripts.sil.org/gentium) → [FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
-* Rethink archive view and work it from scratch.
-* Work on Pagination.
 * [Better](http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory) [thumbnail](https://github.com/markjaquith/WordPress/blob/master/wp-includes/media.php) [filenames](http://wordpress.stackexchange.com/questions/51920/set-custom-name-for-generated-thumbnails).
-* Fix errors with long and UTF8 titles.
-* Tets page display.
-* Hidden pages should not appear as 404
 * Move generated images to alternate directories [1](https://github.com/markjaquith/WordPress/blob/master/wp-includes/class-wp-image-editor.php) (2)[http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory]
-* Fine tune .gallery: caption instead of title, link to file by default.
+* Work on Pagination.
+* Rethink archive view and work it from scratch.
+* Fix errors with long and UTF8 titles.
+* Test page display.
+* Hidden pages should not appear as 404?
 
 ### low priority
 * Pick a semantic alternative to <aside>
