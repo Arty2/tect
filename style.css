@@ -9,7 +9,7 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.1.14
+Version: 1.1.15
 */
 /*
 How CSS in this file is styled:
@@ -425,9 +425,23 @@ img {
 /**
 * Font families and base font-sizes
 */
+@font-face {
+	font-family: 'Gentium Web';
+	src: url('./fonts/gentium_regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'Gentium Web';
+	src: url('./fonts/gentium_italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
 
 html {
-	font: 100%/1.5 "Georgia", serif;
+	font: 100%/1.5 'Gentium Web', 'Gentium Plus', 'Georgia', serif;
 }
 
 body > header,
@@ -437,7 +451,7 @@ time,
 .languages, .tags, .share,
 #appendix, .ref,
 main.single article footer {
-	font-family: "Segoe UI", "Ubuntu Light", "Verdana", "Helvetica", sans-serif;
+	font-family: "Segoe UI", "Ubuntu", "Century Gothic", "Helvetica", sans-serif;
 	font-weight: 100;
 }
 
@@ -749,7 +763,7 @@ body > header > nav {
 }
 
 .share a span {
-	display: none;
+	/*display: none;*/
 }
 
 .share a {
@@ -1417,55 +1431,4 @@ main.single .entry-content > aside {
 	main.single .entry-content .spread {
 		text-align: right;
 	}
-}
-
-
-
-
-/**
-* Custom icon font
-* via http://www.icnfnt.com/
-*/
-@font-face {
-	font-family: 'tect';
-	src: url('./graphics/webfont-tect.eot');
-	src: url('./graphics/webfont-tect.eot?#iefix') format('embedded-opentype'),
-		 url('./graphics/webfont-tect.woff') format('woff'),
-		 url('./graphics/webfont-tect.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-#appendix-hyperlinks:before,
-.icon-print:before {
-	content: "\f021";
-	font-family: tect !important;
-	font-size: 1rem;
-	speak: none;
-}
-
-.share-twitter:before,
-.icon-twitter:before {
-	content: "\f022";
-	font-family: tect !important;
-	font-size: 1rem;
-}
-
-.share-facebook:before,
-.icon-facebook:before {
-	content: "\f023";
-	font-family: tect !important;
-	font-size: 1rem;
-}
-
-.icon-github:before {
-	content: "\f024";
-	font-family: tect !important;
-	font-size: 1rem;
-}
-
-.icon-google-plus:before {
-	content: "\f025";
-	font-family: tect !important;
-	font-size: 1rem;
 }

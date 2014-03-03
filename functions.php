@@ -334,20 +334,6 @@ if ( !defined('ABSPATH') ) die;
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue' );
 
 /**
-* Prism.js
-*/
-
-	function tect_enqueue_prism() {
-		wp_register_style( 'prism_style', get_template_directory_uri() . '/includes/prism/prism.css' );
-		wp_enqueue_style( 'prism_style' );
-
-		wp_register_script( 'prism_script', get_template_directory_uri() . '/includes/prism/prism.js', false, true );
-		wp_enqueue_script( 'prism_script' );
-	}
-
-	add_action( 'wp_enqueue_scripts', 'tect_enqueue_prism' );
-
-/**
 * Magnific Popup → https://github.com/dimsemenov/Magnific-Popup
 * workaround based on http://ajtroxell.com/use-magnific-popup-with-wordpress-now/
 * ! remove section once the plugin is ready: http://dimsemenov.com/plugins/magnific-popup/wordpress.html

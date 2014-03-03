@@ -1,5 +1,8 @@
 Version History
 =========================
+### Version: 1.1.15
+* Included Gentium font.
+
 ### Version: 1.1.14
 * Polished alternate media file structure. Safe to deploy once again.
 

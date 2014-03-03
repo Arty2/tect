@@ -20,7 +20,7 @@ Included enhancements / Credits
 -----------------------------------
 * [GitHub Updater](https://github.com/afragen/github-updater) enabled.
 * [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
-* [Prism.js](http://www.prismjs.com)
+* [Gentium](scripts.sil.org/gentium) font for Latin & Greek.
 * [normalize.css](http://necolas.github.io/normalize.css/)
 * bits and pieces from [roots.io](http://roots.io/starter-theme/)
 
@@ -42,10 +42,11 @@ Suggested plugins
 * [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
 * [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
 * [Stage switcher](https://github.com/Arty2/wp-stage-switcher)
+* [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
 * ?[Dynamic Featured Image](http://wordpress.org/plugins/dynamic-featured-image/)
 * ?[Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
 * ?[Better Delete Revision](http://wordpress.org/plugins/better-delete-revision/)
-* ?[Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
+* ?[Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/)
 
 
 To-do
@@ -58,13 +59,11 @@ To-do
 * Always complete Greek l10n.
 * Pick a semantic alternative to <aside> for parenthetical content.
 * Rework all styles and archive view.
-* Remove Prism.js and suggest [Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/) plugin.
 
 ### low priority
 * Remove junk HTML from header.
 * Test if what works for Posts, works for Pages as well.
 * Fix errors with long and UTF8 titles.
-* Make use of [Gentium](scripts.sil.org/gentium) → [FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
 * Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions).
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
 * Write documentation on styles.

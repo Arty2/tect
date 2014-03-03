@@ -58,16 +58,6 @@ jQuery(document).ready(function($) {
 
 
 /**
-* Masonry
-* via http://masonry.desandro.com/methods.html
-* but it causes more display issues than it solves…
-*/
-	// $('main.archive').masonry();
-	// setTimeout( function(){
-	// 	$('main.archive').masonry();
-	// }, 3000);
-
-/**
 * Slide thumbnails on archive view
 * should be applied on figure:hover
 */
