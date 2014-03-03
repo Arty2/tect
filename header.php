@@ -7,7 +7,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo tect_lang_current(); ?>">
+<html lang="<?php echo get_locale(); ?>">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -52,7 +52,7 @@
 ?>
 
 </head>
-<body <?php body_class($body_class); //http://codex.wordpress.org/Function_Reference/body_class ?>>
+<body <?php body_class( $body_class ); //http://codex.wordpress.org/Function_Reference/body_class ?>>
 <header>
 <!--[if lt IE 9]>
 	<p class="notice">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>

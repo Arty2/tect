@@ -1,4 +1,5 @@
 <?php
+if ( !defined('ABSPATH') ) die;
 /**
 * Utilities
 */
@@ -28,18 +29,27 @@
 
 	add_filter( 'excerpt_length', 'tect_excerpt_length' );
 
-	add_theme_support('post-thumbnails');
+	//http://codex.wordpress.org/Post_Formats
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		//'status',
+		'video',
+		'audio',
+		//'chat'
+	) );
+
+	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 0 , 600 );
 	//need another size for width = 600
-
-	//change upload directory
-	//add this to theme options
-	if ( !is_multisite() ) {
-		update_option( 'upload_path', 'media' );
-	}
+	//http://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
+	//https://codex.wordpress.org/Content_Width
 
 	//LEFT JOIN the meta table so that we can sort by it
-	function tect_query_join($join) {
+	function tect_query_join($join) { 
 		global $wp_query, $wpdb;
 		if ( is_home() || is_archive() ) { 
 			$join .= "LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id AND meta_key = 'tect_time' ";
@@ -48,16 +58,17 @@
 		return $join;
 	}
 
-	add_filter('posts_join', 'tect_query_join');
+	add_filter( 'posts_join', 'tect_query_join' );
 
+	//sort by custom field by key of e.g. 'tect_time' or post_date if it doesn't exist
 	function tect_query_order( $orderby ) {
-		if ( is_home() || is_archive() ) { //sort by custom field by key of 'tect_time' or post_date if it doesn't exist
+		if ( is_home() || is_archive() ) { 
 			$orderby = "COALESCE(meta_value, post_date) DESC";
 		}
 		return $orderby;
 	}
 
-	add_filter('posts_orderby', 'tect_query_order' );
+	add_filter( 'posts_orderby', 'tect_query_order' );
 
 /**
 * Internationalization
@@ -69,14 +80,6 @@
 
 	add_action( 'after_setup_theme', 'tect_i18n' );
 
-	//get current language
-	function tect_lang_current() {
-		if ( function_exists( 'pll_the_languages' ) ) { //requires Polylang plugin
-			return pll_current_language('locale');
-		} else {
-			return 'en'; //default theme language
-		}
-	}
 	//Language switcher
 	function tect_lang_switcher() {
 		if ( function_exists( 'pll_the_languages' ) ) {
@@ -169,7 +172,7 @@
 	function tect_post_meta_boxes_add() {
 		add_meta_box(
 			'tect-post-time',
-			esc_html__( 'Project time', 'tect' ),
+			esc_html__( 'Event time', 'tect' ),
 			'tect_post_time_meta_box',
 			'post',
 			'side',
@@ -215,7 +218,7 @@
 	function tect_post_time_meta_box( $object, $box ) {
 		wp_nonce_field( basename( __FILE__ ), 'tect_post_time_nonce' );
 		echo '<p><label for="tect-post-time">' .
-		__( 'Project completion time by <a href="http://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 6801</a>.', 'tect' ) . '</label><br />
+		__( 'Event time by <a href="http://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 6801</a>.', 'tect' ) . '</label><br />
 			<input class="widefat" type="text" name="tect-post-time" id="tect-post-time" size="30" value="' .
 			esc_attr( get_post_meta( $object->ID, 'tect_time', true ) ) . '" /></p>';
 	}
@@ -470,9 +473,42 @@
 
 	add_filter( "post_gallery", "tect_gallery", 10, 2 );
 
+
+/**
+* Make WordPress URLs hyper-relative! (domain agnostic)
+* may cause bugs
+*/
+	function tect_buffer_filter( $buffer ) {
+		return preg_replace(
+			array(
+			'@' . get_bloginfo( 'url' ) . '/@',
+			'@="\./@',
+			),
+		array(
+			TECT_DOMAIN, //change to . for true relative links
+			'="' . TECT_DOMAIN,
+			),
+		$buffer );
+	}
+
+	function tect_buffer_start() { ob_start( 'tect_buffer_filter' ); }
+
+	function tect_buffer_end() { ob_end_flush(); }
+
+	add_action( 'wp_head', 'tect_buffer_start', 1 );
+	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+
+
 /**
 * Image related improvements
 */
+	
+	//change upload directory
+	if ( !is_multisite() ) {
+		update_option( 'upload_path', 'media' );
+	}
+	//don't “Organize my uploads into month- and year-based folders”
+	update_option( 'uploads_use_yearmonth_folders', '0' );
 
 	//based on http://www.sitepoint.com/wordpress-change-img-tag-html/
 	//remove whatever is too scarcely used: id, alignnone, size-whatever
@@ -500,35 +536,102 @@
 	add_filter( 'get_image_tag', 'tect_image_tag', 10, 4 );
 	add_filter( 'image_send_to_editor', 'tect_image_tag', 10, 4 ); // 'post_thumbnail_html' too ?
 
+	//image_constrain_size_for_editor
+	//http://codex.wordpress.org/Function_Reference/image_constrain_size_for_editor
 
 /**
-* Make WordPress URLs hyper-relative! (domain agnostic)
-* may cause bugs
+* Alternate thumbnail file structure
+* based on http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
 */
-	function tect_buffer_filter( $buffer ) {
-		return preg_replace(
-			array(
-			'@' . get_bloginfo( 'url' ) . '/@',
-			'@="\./@',
-			),
-		array(
-			TECT_DOMAIN, //change to . for true relative links
-			'="' . TECT_DOMAIN,
-			),
-		$buffer );
+	function tect_image_editors($editors) {
+		array_unshift( $editors, 'WP_Image_Editor_tect' );
+
+		return $editors;
 	}
 
-	function tect_buffer_start() { ob_start( 'tect_buffer_filter' ); }
+	add_filter( 'wp_image_editors', 'tect_image_editors' );
 
-	function tect_buffer_end() { ob_end_flush(); }
+	//make array of available thumbnail sizes
+	function tect_image_sizes() {
+		// if ( isset(tect_image_sizes) ) //perhaps incorporate the compare logic here
+		global $_wp_additional_image_sizes;
 
-	add_action( 'wp_head', 'tect_buffer_start', 1 );
-	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+		foreach( get_intermediate_image_sizes() as $s ){
+			$tect_image_sizes[ $s ] = array( 0, 0 );
+			if ( in_array( $s, array( 'thumbnail', 'medium', 'large' ) ) ){
+				$tect_image_sizes[ $s ] = array(
+					'width' => get_option( $s . '_size_w' ),
+					'height' => get_option( $s . '_size_h' )
+				);
+			}
+			elseif ( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) ) {
+				$tect_image_sizes[ $s ] = array(
+					'width' => $_wp_additional_image_sizes[ $s ]['width'],
+					'height' => $_wp_additional_image_sizes[ $s ]['height']
+				);
+			}
+		}
+		return $tect_image_sizes;
+	}
+	$tect_image_sizes = tect_image_sizes();
+
+	require_once ABSPATH . WPINC . '/class-wp-image-editor.php';
+	require_once ABSPATH . WPINC . '/class-wp-image-editor-gd.php';
+
+	// create a custom WP_Image_Editor that handles the naming of files
+	// reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/class-wp-image-editor.php
+	class WP_Image_Editor_tect extends WP_Image_Editor_GD {
+		public function get_slug() {
+			if ( ! $this->get_size() ) {
+				return false;
+			}
+			//$full_size = array( 'width' => $this->size['width'], 'height' => $this->size['height'] );
+			$size = array( $this->size['width'], $this->size['height'] );
+
+			global $tect_image_sizes;
+			foreach ( $tect_image_sizes as $slug => $dimensions ) {
+				// reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/media.php
+				// wp_constrain_dimensions( $current_width, $current_height, $max_width=0, $max_height=0 )
+				if ( $size == wp_constrain_dimensions( $this->size['width'], $this->size['height'], $dimensions['width'], $dimensions['height'])) {
+					//current logic matches wrong sizes, need original media size in the above function
+					return $slug;
+				}
+			}
+		}
+
+		public function generate_filename($slug = NULL, $dest_path = NULL, $extension = NULL) {
+			if( ! $slug ) {
+				$slug = $this->get_slug();
+			}
+
+			$info = pathinfo($this->file);
+			$dir  = $info['dirname'];
+			$ext  = $info['extension'];
+
+			$name = wp_basename($this->file, ".$ext");
+			$new_ext = strtolower($extension ? $extension : $ext);
+			if(!is_null($dest_path) && $_dest_path = realpath($dest_path)) {
+				$dir = $_dest_path;
+			}
+
+			return trailingslashit($dir)."{$slug}/{$name}.{$new_ext}";
+		}
+
+		public function multi_resize($sizes) {
+			$sizes = parent::multi_resize($sizes);
+
+			foreach($sizes as $slug => $data) {
+				//$data['width'] $data['height']
+				$sizes[$slug]['file'] = '' . $slug . '/' . $data['file'];
+			}
+
+			return $sizes;
+		}
+	}
 
 /**
-* test stuff
+* other
 */
 
-//http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
 
 ?>

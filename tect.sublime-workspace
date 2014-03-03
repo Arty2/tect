@@ -1,0 +1,1000 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"out",
+				"out	CSS outline"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"up",
+				"up_left"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"border-bot",
+				"border-bottom-style"
+			],
+			[
+				"border-r",
+				"border-top-left-radius"
+			],
+			[
+				"table",
+				"table-caption"
+			],
+			[
+				"ine",
+				"inline-block"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"page",
+				"page-break-after"
+			],
+			[
+				"list",
+				"list-c	list-style-type: circle;"
+			],
+			[
+				"border-ra",
+				"border-radius"
+			],
+			[
+				"sele",
+				"selection"
+			],
+			[
+				"fig",
+				"figcaption"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"inl",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 6975,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/normalize.css",
+			"settings":
+			{
+				"buffer_size": 7583,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CHANGES.md",
+			"settings":
+			{
+				"buffer_size": 212,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 2274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 2605,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 23217,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 20694,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "utilities/delete_deprecated_thumbs.php",
+			"settings":
+			{
+				"buffer_size": 888,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 160.0,
+		"selected_items":
+		[
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"case",
+				"Convert Case: Lower Case"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Sort Lines (Case Sensitive)"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"insa",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Start Docblock"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"live",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"close ",
+				"Project: Close"
+			],
+			[
+				"whit",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"white",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"high",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"hgh",
+				"Highlight Whitespaces: Toggle"
+			],
+			[
+				"syn text",
+				"Set Syntax: Textile"
+			],
+			[
+				"align",
+				"Align Tabular"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"syn css",
+				"Set Syntax: CSS"
+			],
+			[
+				"live ",
+				"Live CSS: Uncolorize"
+			],
+			[
+				"pack re",
+				"Package Control: Add Repository"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pak ins",
+				"Package Control: Install Package"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"soda",
+				"Preferences: Package Control Settings – Default"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/utilities/delete_deprecated_thumbs.php",
+		"/D/www/tectgr/archi.tect.gr/delete_deprecated_thumbs.php",
+		"/D/www/tectgr/archi.tect.gr/wp-config.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/delete_deprecated_thumbs.php",
+		"/C/Users/Heracles/AppData/Local/Temp/archi.tect.gr.htm",
+		"/C/Users/Heracles/AppData/Local/Temp/archi.tect.gr • Heracles Papatheodorou.htm",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/single.php",
+		"/C/Users/Heracles/Desktop/OSM-plugin-ja_JP.mo",
+		"/C/Users/Heracles/AppData/Local/Temp/7zEDBBE.tmp/OSM-plugin-ru_RU.mo",
+		"/C/Users/Heracles/AppData/Local/Temp/7zEE41C.tmp/OSM-plugin-ru_RU.mo",
+		"/C/Users/Heracles/AppData/Local/Temp/archi.tect.gr • Ηρακλής Παπαθεοδώρου.htm",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/pagination.php",
+		"/C/Users/Heracles/Desktop/WIP/SADAS/sadas-web.txt",
+		"/C/Users/Heracles/Desktop/template_dev.html",
+		"/C/Users/Heracles/Desktop/template.html",
+		"/C/Users/Heracles/Desktop/templete.html",
+		"/C/Users/Heracles/Desktop/sadas_newsletter.html",
+		"/D/www/old/Templates/template.dwt",
+		"/C/Users/Heracles/Desktop/siadora.html",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/wp-config.php",
+		"/D/www/myorchid.gr/myorchid/functions.php",
+		"/D/www/myorchid.gr/myorchid/languages/en_US.po",
+		"/D/www/myorchid.gr/myorchid/_/inc/meta.php",
+		"/D/www/myorchid.gr/myorchid/sidebar-header.php",
+		"/D/www/myorchid.gr/myorchid/header.php",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess 2",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/D/www/myorchid.gr/myorchid/page.php",
+		"/D/www/myorchid.gr/myorchid/page-child.php",
+		"/D/www/myorchid.gr/myorchid/page-microblogs_en.php",
+		"/D/www/myorchid.gr/myorchid/page-microblog.php",
+		"/D/www/myorchid.gr/myorchid/page-microblogs.php",
+		"/D/www/myorchid.gr/myorchid/page-parent.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/functions.php",
+		"/D/www/myorchid.gr/myorchid/sidebar-hud.php",
+		"/D/www/myorchid.gr/myorchid/_/inc/nav.php",
+		"/D/www/myorchid.gr/myorchid/sidebar.php",
+		"/D/www/myorchid.gr/myorchid/search.php",
+		"/D/www/myorchid.gr/myorchid/searchform.php",
+		"/D/www/myorchid.gr/myorchid/page-thumbs.php",
+		"/D/www/myorchid.gr/myorchid/category-thumbs.php",
+		"/D/www/myorchid.gr/myorchid/page-club.php",
+		"/D/www/myorchid.gr/myorchid/index.php",
+		"/D/www/myorchid.gr/myorchid/footer.php",
+		"/D/www/myorchid.gr/myorchid/404.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/el.po",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/README.md",
+		"/D/www/myorchid.gr/myorchid/languages/en.mo",
+		"/C/Users/Heracles/Desktop/New folder/sidebar-hud.php",
+		"/D/www/myorchid.gr/myorchid/languages/myorchid.pot",
+		"/C/Users/Heracles/Desktop/New folder/sidebar.php",
+		"/C/Users/Heracles/Desktop/New folder/404.php",
+		"/D/www/myorchid.gr/myorchid/languages/el.po",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/languages/tect.pot",
+		"/D/www/myorchid.gr/myorchid/advertisement.php",
+		"/D/www/myorchid.gr/myorchid/category-articles.php",
+		"/D/www/myorchid.gr/myorchid/category-care.php",
+		"/D/www/myorchid.gr/myorchid/category-contests.php",
+		"/D/www/myorchid.gr/myorchid/category-gallerypedia.php",
+		"/D/www/myorchid.gr/myorchid/comments.php",
+		"/D/www/myorchid.gr/myorchid/test-archive.php",
+		"/D/www/myorchid.gr/myorchid/test-author.php",
+		"/D/www/myorchid.gr/myorchid/test-page.php",
+		"/D/www/myorchid.gr/myorchid/test-page-urls.php",
+		"/D/www/myorchid.gr/myorchid/test-single.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/404.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/page.php",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/index.php",
+		"/C/Users/Heracles/AppData/Local/Temp/Keldeo - #647 - Serebii.net Pokédex.htm",
+		"/C/Users/Heracles/Desktop/test.js",
+		"/C/Users/Heracles/Desktop/647.shtml",
+		"/C/Users/Heracles/AppData/Local/Temp/Google Calendar.htm",
+		"/D/Dropbox/legendarypokemon/javacalc/ivcalcxy.html",
+		"/C/Users/Heracles/AppData/Local/Temp/National Archive of PhD Theses.xht",
+		"/D/Dropbox/Public/sphere/test2.html",
+		"/D/Dropbox/Public/sphere/js/jquery.leanorama.js",
+		"/D/Dropbox/Public/sphere/test.html",
+		"/C/Users/Heracles/AppData/Local/Temp/XY Individual Value & Stat Calculator - www.legendarypokemon.net.htm",
+		"/D/Dropbox/Public/sphere/js/jquery.leanorama.hotspot.js",
+		"/D/Dropbox/Public/sphere/js/jquery.leanorama.infobox.js",
+		"/C/Users/Heracles/AppData/Local/Temp/parallax.htm",
+		"/D/Dropbox/Public/sphere/js/jquery.transit.js",
+		"/D/www/tectgr/archi.tect.gr/wp-content/themes/tect/scripts/core.js",
+		"/C/Users/Heracles/Desktop/WIP/Gentium/characters.txt",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/style.css",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/404.php",
+		"/C/Users/Heracles/AppData/Local/Temp/three.js css3d - panorama.htm",
+		"/C/Users/Heracles/AppData/Local/Temp/PanoramaStudio Gallery - 360x180 panorama example.htm",
+		"/C/Users/Heracles/AppData/Local/Temp/ΣΑΔΑΣ-ΠΕΑ _ Σύλλογος Αρχιτεκτόνων Διπλωματούχων Ανωτάτων Σχολών – Πανελλήνια Ένωση Αρχιτεκτόνων.htm",
+		"/D/www/old/hello.pl",
+		"/D/www/magazine/perc/00/messages.php",
+		"/D/www/old/WS_FTP.LOG",
+		"/D/www/old/EB18.1.08",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/lib/utils.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/functions.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/.editorconfig",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/base.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/page.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/style.css",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/.jshintrc",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/404.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/templates/header.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/templates/header-top-navbar.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/arxitektones/package.json",
+		"/D/Dropbox/Public/sphere/index.html",
+		"/C/Users/Heracles/Desktop/sphere/test.html",
+		"/C/Users/Heracles/Desktop/sphere/page.js",
+		"/C/Users/Heracles/Desktop/photosphere.txt",
+		"/C/Users/Heracles/Desktop/sphere/stest.html",
+		"/C/Users/Heracles/Desktop/sphere/cpop.js",
+		"/C/Users/Heracles/Desktop/sphere/cpop.html",
+		"/C/Users/Heracles/Desktop/sphere/manifest.json",
+		"/D/www/sadas-pea.gr/wp-content/themes/bones/library/bones.php",
+		"/D/www/sadas-pea.gr/wp-content/themes/bones/style.css",
+		"/D/www/sadas-pea.gr/.htaccess",
+		"/D/www/sadas-pea.gr/.htaccess.orig",
+		"/D/www/sadas-pea.gr/wp-config.php",
+		"/D/www/sadas-pea.gr/wp-content/uploads/2014/01/index.php",
+		"/D/www/sadas-pea.gr/wp-content/uploads/.htaccess",
+		"/C/Users/Heracles/AppData/Local/Temp/Σ.Α.Δ.Α.Σ. - Π.Ε.Α.htm",
+		"/C/Users/Heracles/Desktop/tgeorgakopoulos.txt",
+		"/D/www/sadas-pea.gr/wp-content/themes/rt_gantry_wp/style.css",
+		"/D/www/sadas-pea.gr/_old/wp-config.php",
+		"/D/www/sadas-pea.gr/installer.php",
+		"/C/Users/Heracles/Desktop/index.html",
+		"/C/Users/Heracles/AppData/Local/Temp/fz3temp-1/custom_grey.css",
+		"/C/Users/Heracles/AppData/Local/Temp/404 — File not found.htm",
+		"/C/Users/Heracles/AppData/Local/Temp/sadas-pea.gr.htm"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"D:\\www\\gk_corporate2"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"caption",
+			"deleted",
+			"media",
+			"jpg",
+			"value",
+			"$dir",
+			"dir",
+			" ) {\n		$deleted[] = $file;\n		// unlink($file);\n	} elseif ",
+			"$dir/$value",
+			"}elseif",
+			"unlink",
+			"find_all_files",
+			"files2",
+			"find_all_files",
+			"\"",
+			"if(",
+			"tect_image_sizes",
+			"suffix",
+			"slug",
+			"$sizes",
+			"WP_Image_Editor_Custom",
+			"lang",
+			"my_wp_image_editors",
+			"prefix",
+			"image_ed",
+			"TECT_DOMAIN",
+			"time",
+			"lang",
+			"tect_lang_current",
+			"body_class",
+			"pagin",
+			"next",
+			")\n",
+			"multi",
+			"featured",
+			"content]",
+			"content",
+			"font-size",
+			"font-soze",
+			"Ενημερωτικό",
+			" 	",
+			"micro",
+			"microblog",
+			"single",
+			"σινγλε",
+			"σελίδες",
+			"επεξεργασία",
+			"__msgid",
+			"msgstr",
+			"msgid",
+			"mines",
+			"translate",
+			"_(",
+			".js",
+			"$c",
+			"form-select",
+			"altsprite",
+			"  ",
+			" \n",
+			"\n ",
+			"\n",
+			"  ",
+			"   ",
+			"    ",
+			"gammad",
+			"average",
+			"gamma",
+			"degnormalize",
+			"gyrostab",
+			"stab",
+			"animationId",
+			"gyro",
+			"gyrostab",
+			"gyro",
+			"/path/to/plaza/",
+			"entry-title",
+			"cookie",
+			"	",
+			" ",
+			"\"",
+			" \"",
+			":1,",
+			"element-on",
+			"iframe",
+			" {",
+			"parentc",
+			"display: none",
+			"widget simple_ads_manager_block_widget rt-block",
+			"entry-title",
+			"-pager",
+			"bx-contr",
+			".post:",
+			".post:nth-of-type(2n",
+			".rt-grid-4 #rt-sidebar-b .module-content .post:nth-of-type(2n",
+			"meta-tit",
+			"n-th",
+			"n-t",
+			"n-",
+			"child",
+			"thchild",
+			"child",
+			"n-th",
+			"font-size",
+			"h4",
+			"decode",
+			"iframe",
+			"ignore",
+			"ritimart",
+			"iframe",
+			"eval(",
+			"base64",
+			"base",
+			"eval",
+			"iframe",
+			"html",
+			"iframe",
+			"outpu",
+			"pin",
+			" ",
+			"define",
+			"local",
+			"main",
+			"main menu",
+			"underl",
+			"menu",
+			"004C98",
+			"logo",
+			"pager-de"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"pages",
+			"edit",
+			"msgstr",
+			"msgid",
+			"__msgid",
+			"translate(",
+			" ",
+			"\n\n ",
+			"\n\n",
+			"",
+			" ",
+			"beta",
+			"/test-3d_sphere_",
+			"",
+			":after",
+			":before",
+			":hover",
+			":last",
+			":not",
+			":first",
+			":nth",
+			" !important;",
+			": ",
+			" {",
+			"{",
+			"",
+			"–",
+			"·",
+			" ",
+			"=\"1\"",
+			" ",
+			"",
+			".home",
+			"\"",
+			"'",
+			"\"",
+			"'",
+			"\"",
+			"[/url]",
+			"]",
+			"modified",
+			"-EN.",
+			".",
+			"src=\"./",
+			"src=\"",
+			"rem",
+			"",
+			"\n",
+			" ",
+			"#main"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 6975,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1565,
+								1565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 42.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "styles/normalize.css",
+					"settings":
+					{
+						"buffer_size": 7583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1450,
+								1450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "CHANGES.md",
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 2274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1209,
+								1209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 2605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1357,
+								1357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 23217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "functions.php",
+					"settings":
+					{
+						"buffer_size": 20694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17795,
+								17795
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8175.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "utilities/delete_deprecated_thumbs.php",
+					"settings":
+					{
+						"buffer_size": 888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sty",
+				"style.css"
+			],
+			[
+				"rea",
+				"README.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true
+}

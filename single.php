@@ -13,7 +13,7 @@ if ( have_posts() ) {
 		$id = get_the_ID();
 		$slug = basename(get_permalink());
 
-		echo '<article class="hnews hentry" lang="' . tect_lang_current() . '">';
+		echo '<article class="hnews hentry">';
 		echo '<header>';
 			echo '<h1><a href="' . get_permalink() . '" rel="bookmark">/' . $slug . '</a></h1>';
 			echo '<div class="entry-summary">';
