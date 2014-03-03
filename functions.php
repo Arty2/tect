@@ -506,7 +506,7 @@ if ( !defined('ABSPATH') ) die;
 
 	//fixes display of SVGs in admin
 	function tect_image_svg_admin() {
-		$css = 'td.media-icon img[src$=".svg"] { width: 100% !important; height: auto !important; }';
+		$css = 'td.media-icon img[src$=".svg"] { width: auto !important; height: auto !important; }';
 		echo '<style type="text/css">'.$css.'</style>';
 	}
 
