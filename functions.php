@@ -22,6 +22,13 @@ if ( !defined('ABSPATH') ) die;
 	}
 
 	add_action('after_setup_theme', 'tect_l10n_setup');
+
+	//add
+	function tect_wp_options() {
+		add_options_page( __('Options'), __('Options'), 'administrator', 'options.php' );
+	}
+
+	add_action( 'admin_menu', 'tect_wp_options' );
 	
 	function tect_excerpt_length( $length ) {
 		return 20;
@@ -502,14 +509,6 @@ if ( !defined('ABSPATH') ) die;
 /**
 * Image related improvements
 */
-	
-	//change upload directory
-	if ( !is_multisite() ) {
-		update_option( 'upload_path', 'media' );
-	}
-	//don't “Organize my uploads into month- and year-based folders”
-	update_option( 'uploads_use_yearmonth_folders', '0' );
-
 	//based on http://www.sitepoint.com/wordpress-change-img-tag-html/
 	//remove whatever is too scarcely used: id, alignnone, size-whatever
 	function tect_image_tag_class( $class, $id, $align, $size ) {
@@ -540,9 +539,21 @@ if ( !defined('ABSPATH') ) die;
 	//http://codex.wordpress.org/Function_Reference/image_constrain_size_for_editor
 
 /**
-* Alternate thumbnail file structure
+* Alternate media file structure
+* sets new media directory, 
 * based on http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
+* reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/class-wp-image-editor.php
 */
+	//change upload directory
+	if ( !is_multisite() ) {
+		update_option( 'upload_path', 'media' ); //to-do: add to options page
+		define( 'UPLOADS', 'media' ); //define UPLOADS dir
+	}
+	//don't “Organize my uploads into month- and year-based folders”
+	update_option( 'uploads_use_yearmonth_folders', '0' ); // to-do: add to options page
+
+	//create a custom WP_Image_Editor that handles the naming of files
+	//based on http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
 	function tect_image_editors($editors) {
 		array_unshift( $editors, 'WP_Image_Editor_tect' );
 
@@ -551,78 +562,25 @@ if ( !defined('ABSPATH') ) die;
 
 	add_filter( 'wp_image_editors', 'tect_image_editors' );
 
-	//make array of available thumbnail sizes
-	function tect_image_sizes() {
-		// if ( isset(tect_image_sizes) ) //perhaps incorporate the compare logic here
-		global $_wp_additional_image_sizes;
-
-		foreach( get_intermediate_image_sizes() as $s ){
-			$tect_image_sizes[ $s ] = array( 0, 0 );
-			if ( in_array( $s, array( 'thumbnail', 'medium', 'large' ) ) ){
-				$tect_image_sizes[ $s ] = array(
-					'width' => get_option( $s . '_size_w' ),
-					'height' => get_option( $s . '_size_h' )
-				);
-			}
-			elseif ( isset( $_wp_additional_image_sizes ) && isset( $_wp_additional_image_sizes[ $s ] ) ) {
-				$tect_image_sizes[ $s ] = array(
-					'width' => $_wp_additional_image_sizes[ $s ]['width'],
-					'height' => $_wp_additional_image_sizes[ $s ]['height']
-				);
-			}
-		}
-		return $tect_image_sizes;
-	}
-	$tect_image_sizes = tect_image_sizes();
-
 	require_once ABSPATH . WPINC . '/class-wp-image-editor.php';
 	require_once ABSPATH . WPINC . '/class-wp-image-editor-gd.php';
 
-	// create a custom WP_Image_Editor that handles the naming of files
-	// reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/class-wp-image-editor.php
 	class WP_Image_Editor_tect extends WP_Image_Editor_GD {
-		public function get_slug() {
-			if ( ! $this->get_size() ) {
-				return false;
-			}
-			//$full_size = array( 'width' => $this->size['width'], 'height' => $this->size['height'] );
-			$size = array( $this->size['width'], $this->size['height'] );
-
-			global $tect_image_sizes;
-			foreach ( $tect_image_sizes as $slug => $dimensions ) {
-				// reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/media.php
-				// wp_constrain_dimensions( $current_width, $current_height, $max_width=0, $max_height=0 )
-				if ( $size == wp_constrain_dimensions( $this->size['width'], $this->size['height'], $dimensions['width'], $dimensions['height'])) {
-					//current logic matches wrong sizes, need original media size in the above function
-					return $slug;
-				}
-			}
-		}
-
-		public function generate_filename($slug = NULL, $dest_path = NULL, $extension = NULL) {
-			if( ! $slug ) {
-				$slug = $this->get_slug();
-			}
-
-			$info = pathinfo($this->file);
-			$dir  = $info['dirname'];
-			$ext  = $info['extension'];
-
-			$name = wp_basename($this->file, ".$ext");
-			$new_ext = strtolower($extension ? $extension : $ext);
-			if(!is_null($dest_path) && $_dest_path = realpath($dest_path)) {
-				$dir = $_dest_path;
-			}
-
-			return trailingslashit($dir)."{$slug}/{$name}.{$new_ext}";
-		}
-
 		public function multi_resize($sizes) {
 			$sizes = parent::multi_resize($sizes);
+			
+			$media_dir = trailingslashit( ABSPATH . UPLOADS );
 
 			foreach($sizes as $slug => $data) {
-				//$data['width'] $data['height']
-				$sizes[$slug]['file'] = '' . $slug . '/' . $data['file'];
+				$default_name = $sizes[ $slug ]['file'];
+				$new_name = $slug . '/' . preg_replace( '#-\d+x\d+\.#', '.', $data['file'] );
+
+				if ( !is_dir( $media_dir . $slug ) ) {
+					mkdir( $media_dir . $slug );
+				}
+				rename ( $media_dir . $default_name, $media_dir . $new_name );
+
+				$sizes[$slug]['file'] = $new_name;
 			}
 
 			return $sizes;
@@ -630,8 +588,22 @@ if ( !defined('ABSPATH') ) die;
 	}
 
 /**
-* other
+* Debug
 */
+	function tect_debug() {
+		define('WP_DEBUG', true);
+		define('SAVEQUERIES', true);
+		define('WP_DEBUG_DISPLAY', true);
+		// define('WP_DEBUG_LOG', true);
 
+		$stat = sprintf(  '%d queries in %.3f seconds, using %.2fMB memory',
+			get_num_queries(),
+			timer_stop( 0, 3 ),
+			memory_get_peak_usage() / 1024 / 1024
+			);
+
+		echo $stat;
+	}
+	// add_action( 'wp_footer', 'tect_debug', 20 );
 
 ?>

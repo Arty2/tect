@@ -32,7 +32,7 @@ $files = files( dirname(__FILE__) . $uploads );
 $thumbnails = array();
 
 foreach ($files as $key => $file ) {
-	if ( 1 == preg_match('#d+x\d+\.(jpg|jpeg|png|gif)$#', $file) ) {
+	if ( 1 == preg_match('#-\d+x\d+\.#', $file) ) {
 			$thumbnails[] = $file;
 			// uncomment following line to delete files
 			// unlink($file);

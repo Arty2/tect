@@ -2,7 +2,8 @@
 
 tect • an architect’s WordPress theme
 ===================================
-“In the beginning there was only chaos.”
+> “In the beginning there was only chaos.”
+
 A bespoke ecosystem created out of frustration for untidy, complex and unnecessary code in WordPress themes. 
 Safe to deploy, but still experimental!
 
@@ -40,7 +41,7 @@ Suggested plugins
 	* ☐ Synchronization: Custom fields. (they may be translatable)
 * [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
 * [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
-* [Stage switcher](http://roots.io/plugins/stage-switcher/)
+* [Stage switcher](https://github.com/Arty2/wp-stage-switcher)
 * ?[Dynamic Featured Image](http://wordpress.org/plugins/dynamic-featured-image/)
 * ?[Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
 * ?[Better Delete Revision](http://wordpress.org/plugins/better-delete-revision/)
@@ -57,13 +58,14 @@ To-do
 * Always complete Greek l10n.
 * Pick a semantic alternative to <aside> for parenthetical content.
 * Rework all styles and archive view.
+* Remove Prism.js and suggest [Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/) plugin.
 
 ### low priority
-* Remove Prism.js and suggest [Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/) plugin.
+* Remove junk HTML from header.
 * Test if what works for Posts, works for Pages as well.
 * Fix errors with long and UTF8 titles.
 * Make use of [Gentium](scripts.sil.org/gentium) → [FontSquirrel](http://www.fontsquirrel.com/tools/webfont-generator)
-* Turn styleguide-raw.html into a proper accompanying page. (you can currently Copy & Paste the code into a post)
+* Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions).
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
 * Write documentation on styles.
 * Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)
@@ -132,6 +134,6 @@ References
 Some things that “tect” likes
 -----------------------------------
 * [Roots Theme](http://roots.io/)
-* [Wired.co.uk](http://www.wired.co.uk/magazine/archive/2013/03/features/up) articles [dev post](http://views.fromthe7th.com/posts/2013/04/wired-uk-website-launches-new-articles) or [CQ](http://www.gq-magazine.co.uk/entertainment/articles/2013-04/09/steve-martin-david-walliams-in-conversation/viewall)
+* [Wired.co.uk](http://www.wired.co.uk/magazine/archive/2013/03/features/up) articles / see [dev post](http://views.fromthe7th.com/posts/2013/04/wired-uk-website-launches-new-articles) or [CQ](http://www.gq-magazine.co.uk/entertainment/articles/2013-04/09/steve-martin-david-walliams-in-conversation/viewall)
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)
