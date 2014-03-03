@@ -495,8 +495,26 @@ if ( !defined('ABSPATH') ) die;
 /**
 * Image related improvements
 */
-	//based on http://www.sitepoint.com/wordpress-change-img-tag-html/
+	//allow SVGs in the media library
+	//based on http://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
+	function tect_image_svg( $mimes ){
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
+
+	add_filter( 'upload_mimes', 'tect_image_svg' );
+
+	//fixes display of SVGs in admin
+	function tect_image_svg_admin() {
+		$css = 'td.media-icon img[src$=".svg"] { width: 100% !important; height: auto !important; }';
+		echo '<style type="text/css">'.$css.'</style>';
+	}
+
+	add_action('admin_head', 'tect_image_svg_admin');
+
+
 	//remove whatever is too scarcely used: id, alignnone, size-whatever
+	//based on http://www.sitepoint.com/wordpress-change-img-tag-html/
 	function tect_image_tag_class( $class, $id, $align, $size ) {
 		return ( $align != 'none' ? 'align' . $align : '' );
 	}

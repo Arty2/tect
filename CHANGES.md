@@ -1,5 +1,8 @@
 Version History
 =========================
+### Version: 1.1.16
+* Allow SVGs in media library.
+
 ### Version: 1.1.15
 * Included Gentium font.
 
