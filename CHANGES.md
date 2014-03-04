@@ -1,5 +1,8 @@
 Version History
 =========================
+### Version: 1.1.17
+* Included Ubuntu Light font.
+
 ### Version: 1.1.16
 * Allow SVGs in media library.
 

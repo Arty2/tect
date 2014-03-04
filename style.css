@@ -9,7 +9,7 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.1.16
+Version: 1.1.17
 */
 /*
 How CSS in this file is styled:
@@ -427,7 +427,7 @@ img {
 */
 @font-face {
 	font-family: 'Gentium Web';
-	src: url('./fonts/gentium_regular.woff') format('woff');
+	src: url('./fonts/gentium.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 
@@ -438,6 +438,13 @@ img {
 	src: url('./fonts/gentium_italic.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Ubuntu Web';
+	src: url('./fonts/ubuntu_light_italic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 html {
@@ -451,12 +458,12 @@ time,
 .languages, .tags, .share,
 #appendix, .ref,
 main.single article footer {
-	font-family: "Segoe UI", "Ubuntu", "Century Gothic", "Helvetica", sans-serif;
+	font-family: 'Ubuntu Web', 'Ubuntu', 'Segoe UI', 'Century Gothic', 'Tahoma', 'Helvetica', sans-serif;
 	font-weight: 100;
 }
 
 .annotation {
-	font-family: "Segoe Script", "Pilgi", "Papyrus", serif;
+	font-family: 'Segoe Script', 'Pilgi', 'Papyrus', serif;
 }
 
 .entry-content h2,

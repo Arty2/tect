@@ -20,8 +20,9 @@ Included enhancements / Credits
 -----------------------------------
 * [GitHub Updater](https://github.com/afragen/github-updater) enabled.
 * [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
-* [Gentium](scripts.sil.org/gentium) font for Latin & Greek.
 * [normalize.css](http://necolas.github.io/normalize.css/)
+* [Gentium](scripts.sil.org/gentium) font in Latin & Greek.
+* [Ubuntu Light](http://font.ubuntu.com/) font in Latin & Greek.
 * bits and pieces from [roots.io](http://roots.io/starter-theme/)
 
 Known bugs / Undocumented behaviors
