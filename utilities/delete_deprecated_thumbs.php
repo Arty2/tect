@@ -26,7 +26,7 @@ function files($base) {
 	return $result; 
 }
 
-$uploads = '/media'; // by default" /wp-content/uploads
+$uploads = '/media'; // by default: /wp-content/uploads
 $files = files( dirname(__FILE__) . $uploads );
 
 $thumbnails = array();

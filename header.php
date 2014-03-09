@@ -54,25 +54,26 @@
 </head>
 <body <?php body_class( $body_class ); //http://codex.wordpress.org/Function_Reference/body_class ?>>
 <header>
-<!--[if lt IE 9]>
-	<p class="notice">You are using a very old browser therefore you can't expect this website —or “the internet”— to work properly.<br>
-	Do yourself a favor and <a href="http://browsehappy.com/">download a better one</a>.
+<!--[if lt IE 13]>
+	<p class="notice"><?php _e('You are using a very old browser therefore you can’t expect this website —or “the internet”— to work properly.<br>
+	Do yourself a favor and <a href="http://browsehappy.com/">download a better one</a>.','tect'); ?>
 	</p>
 <![endif]-->
 	<div id="about">
 <?php
-	if (!dynamic_sidebar('sidebar-about')) { 
-		bloginfo('description');
+	if ( !dynamic_sidebar( 'sidebar-about' ) ) {
+		echo  '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+		echo  get_bloginfo( 'description' );
 	}
 ?>
 	</div>
 	<nav role="navigation">
 <?php
-	if (!dynamic_sidebar('sidebar-nav')) { 
+	if ( !dynamic_sidebar( 'sidebar-nav' ) ) { 
 		echo '<ul class="tags"><li>';
 		wp_tag_cloud(array(
-			'smallest' => 0.8,
-			'largest' => 1.1,
+			'smallest' => 1, //0.8
+			'largest' => 1, //1.1
 			'unit' => 'rem',
 			'separator' => '</li><li>',
 		));

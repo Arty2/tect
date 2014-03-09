@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 /**
 * Header animations
 */
-	var body = $('html, body');
+/*	var body = $('html, body');
 	var target = $('#logo');
 	//ease to target if the user hasn't scrolled already
 	setTimeout(function() {
@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
 				body.animate({ scrollTop: target.offset().top }, 500);
 			}
 		}
-	);
+	);*/
 
 /**
 * Better Greek small-caps 

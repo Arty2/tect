@@ -4,7 +4,7 @@
 		$tect_page_title = wp_title( '•', false, 'right' );
 		$tect_page_title .= get_bloginfo( 'name' );
 
-		echo '<h1>' . __( 'Hyperlink index', 'tect' ) . '</h1>';
+		//echo '<h1>' . __( 'Hyperlink index', 'tect' ) . '</h1>';
 		echo '<p>'
 		. '<small>' . __( 'cite', 'tect' ) . ': <em>' . $tect_page_title . '</em> ('
 		. __('Accessed', 'tect') . date_i18n( ' j F Y', time())

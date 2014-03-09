@@ -93,7 +93,7 @@ if ( !defined('ABSPATH') ) die;
 			//requires Polylang plugin
 			//http://polylang.wordpress.com/documentation/documentation-for-developers/functions-reference/
 			$raw = pll_the_languages( array( 'raw' => 1 ) );
-			$output = '<ul class="languages">';
+			$output = '<nav><ul class="languages">';
 			foreach ( $raw as $lang ) {
 				if ( !$lang['no_translation'] ) {
 					if ( $lang['current_lang'] ) {
@@ -106,7 +106,7 @@ if ( !defined('ABSPATH') ) die;
 					$output .= mb_strtolower( mb_substr( $lang['name'] , 0, 2) ) . '</a></li>';
 				}
 			}
-			$output .= '</ul>';
+			$output .= '</ul></nav>';
 			return $output;
 		}
 	}
