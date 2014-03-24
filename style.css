@@ -1,4 +1,4 @@
-/*   
+/*
 Theme Name: tect
 Theme URI: https://github.com/Arty2/tect
 Description: an architect’s WordPress theme
@@ -9,8 +9,9 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.01
+Version: 1.2.02
 */
+
 /*
 How CSS in this file is styled:
 
@@ -54,13 +55,29 @@ How CSS in this file is styled:
 
 */
 
+/*	
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Normalize
+2.0 - Typography
+	2.1 - Fonts
+3.0 - Elements and helper classes
+
+--------------------------------------------------------------*/
 
 
-/**
-* Normalize
-*/
+/*--------------------------------------------------------------
+1.0 - Normalize
+--------------------------------------------------------------*/
 
 @import url('./styles/normalize.css');
+
+
+body {
+	margin: 0 auto;
+}
 
 ::-moz-selection {
 	background: khaki;
@@ -82,9 +99,12 @@ How CSS in this file is styled:
 
 
 
-/**
-* Fonts
-*/
+/*--------------------------------------------------------------
+2.0 - Typography
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+2.1 - Fonts
+--------------------------------------------------------------*/
 @font-face {
 	font-family: 'Gentium Web';
 	src: url('./fonts/gentium.woff') format('woff');
@@ -130,15 +150,9 @@ main article header h1 {
 }
 
 
-
-/**
-* Type and vertical rythm
-*/
-
-body {
-	margin: 0 auto;
-}
-
+/*--------------------------------------------------------------
+1.0 - Type and vertical rythm
+--------------------------------------------------------------*/
 h1 {
 	margin: 0 0 1.5rem 0;
 
@@ -210,9 +224,9 @@ hr {
 
 
 
-/**
-* Common styles
-*/
+/*--------------------------------------------------------------
+3.0 - Elements and helper classes
+--------------------------------------------------------------*/
 p {	
 	-moz-hyphens 	: auto;
 	-webkit-hyphens	: auto;

@@ -7,7 +7,6 @@ tect • an architect’s WordPress theme
 A bespoke ecosystem created out of frustration for untidy, complex and unnecessary code in WordPress themes. 
 Safe to deploy, but still experimental!
 
-
 This theme aims to:
 -----------------------------------
 * Be an unobtrusive, contemporary and responsive, suitable for visual designers and writers.
@@ -54,38 +53,35 @@ To-do
 -----------------------------------
 
 ### high priority
-* Extensively test the alternate thumbnail naming functions, then comment in detail move into a seperate plugin.
+* Always complete Greek l10n.
+* Rework all styles.
+* Work on pagination.
 * Add content_width and image_size_names_choose in functions.php
 * Fix visual editor bug; images don't show up (related to relative URLs).
-* Always complete Greek l10n.
 * Pick a semantic alternative to <aside> for parenthetical content.
-* Rework all styles and archive view.
+* Option to display select taxonomies in home.
+* Option to group select taxonomies in home by week or month.
+* Split alternate thumbnail naming functions into separate plugin.
 
 ### low priority
-* Remove junk HTML from header.
-* Menu enable.
-* Test if what works for Posts, works for Pages as well.
+* Make use of [Attachment](http://wordpress.org/plugins/attachments/) plugin.
+* Remove junk HTML from header and better meta description.
 * Fix errors with long and UTF8 titles.
-* Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions).
-* Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
-* Write documentation on styles.
-* Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)
+* Menu enable & own menu walker.
 * Style [Post Formats](http://codex.wordpress.org/Post_Formats)
-* Clean useless code WordPress includes in the header by default.
 * Theme options:
-	* twitter handle
 	* Categories that are displayed in homepage. (default: all)
 	* Media directory → /media (default: true)
 	* Hyper-relative links toggle. (default: true)
-	* Prism.js and Magnific Popup toggle. (default: true)
-	* Google Analytics
 * Test and work on RSS feeds.
-* Add download related media link and field. (?)
+* Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions) and write documentation on styles.
+* Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
+* Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)
 
 ### even lower priority
 * Polish [caption] shortcode enhancements.
 * Flexbox CSS at .gallery.
-* Add Location custom field. ([OSM](http://wordpress.org/plugins/osm/)
+* Add Location custom field w/ [OSM](http://wordpress.org/plugins/osm/)?
 * Singled-out page template for cleaner .html (offline) copies of content.
 * Ensure output code has better linebreaks.
 * Add style options to Customizer:
@@ -130,6 +126,7 @@ References
 * [I18n for WordPress developers](http://codex.wordpress.org/I18n_for_WordPress_Developers)
 * [WordPress Theme Customization API](https://codex.wordpress.org/Theme_Customization_API)
 * [Gridlover](http://www.gridlover.net/app/)
+* [Bootstrap](http://getbootstrap.com/components/)
 
 
 
