@@ -9,7 +9,7 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.02
+Version: 1.2.04
 */
 
 /*
@@ -120,6 +120,13 @@ body {
 	font-style: italic;
 }
 
+/* @font-face {
+	font-family: 'Ubuntu Web';
+	src: url('./fonts/ubuntu_light.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+} */
+
 @font-face {
 	font-family: 'Ubuntu Web';
 	src: url('./fonts/ubuntu_light_italic.woff') format('woff');
@@ -127,6 +134,12 @@ body {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Graphe Web';
+	src: url('./fonts/graphe.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
 html {
 	font: 125%/1.5rem 'Gentium Web', 'Gentium Plus', 'Georgia', serif;
@@ -146,7 +159,7 @@ main article header h1 {
 }
 
 .annotation {
-	font-family: 'Segoe Script', 'Pilgi', 'Papyrus', monospace;
+	font-family: 'Graphe Web', 'Segoe Script', 'Pilgi', 'Papyrus', monospace;
 }
 
 
@@ -177,6 +190,10 @@ h6 {
 	margin: 3rem 0 1.5rem 0;
 
 	font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	word-wrap: break-word;
 }
 
 .entry-content h1,
@@ -324,10 +341,9 @@ nav ul {
 }
 
 figure {
-
+	margin-bottom: 2rem;
 }
 	figcaption {
-		margin-bottom: 1.5rem;
 		font-size: 0.8rem;
 	}
 	blockquote + figcaption {
@@ -496,6 +512,13 @@ del {
 	font-size: 1.1em;
 }
 
+.caps {
+	text-transform: uppercase;
+}
+
+.smallcaps {
+	font-variant: small-caps;
+}
 
 
 /**
@@ -515,9 +538,9 @@ del {
 
 
 
-/**
-* Link styles
-*/
+/*--------------------------------------------------------------
+Link styles
+--------------------------------------------------------------*/
 
 a {
 	vertical-align: baseline;
@@ -539,7 +562,7 @@ main article a {
 	border-bottom: 1px solid #ccc;
 	border-color: rgba(0,0,0,0.2);
 }
-	main article a:hover,
+	main article .entry a:hover,
 	main article:hover a { /* performance hit? */
 		border-color: #ff8080;
 		color: #ff8080;
@@ -589,9 +612,9 @@ a[href$=".zip"]:before {
 
 
 
-/**
-* Structures
-*/
+/*--------------------------------------------------------------
+Structures
+--------------------------------------------------------------*/
 
 .notice {
 	padding: 1em;
@@ -644,29 +667,8 @@ a[href$=".zip"]:before {
 	cursor: help;
 	overflow: hidden;
 
-	-webkit-transition: margin .5s, max-height .5s;
-	-moz-transition   : margin .5s, max-height .5s;
-	transition        : margin .5s, max-height .5s;
-
-	-webkit-transition-delay: 2s;
-	-moz-transition-delay   : 2s;
-	transition-delay        : 2s;
+	display: none;
 }
-	.peekaboo:before {
-		content: '\00A0'; /* &nbsp; */
-
-		float: none;
-
-		display: block;
-		height: 2rem;
-	}
-	.peekaboo:hover {
-		max-height: 50rem;
-
-		-webkit-transition-delay: 1s;
-		-moz-transition-delay   : 1s;
-		transition-delay        : 1s;
-	}
 
 .gallery {
 	/* use flexbox in .gallery */
@@ -702,9 +704,12 @@ time {
 		content: ' \21bb  ';
 	}
 
-.pagination a {
-	display: inline-block;
+.pagination {
+	clear: both;
 }
+	.pagination a {
+		display: inline-block;
+	}
 	.pagination .nav-newer {
 		float: left;
 	}
@@ -740,8 +745,6 @@ time {
 		border-bottom: none;
 		font-size: 0.8rem;
 		text-align: right;
-
-		/* fix z-index order to above article */
 	}
 		.languages a:before {
 			content: attr(title) '';
@@ -795,11 +798,12 @@ time {
 
 .tags {
 	padding: 0;
-	margin: 2rem 0 0 0;
+	margin: 0;
 
 	list-style: none;
 
 	font-variant: small-caps;
+
 	text-transform: uppercase;
 }
 	.tags li {
@@ -810,9 +814,9 @@ time {
 			content: '#';
 		}
 
-/**
-* Specific styling in order of appearence
-*/
+/*--------------------------------------------------------------
+Theme Specific Elements (order of appearence)
+--------------------------------------------------------------*/
 
 body {
 	/*padding: 2rem;*/
@@ -840,7 +844,7 @@ body > header {
 }
 	#about h1 {
 		margin: 0 0 1rem 0;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		font-style: normal;
 	}
 
@@ -860,11 +864,9 @@ body > header {
 		width: auto;
 	}
 
-/**
-* Single article
-*/
-
-
+/*--------------------------------------------------------------
+Article: structures
+--------------------------------------------------------------*/
 
 main article .share {
 	opacity: 0;
@@ -920,11 +922,19 @@ main article header time {
 	font-size: 0.8rem;
 	opacity: .5;
 }
+
+main article header .tags {
+	margin: 1rem 0 0 0;
+
+	font-size: 0.8rem;
+}
+
 main article header time.published,
 main article header time.updated,
 main article header .tags {
 	opacity: 0;
 	visibility: hidden;
+	font-size: 0.8rem;
 
 	-webkit-transition: visibility .5s, opacity .5s;
 	-moz-transition   : visibility .5s, opacity .5s;
@@ -958,14 +968,20 @@ main article header .tags {
 	}
 
 
-main.single article footer {
-	/*float: right;*/
+main article .entry-content  {
+	position: relative;
+}
 
-	margin-top: 2rem;
+
+/*--------------------------------------------------------------
+Article: single
+--------------------------------------------------------------*/
+
+main.single article footer {
 	margin-bottom: 2rem;
 
 	font-size: 0.75rem;
-	line-height: 1.5;
+	line-height: 1.5rem;
 	text-align: right;
 }
 	main.single article footer h2 {
@@ -975,7 +991,7 @@ main.single article footer {
 		font-size: 0.8rem;
 		font-style: normal;
 		font-variant: small-caps;
-		line-height: 1;
+		line-height: 1rem;
 		text-transform: uppercase;
 	}
 	main.single article footer dl,
@@ -1013,9 +1029,6 @@ main.single article footer {
 main.single .entry-content {
 	clear: both;
 }
-main article .entry-content  {
-	position: relative;
-}
 
 main.single .entry-content > *,
 main.single article header,
@@ -1032,31 +1045,152 @@ main.single .entry-content .spread {
 	max-width: 100%;
 }
 
-main.single .entry-content aside {
+main.single .entry-content .marginalia {
 	margin-right: 0;
 	margin-left: 0;
 	padding: 1.5rem 2rem;
+}
+	main.single .entry-content .marginalia:hover {
+	outline: 1px dotted red;
+	}
 
-	-webkit-box-shadow: inset 0 0 1.5rem rgba(0,0,0,.5);
-	-moz-box-shadow   : inset 0 0 1.5rem rgba(0,0,0,.5);
-	box-shadow        : inset 0 0 1.5rem rgba(0,0,0,.5);
 
-	mask: url('./graphics/sawtooth.svg#mask');
+/*--------------------------------------------------------------
+Article: archive view
+--------------------------------------------------------------*/
 
-	-webkit-mask-box-image: url('./graphics/sawtooth.svg') 10 0 10 0 repeat;
+main.archive article {
+	position: relative;
+
+	display: inline-block;
+
+	padding: 4rem;
+	min-height: 16rem;
+	max-width: 26rem;
+	vertical-align: top;
+
+	/*outline: 1px dotted blue;*/
 }
 
+main.archive article header {
+	position: relative;
 
-/**
-* Responsiveness
-*/
+	padding: 3rem;
+
+	background: #fff;
+
+	opacity: 0.95;
+
+	-webkit-box-shadow: 0 0 0.5rem rgba(0,0,0,.3);
+	-moz-box-shadow   : 0 0 0.5rem rgba(0,0,0,.3);
+	box-shadow        : 0 0 0.5rem rgba(0,0,0,.3);
+
+	-webkit-transition  : opacity .3s;
+	-moz-transition     : opacity .3s;
+	transition          : opacity .3s;
+}
+	main.archive article header:hover {
+		opacity: 1;
+	}
+
+main.archive article header .time {
+	top: 0;
+}
+
+main.archive article header a {
+	border: none;
+	color: inherit;
+}
+
+main.archive article .post-thumbnail {
+	position: absolute;
+
+	display: inline;
+
+	max-width: 17rem;
+
+	border: none;
+}
+	main.archive article .post-thumbnail:hover {
+
+	}
+	main.archive article .post-thumbnail:nth-child(1) {
+		top: 1rem;
+		left: 1rem;
+	}
+	main.archive article .post-thumbnail:nth-child(2) {
+		top: 2rem;
+		right: 1rem;
+	}
+	main.archive article .post-thumbnail:nth-child(3) {
+		bottom: 1rem;
+		right: 2rem;
+	}
+	main.archive article .post-thumbnail:nth-child(4) {
+		bottom: 2rem;
+		left: 2rem;
+	}
+
+/*--------------------------------------------------------------
+Responsiveness
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1000px) {
+	body > header > nav {
+		margin: 2rem 0 0 0;
+	}
+
+	main.single .entry-content .marginalia {
+		-webkit-box-shadow: inset 0 0 1.5rem rgba(0,0,0,.5);
+		-moz-box-shadow   : inset 0 0 1.5rem rgba(0,0,0,.5);
+		box-shadow        : inset 0 0 1.5rem rgba(0,0,0,.5);
+
+		mask: url('./graphics/sawtooth.svg#mask');
+		-webkit-mask-box-image: url('./graphics/sawtooth.svg') 10 0 10 0 repeat;
+	}
+}
+
 @media only screen and (min-width: 1000px) {
-	/*main.single .entry-content > * {
+	#about,
+	main.single article header {
+		float: left;
+
+		width: 16rem;
+	}
+	body > header > nav {
+		float: right;
+		
+		width: 25rem; /* need to look into a better solution */
+		width: calc(100% - 18rem);
+	}
+
+	main.single article footer {
+		float: right;
+		
+		width: 25rem;
+		width: calc(100% - 24rem);
+	}
+
+	main.single .entry-content > * {
 		position: relative;
 		margin-left: 20rem;
 		max-width: 40rem;
 	}
-	aside {
-		margin-left: 0 !important;
-	}*/
+	main.single .entry-content .marginalia {
+		float: left;
+		clear: left;
+
+		margin: 0;
+		padding-top: 0;
+		width: 20rem;
+	}
+
+	main.single .entry-content .callout {
+		float: right;
+
+		margin: 0 1rem;
+		padding: 0;
+
+		border: none;
+		font-size: 1.5rem;
+	}
 }

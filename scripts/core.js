@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
 	
-/**
-* Header animations
-*/
+/*--------------------------------------------------------------
+Header animations
+--------------------------------------------------------------*/
 /*	var body = $('html, body');
 	var target = $('#logo');
 	//ease to target if the user hasn't scrolled already
@@ -29,38 +29,40 @@ jQuery(document).ready(function($) {
 		}
 	);*/
 
-/**
-* Better Greek small-caps 
-* until browsers decide to fix it…
-* ref: https://bugzilla.mozilla.org/show_bug.cgi?id=307039
-*/
-	function greek_small_caps(selectors) {  //you should not be greedy with your selectors
-		String.prototype.replaceArray = function(search, replace) {
-			var text = this;
-			for (var i = 0; i < search.length; i++) {
-				text = text.replace(search[i], replace[i]);
-			}
-			return text;
-		};
-		var greek_search = ['άι', 'έι', 'όι', 'ύι', 'άυ', 'έυ', 'ήυ', 'όυ', 'ά', 'έ', 'ή', 'ί', 'ΐ', 'ό', 'ύ', 'ΰ', 'ώ', ' η '];
-		var greek_replace = ['αϊ', 'εϊ', 'οϊ', 'υϊ', 'αϊ', 'εϋ', 'ηϋ', 'οϋ', 'α', 'ε', 'η', 'ι', 'ϊ', 'ο', 'υ', 'ϋ', 'ω', ' ή '];
+/*--------------------------------------------------------------
+Normalised Greek small-caps: https://gist.github.com/Arty2/e6855b956e79ee4d2455
+fixes erroneous behaviour of browsers that display accents on Greek small-caps
+at the time of writing, the latest versions of Firefox, Chrome and Opera behave properly; IE doesn't, of course
+--------------------------------------------------------------*/
+	if (!jQuery().greek_small_caps) {
+		$.fn.greek_small_caps = function() {
+			String.prototype.replaceArray = function(search, replace) {
+				var text = this;
+				for (var i = 0; i < search.length; i++) {
+					text = text.replace(search[i], replace[i]);
+				}
+				return text;
+			};
+			var text_search = ['άι', 'έι', 'όι', 'ύι', 'άυ', 'έυ', 'ήυ', 'όυ', 'ά', 'έ', 'ή', 'ί', 'ΐ', 'ό', 'ύ', 'ΰ', 'ώ'];
+			var text_replace = ['αϊ', 'εϊ', 'οϊ', 'υϊ', 'αϊ', 'εϋ', 'ηϋ', 'οϋ', 'α', 'ε', 'η', 'ι', 'ϊ', 'ο', 'υ', 'ϋ', 'ω'];
 
-		$(selectors).each(function() {
-			if ($(this).css("text-transform") == 'uppercase' || $(this).css("fontVariant") == 'small-caps') {
-				var text = $(this).text();
-				text = text.replaceArray(greek_search, greek_replace);
-				$(this).text(text);
-			}
-		});
+			this.each(function() {
+				if ($(this).css('text-transform') == 'uppercase' || $(this).css('fontVariant') == 'small-caps') {
+					var text = $(this).text();
+					text = text.replaceArray(text_search, text_replace);
+					$(this).text(text);
+				}
+			});
+		};
 	}
 
-	greek_small_caps('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)');
+$('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)').greek_small_caps();
 
 
-/**
-* Slide thumbnails on archive view
-* should be applied on figure:hover
-*/
+/*--------------------------------------------------------------
+Slide thumbnails on archive view
+should be applied on figure:hover
+--------------------------------------------------------------*/
 	$('main.archive article figure > img').hover(
 		function() {
 			$(this).css('transform', 'translate(-' + ($(this).width() - $(this).parent().width()) + 'px, 0)');
@@ -70,9 +72,9 @@ jQuery(document).ready(function($) {
 		}
 	);
 
-/**
-* Hyperlink index
-*/
+/*--------------------------------------------------------------
+Hyperlink index
+--------------------------------------------------------------*/
 	/*$('#appendix-hyperlinks').one( "click", function() {
 		var ref = 1;
 
@@ -88,14 +90,63 @@ jQuery(document).ready(function($) {
 		window.print();
 	});*/
 
-/**
-* Popup windows
-*/
+/*--------------------------------------------------------------
+Popup windows
+--------------------------------------------------------------*/
 	$('.share-twitter, .share-facebook').popupWindow({
 		width: 550,
 		height: 250,
 		centerScreen: 1 
 	});
 
+/*--------------------------------------------------------------
+Draggables: https://gist.github.com/Arty2/11199162
+alternative to jQuery UI’s draggable
+based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+--------------------------------------------------------------*/
+	if (!jQuery().draggable) {
+		$.fn.draggable = function() {
+			this
+				.css('cursor', 'move')
+				.on('mousedown touchstart', function(e) {
+					var $dragged = $(this);
+
+					var x = $dragged.offset().left - e.pageX,
+						y = $dragged.offset().top - e.pageY,
+						z = $dragged.css('z-index');
+
+					if (!$.fn.draggable.stack) {
+						$.fn.draggable.stack = 999;
+					}
+					stack = $.fn.draggable.stack;
+					
+					$(window)
+						.on('mousemove.draggable touchmove.draggable', function(e) {
+							$dragged
+								.css({'z-index': stack, 'transform': 'scale(1.1)', 'transition': 'transform .3s', 'bottom': 'auto', 'right': 'auto'})
+								.offset({
+									left: x + e.pageX,
+									top: y + e.pageY
+								})
+								.find('a').one('click.draggable', function(e) {
+									e.preventDefault();
+								});
+
+							e.preventDefault();
+						})
+						.one('mouseup touchend touchcancel', function() {
+							$(this).off('mousemove.draggable touchmove.draggable click.draggable');
+							$dragged.css({'z-index': stack, 'transform': 'scale(1)'})
+							$.fn.draggable.stack++;
+						});
+
+					e.preventDefault();
+				});
+			return this;
+		};
+	}
+
+
+	$('.post-thumbnail, article header').draggable();
 
 });

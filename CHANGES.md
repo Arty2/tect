@@ -1,5 +1,9 @@
 Version History
 =========================
+### Version: 1.2.04
+* Split out [tect-media](https://github.com/Arty2/wp-tect-media) plugin.
+* Stylistic changes.
+
 ### Version: 1.1.17
 * Included Ubuntu Light font.
 

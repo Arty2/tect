@@ -16,8 +16,8 @@ Utilities
 Theme settings
 --------------------------------------------------------------*/
 	
-	// Define base location for use in header.php
-	define('WP_BASE', 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/');
+	// Define base location for use in header.php // site_url()
+	//define('WP_BASE', 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/');
 
 	// Add link to WordPress Options in Admin
 	function tect_wp_options() {
@@ -63,7 +63,24 @@ Theme settings
 		'flex-height'    => true,
 		'height'        => 100,
 	);
+
 	add_theme_support( 'custom-header', $args );
+
+	
+
+	// Add classes to navigation links
+	function nav_newer() {
+		return 'class="nav-newer"';
+	}
+
+	add_filter('next_posts_link_attributes', 'nav_newer');
+
+	function nav_older() {
+		return 'class="nav-older"';
+	}
+
+	add_filter('previous_posts_link_attributes', 'nav_older');
+
 
 /*--------------------------------------------------------------
 Internationalization
@@ -136,6 +153,9 @@ CSS and script enqueues
 	}
 
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue' );
+
+	//custom TinyMCE styles
+	add_editor_style( 'editor.css' );
 
 /*--------------------------------------------------------------
 Magnific Popup → https://github.com/dimsemenov/Magnific-Popup
@@ -441,7 +461,7 @@ Improved gallery code
 Make WordPress URLs hyper-relative! (domain agnostic)
 --------------------------------------------------------------*/
 
-	function tect_buffer_filter( $buffer ) {
+/*	function tect_buffer_filter( $buffer ) {
 		return preg_replace(
 			array(
 			'@' . get_bloginfo( 'url' ) . '/@',
@@ -458,109 +478,10 @@ Make WordPress URLs hyper-relative! (domain agnostic)
 
 	function tect_buffer_end() { ob_end_flush(); }
 
-	// add_action( 'wp_head', 'tect_buffer_start', 1 );
-	// add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+	add_action( 'wp_head', 'tect_buffer_start', 1 );
+	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+*/
 
-
-/*--------------------------------------------------------------
-Image related improvements
---------------------------------------------------------------*/
-	//allow SVGs in the media library
-	//based on http://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
-	function tect_image_svg( $mimes ){
-		$mimes['svg'] = 'image/svg+xml';
-		return $mimes;
-	}
-
-	add_filter( 'upload_mimes', 'tect_image_svg' );
-
-	//fixes display of SVGs in admin
-	function tect_image_svg_admin() {
-		$css = 'td.media-icon img[src$=".svg"] { width: auto !important; height: auto !important; }';
-		echo '<style type="text/css">'.$css.'</style>';
-	}
-
-	add_action('admin_head', 'tect_image_svg_admin');
-
-
-	//remove whatever is too scarcely used: id, alignnone, size-whatever
-	//based on http://www.sitepoint.com/wordpress-change-img-tag-html/
-	function tect_image_tag_class( $class, $id, $align, $size ) {
-		return ( $align != 'none' ? 'align' . $align : '' );
-	}
-
-	add_filter( 'get_image_tag_class', 'tect_image_tag_class', 0, 4 );
-
-	//edit add media replacements
-	function tect_image_tag( $html, $id, $alt, $title ) {
-		return preg_replace(
-			array(
-			'@' . get_bloginfo( 'url' ) . '@', // make src and href relative, borks visual editor!
-			'/(width|height)="\d*"\s/', // remove width & height
-			),
-		array(
-			'.',
-			'',
-			),
-		$html );
-	}
-
-	add_filter( 'post_thumbnail_html', 'tect_image_tag', 10, 4 );
-	add_filter( 'get_image_tag', 'tect_image_tag', 10, 4 );
-	add_filter( 'image_send_to_editor', 'tect_image_tag', 10, 4 ); // 'post_thumbnail_html' too ?
-
-	//image_constrain_size_for_editor
-	//http://codex.wordpress.org/Function_Reference/image_constrain_size_for_editor
-
-/*--------------------------------------------------------------
-Alternate media file structure
-	sets new media directory, 
-	based on http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
-	reference: https://github.com/WordPress/WordPress/blob/master/wp-includes/class-wp-image-editor.php
---------------------------------------------------------------*/
-
-	//change upload directory
-	if ( !is_multisite() ) {
-		update_option( 'upload_path', 'media' ); //to-do: add to options page
-		define( 'UPLOADS', 'media' ); //define UPLOADS dir
-	}
-	//don't “Organize my uploads into month- and year-based folders”
-	update_option( 'uploads_use_yearmonth_folders', '0' ); // to-do: add to options page
-
-	//create a custom WP_Image_Editor that handles the naming of files
-	//based on http://wordpress.stackexchange.com/questions/125784/each-custom-image-size-in-custom-upload-directory
-	function tect_image_editors($editors) {
-		array_unshift( $editors, 'WP_Image_Editor_tect' );
-
-		return $editors;
-	}
-
-	add_filter( 'wp_image_editors', 'tect_image_editors' );
-
-	require_once ABSPATH . WPINC . '/class-wp-image-editor.php';
-	require_once ABSPATH . WPINC . '/class-wp-image-editor-gd.php';
-
-	class WP_Image_Editor_tect extends WP_Image_Editor_GD {
-		public function multi_resize($sizes) {
-			$sizes = parent::multi_resize($sizes);
-			
-			$media_dir = trailingslashit( ABSPATH . UPLOADS );
-
-			foreach($sizes as $slug => $data) {
-				$default_name = $sizes[ $slug ]['file'];
-				$new_name = $slug . '/' . preg_replace( '#-\d+x\d+\.#', '.', $data['file'] );
-
-				if ( !is_dir( $media_dir . $slug ) ) {
-					mkdir( $media_dir . $slug );
-				}
-				rename ( $media_dir . $default_name, $media_dir . $new_name );
-
-				$sizes[$slug]['file'] = $new_name;
-			}
-
-			return $sizes;
-		}
-	}
 
 /*--------------------------------------------------------------
 DEBUG

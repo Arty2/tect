@@ -22,6 +22,7 @@ Included enhancements / Credits
 * [normalize.css](http://necolas.github.io/normalize.css/)
 * [Gentium](scripts.sil.org/gentium) font in Latin & Greek.
 * [Ubuntu Light](http://font.ubuntu.com/) font in Latin & Greek.
+* [Graphe Alpha](https://github.com/Arty2/graphe) font in Latin & Greek.
 * bits and pieces from [roots.io](http://roots.io/starter-theme/)
 
 Known bugs / Undocumented behaviors
@@ -30,43 +31,43 @@ Known bugs / Undocumented behaviors
 * It is suggested to use full-size for images if you want them to be fluid, filesize will be addressed with a plugin in the future.
 * RSS feeds have not been tested thus they may not work as expected.
 * If your blog already contains media, they may not work as expected.
-* Images do not appear in the visual editor.
 
 Suggested plugins
 -----------------------------------
+* [tect-media](https://github.com/Arty2/wp-tect-media)
 * [Magic Widgets](http://wordpress.org/plugins/magic-widgets/)
 * [Polylang](http://wordpress.org/plugins/polylang/) (theme uses own language switcher when plugin is enabled)
 	* ☑ Hide URL language information for default language.
 	* ☐ Activate languages and translations for media. (poorly applied)
 	* ☐ Synchronization: Custom fields. (they may be translatable)
 * [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
-* [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
-* [Stage switcher](https://github.com/Arty2/wp-stage-switcher)
+* [Stage switcher](https://github.com/roots/wp-stage-switcher)
 * [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
+* [Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/)
+* [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
 * ?[Dynamic Featured Image](http://wordpress.org/plugins/dynamic-featured-image/)
 * ?[Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
 * ?[Better Delete Revision](http://wordpress.org/plugins/better-delete-revision/)
-* ?[Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/)
+* ?[Root Relative URLs](http://wordpress.org/plugins/root-relative-urls/)
 
 
 To-do
 -----------------------------------
 
 ### high priority
+* Add social icon font for header stuff (github, twitter etc)
 * Always complete Greek l10n.
 * Rework all styles.
-* Work on pagination.
-* Add content_width and image_size_names_choose in functions.php
-* Fix visual editor bug; images don't show up (related to relative URLs).
-* Pick a semantic alternative to <aside> for parenthetical content.
+* Enable [h-entry](http://microformats.org/wiki/h-entry)
 * Option to display select taxonomies in home.
-* Option to group select taxonomies in home by week or month.
-* Split alternate thumbnail naming functions into separate plugin.
+* Option to group select taxonomies in home by week or month (emphemera).
+* Look into [Markdown](http://en.support.wordpress.com/markdown-quick-reference/) for WordPress.
+* HTML 5 for Galleries and captions: `add_theme_support( 'html5', array( 'gallery', 'caption' ) );`
 
 ### low priority
+* Move *Magnific Popup* into a separate plugin.
 * Make use of [Attachment](http://wordpress.org/plugins/attachments/) plugin.
 * Remove junk HTML from header and better meta description.
-* Fix errors with long and UTF8 titles.
 * Menu enable & own menu walker.
 * Style [Post Formats](http://codex.wordpress.org/Post_Formats)
 * Theme options:
@@ -76,9 +77,9 @@ To-do
 * Test and work on RSS feeds.
 * Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions) and write documentation on styles.
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
-* Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)
 
 ### even lower priority
+* Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)(?)
 * Polish [caption] shortcode enhancements.
 * Flexbox CSS at .gallery.
 * Add Location custom field w/ [OSM](http://wordpress.org/plugins/osm/)?
@@ -89,10 +90,10 @@ To-do
 	* logo height
 	* text colors
 	* link colors
-* utilities/delete_deprecated_thumbs.php → seperate plugin
+* *utilities/delete_deprecated_thumbs.php* → seperate plugin
 
 ### may never happen priority
-* Add buttons and proper display styles for original classes to the visual editor.
+* Custom [editor styles](http://codex.wordpress.org/Function_Reference/add_editor_style).
 
 
 Plugins to select or write
@@ -103,7 +104,7 @@ Plugins to select or write
 	* https://github.com/joeyvandijk/rimg
 	* http://jetpack.me/support/photon/
 * Improved wpautop() (currently breaks custom HTML, WordPress "bug")
-* Endless scroll (via JetPack?).
+* Infinite scroll ([via JetPack?](http://jetpack.me/support/infinite-scroll/))
 * References (footnotes or sidenotes) plugin.
 * vCard widget.
 * Tag filter navigation.
@@ -115,7 +116,7 @@ References
 * [Github flavored markdown](https://help.github.com/articles/github-flavored-markdown)
 * [Theme options page](http://codex.wordpress.org/Creating_Options_Pages)
 * [Theme Guidelines](http://make.wordpress.org/themes/guidelines/)
-* [hAtmo microformat](http://microformats.org/wiki/hAtom)
+* [hAtom microformat](http://microformats.org/wiki/hAtom)
 * [hnews microformat](http://microformats.org/wiki/hnews)
 * [Readability™ developer guidelines](http://www.readability.com/developers/guidelines)
 * [Normalize.css](http://necolas.github.io/normalize.css/)

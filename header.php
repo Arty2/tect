@@ -36,7 +36,7 @@
 } else {
     echo get_post_meta($post->ID, "Metadescription", true);
 }?>">
-	<base href="<?php echo WP_BASE; ?>" />
+	<base href="<?php echo site_url('/'); ?>" />
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
 	<!-- WiiU & 3DS detection -> redirection to be placed here -->
