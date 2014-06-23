@@ -111,8 +111,8 @@ based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-
 				.on('mousedown touchstart', function(e) {
 					var $dragged = $(this);
 
-					var x = $dragged.offset().left - e.pageX,
-						y = $dragged.offset().top - e.pageY,
+					var x = $dragged.offset().left - e.screenX,
+						y = $dragged.offset().top - e.screenY,
 						z = $dragged.css('z-index');
 
 					if (!$.fn.draggable.stack) {
@@ -125,14 +125,14 @@ based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-
 							$dragged
 								.css({'z-index': stack, 'transform': 'scale(1.1)', 'transition': 'transform .3s', 'bottom': 'auto', 'right': 'auto'})
 								.offset({
-									left: x + e.pageX,
-									top: y + e.pageY
+									left: x + e.screenX,
+									top: y + e.screenY
 								})
-								.find('a').one('click.draggable', function(e) {
+								/*.find('a').one('click.draggable', function(e) {
 									e.preventDefault();
-								});
+								});*/
 
-							e.preventDefault();
+							//e.preventDefault();
 						})
 						.one('mouseup touchend touchcancel', function() {
 							$(this).off('mousemove.draggable touchmove.draggable click.draggable');

@@ -55,6 +55,7 @@ To-do
 -----------------------------------
 
 ### high priority
+* Draggables ← [touch enable](http://popdevelop.com/2010/08/touching-the-web/).
 * Add social icon font for header stuff (github, twitter etc)
 * Always complete Greek l10n.
 * Rework all styles.
