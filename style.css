@@ -1050,9 +1050,6 @@ main.single .entry-content .marginalia {
 	margin-left: 0;
 	padding: 1.5rem 2rem;
 }
-	main.single .entry-content .marginalia:hover {
-	outline: 1px dotted red;
-	}
 
 
 /*--------------------------------------------------------------

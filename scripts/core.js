@@ -140,7 +140,7 @@ based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-
 							$.fn.draggable.stack++;
 						});
 
-					e.preventDefault();
+					// e.preventDefault();
 				});
 			return this;
 		};
