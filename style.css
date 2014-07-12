@@ -9,7 +9,7 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.04
+Version: 1.2.05
 */
 
 /*
@@ -167,28 +167,20 @@ main article header h1 {
 1.0 - Type and vertical rythm
 --------------------------------------------------------------*/
 h1 {
-	margin: 0 0 1.5rem 0;
-
 	font-size: 1.7rem;
 	font-style: italic;
 }
 h2 {
-	margin: 3rem 0 1.5rem 0;
-
 	font-size: 1.5rem;
 	font-style: italic;
 }
 h3 {
-	margin: 3rem 0 1.5rem 0;
-
 	font-size: 1.25rem;
 	font-style: italic;
 }
 h4,
 h5,
 h6 {
-	margin: 3rem 0 1.5rem 0;
-
 	font-size: 1rem;
 }
 
@@ -203,6 +195,21 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content h5,
 .entry-content h6 {
 	text-align: center;
+}
+
+.entry-content h1 {
+	margin: 0 0 1.5rem 0;
+}
+.entry-content h2 {
+	margin: 3rem 0 1.5rem 0;
+}
+.entry-content h3 {
+	margin: 3rem 0 1.5rem 0;
+}
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+	margin: 3rem 0 1.5rem 0;
 }
 
 p, blockquote,
@@ -711,13 +718,13 @@ time {
 		display: inline-block;
 	}
 	.pagination .nav-newer {
-		float: left;
+		/*float: left;*/
 	}
 		.pagination .nav-newer:before {
 			content: '← ';
 		}
 	.pagination .nav-older {
-		float: right;
+		/*float: right;*/
 	}
 		.pagination .nav-older:after {
 			content: ' →';
@@ -887,11 +894,11 @@ main article header {
 	main article header .entry-title {
 		margin-top: 0;
 	}
-	main article header h1 {
+	main.single article header h1 {
 		margin: 0 0 -2rem 0;
 		padding: 0;
 
-		font-size: 1.25rem;
+		font-size: 1rem;
 		line-height: 2rem;
 
 		-webkit-transform-origin: top left;
@@ -1055,24 +1062,99 @@ main.single .entry-content .marginalia {
 /*--------------------------------------------------------------
 Article: archive view
 --------------------------------------------------------------*/
-
+main.archive {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center; 
+	justify-content: space-around;
+}
 main.archive article {
 	position: relative;
+	flex: 1 1 18rem;
 
-	display: inline-block;
-
-	padding: 4rem;
-	min-height: 16rem;
-	max-width: 26rem;
-	vertical-align: top;
-
-	/*outline: 1px dotted blue;*/
+	/*outline: 1px dashed blue;*/
 }
+
+main.archive article.format-standard {
+	padding: 2rem;
+	max-width: 23rem;
+}
+
+main.archive article.format-image {
+	flex: 1 1 36rem;
+
+	/*margin: 2rem;*/
+
+	text-align: center;
+}
+	main.archive article.format-image figure {
+		margin: 0;
+	}
+		main.archive article.format-image figure figcaption {
+			position: absolute;
+
+			width: 100%;
+
+			text-align: center !important;
+		}
+		main.archive article.format-image figure a {
+			border: none;
+		}
+		main.archive article.format-image figure p {
+			margin: 0;
+		}
+
+main.archive article header a {
+	border: none;
+	color: inherit;
+}
+
+main.archive article.format-standard .post-thumbnail {
+	position: absolute;
+
+	padding: 1rem;
+	max-width: 100%;
+
+	border: none;
+
+	opacity: 0.5;
+
+	-webkit-transition  : all 0.5s;
+	-moz-transition     : all 0.5s;
+	transition          : all 0.5s;
+}
+	main.archive article .post-thumbnail:hover {
+		/*z-index: 1000;*/
+
+		opacity: 1;
+
+		-webkit-transform   : scale(1.1);
+		-moz-transform      : scale(1.1);
+		transform           : scale(1.1);
+	}
+	main.archive article .post-thumbnail:nth-child(1) {
+		top: 3rem;
+		left: 0rem;
+	}
+	main.archive article .post-thumbnail:nth-child(2) {
+		top: 2rem;
+		right: 1rem;
+	}
+	main.archive article .post-thumbnail:nth-child(3) {
+		bottom: 1rem;
+		right: 2rem;
+	}
+	main.archive article .post-thumbnail:nth-child(4) {
+		bottom: 2rem;
+		left: 2rem;
+	}
+
 
 main.archive article header {
 	position: relative;
 
-	padding: 3rem;
+	/*margin: 2rem;*/
+	padding: 2rem;
 
 	background: #fff;
 
@@ -1090,43 +1172,13 @@ main.archive article header {
 		opacity: 1;
 	}
 
+main.archive article header h1 {
+	font-size: 0.8rem;
+}
+
 main.archive article header .time {
-	top: 0;
+	position: static;
 }
-
-main.archive article header a {
-	border: none;
-	color: inherit;
-}
-
-main.archive article .post-thumbnail {
-	position: absolute;
-
-	display: inline;
-
-	max-width: 17rem;
-
-	border: none;
-}
-	main.archive article .post-thumbnail:hover {
-
-	}
-	main.archive article .post-thumbnail:nth-child(1) {
-		top: 1rem;
-		left: 1rem;
-	}
-	main.archive article .post-thumbnail:nth-child(2) {
-		top: 2rem;
-		right: 1rem;
-	}
-	main.archive article .post-thumbnail:nth-child(3) {
-		bottom: 1rem;
-		right: 2rem;
-	}
-	main.archive article .post-thumbnail:nth-child(4) {
-		bottom: 2rem;
-		left: 2rem;
-	}
 
 /*--------------------------------------------------------------
 Responsiveness
@@ -1151,7 +1203,7 @@ Responsiveness
 	main.single article header {
 		float: left;
 
-		width: 16rem;
+		width: 18rem;
 	}
 	body > header > nav {
 		float: right;

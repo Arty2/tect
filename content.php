@@ -1,5 +1,4 @@
 <?php
-	the_post();
 	$id = get_the_ID();
 	$slug = basename(get_permalink());
 
@@ -11,7 +10,6 @@
 	$post_class = implode( ' ',  get_post_class() );
 
 	echo '<article class="hentry hnews ' . $post_class . '">';
-	
 	echo '<a class="post-thumbnail">';
 	if ( has_post_thumbnail() ) { 
 		echo get_the_post_thumbnail();

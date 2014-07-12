@@ -99,20 +99,23 @@ Popup windows
 		centerScreen: 1 
 	});
 
+
 /*--------------------------------------------------------------
 Draggables: https://gist.github.com/Arty2/11199162
 alternative to jQuery UI’s draggable
 based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
+see: http://popdevelop.com/2010/08/touching-the-web/
 --------------------------------------------------------------*/
 	if (!jQuery().draggable) {
 		$.fn.draggable = function() {
 			this
 				.css('cursor', 'move')
 				.on('mousedown touchstart', function(e) {
+				//start counting time to detect click or drag
 					var $dragged = $(this);
 
-					var x = $dragged.offset().left - e.screenX,
-						y = $dragged.offset().top - e.screenY,
+					var x = $dragged.position().left - e.screenX,
+						y = $dragged.position().top - e.screenY,
 						z = $dragged.css('z-index');
 
 					if (!$.fn.draggable.stack) {
@@ -123,30 +126,35 @@ based on comments from: http://css-tricks.com/snippets/jquery/draggable-without-
 					$(window)
 						.on('mousemove.draggable touchmove.draggable', function(e) {
 							$dragged
-								.css({'z-index': stack, 'transform': 'scale(1.1)', 'transition': 'transform .3s', 'bottom': 'auto', 'right': 'auto'})
-								.offset({
-									left: x + e.screenX,
-									top: y + e.screenY
-								})
-								/*.find('a').one('click.draggable', function(e) {
-									e.preventDefault();
-								});*/
+								.css({'z-index': stack,
+									'transform': 'translate(' + (x + e.screenX) + 'px, ' + (y + e.screenY) + 'px)'
+								});
 
-							//e.preventDefault();
+							e.preventDefault();
 						})
 						.one('mouseup touchend touchcancel', function() {
-							$(this).off('mousemove.draggable touchmove.draggable click.draggable');
-							$dragged.css({'z-index': stack, 'transform': 'scale(1)'})
+							$(this).off('mousemove.draggable touchmove.draggable'); //click.draggable
+							$dragged.css({'z-index': stack});
+							// $dragged.css({'z-index': stack, 'transform': 'scale(1)'});
 							$.fn.draggable.stack++;
 						});
 
-					// e.preventDefault();
+					e.preventDefault();
 				});
 			return this;
 		};
 	}
 
 
-	$('.post-thumbnail, article header').draggable();
+	// $('.post-thumbnail, article header').draggable();
+
+/*--------------------------------------------------------------
+Masonry
+--------------------------------------------------------------*/
+/*	$('main.archive').masonry({ 
+		itemSelector: 'article'
+	});
+*/
 
 });
+

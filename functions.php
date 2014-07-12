@@ -66,6 +66,8 @@ Theme settings
 
 	add_theme_support( 'custom-header', $args );
 
+	// Custom background
+	add_theme_support( 'custom-background' );
 	
 
 	// Add classes to navigation links
@@ -145,11 +147,11 @@ CSS and script enqueues
 		wp_register_script( 'core', get_stylesheet_directory_uri() . '/scripts/core.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'core' );
 
-		wp_register_script( 'masonry', get_stylesheet_directory_uri() . '/scripts/masonry.min.js', false, true );
-		wp_enqueue_script( 'masonry' );
-
 		wp_register_script( 'popup', get_stylesheet_directory_uri() . '/scripts/jquery.popupWindow.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'popup' );
+
+		wp_register_script( 'masonry', get_stylesheet_directory_uri() . '/scripts/masonry/masonry.min.js', array( 'jquery' ), true );
+		wp_enqueue_script( 'masonry' );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue' );
@@ -164,12 +166,12 @@ Magnific Popup → https://github.com/dimsemenov/Magnific-Popup
 --------------------------------------------------------------*/
 	
 	function tect_enqueue_magnific_popup() {
-		wp_register_style( 'magnific_popup_style', get_template_directory_uri() . '/includes/magnific-popup/magnific-popup.css' );
+		wp_register_style( 'magnific_popup_style', get_template_directory_uri() . '/scripts/magnific-popup/magnific-popup.css' );
 		wp_enqueue_style( 'magnific_popup_style' );
 
-		wp_register_script( 'magnific_popup_script', get_template_directory_uri() . '/includes/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ) );
+		wp_register_script( 'magnific_popup_script', get_template_directory_uri() . '/scripts/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ) );
 		wp_enqueue_script( 'magnific_popup_script' );
-		wp_register_script( 'magnific_init_script', get_template_directory_uri() . '/includes/magnific-popup/jquery.magnific-init.js', array( 'jquery' ) );
+		wp_register_script( 'magnific_init_script', get_template_directory_uri() . '/scripts/magnific-popup/jquery.magnific-init.js', array( 'jquery' ) );
 		wp_enqueue_script( 'magnific_init_script' );
 	}
 
@@ -461,15 +463,15 @@ Improved gallery code
 Make WordPress URLs hyper-relative! (domain agnostic)
 --------------------------------------------------------------*/
 
-/*	function tect_buffer_filter( $buffer ) {
+	function tect_buffer_filter( $buffer ) {
 		return preg_replace(
 			array(
 			'@' . get_bloginfo( 'url' ) . '/@',
 			'@="\./@',
 			),
 		array(
-			'./',
-			'="' . './',
+			'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
+			'="' . 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
 			),
 		$buffer );
 	}
@@ -480,7 +482,7 @@ Make WordPress URLs hyper-relative! (domain agnostic)
 
 	add_action( 'wp_head', 'tect_buffer_start', 1 );
 	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
-*/
+
 
 
 /*--------------------------------------------------------------

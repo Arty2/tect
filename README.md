@@ -55,7 +55,9 @@ To-do
 -----------------------------------
 
 ### high priority
-* Draggables ← [touch enable](http://popdevelop.com/2010/08/touching-the-web/).
+* Implement [flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/): 4 “columns” and flex-grow per importance / custom field
+* Rework language switcher (keep current as prev/next?).
+* Fix Draggables ← [touch enable](http://popdevelop.com/2010/08/touching-the-web/).
 * Add social icon font for header stuff (github, twitter etc)
 * Always complete Greek l10n.
 * Rework all styles.
@@ -87,7 +89,6 @@ To-do
 * Singled-out page template for cleaner .html (offline) copies of content.
 * Ensure output code has better linebreaks.
 * Add style options to Customizer:
-	* custom background
 	* logo height
 	* text colors
 	* link colors
@@ -136,5 +137,6 @@ Some things that “tect” likes
 -----------------------------------
 * [Roots Theme](http://roots.io/)
 * [Wired.co.uk](http://www.wired.co.uk/magazine/archive/2013/03/features/up) articles / see [dev post](http://views.fromthe7th.com/posts/2013/04/wired-uk-website-launches-new-articles) or [CQ](http://www.gq-magazine.co.uk/entertainment/articles/2013-04/09/steve-martin-david-walliams-in-conversation/viewall)
+* [The Guardian: Adventures in content](http://next.theguardian.com/blog/bison/)
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)

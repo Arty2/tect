@@ -14,10 +14,9 @@ get_sidebar();
 	// Start The Loop
 	if ( have_posts() ) {
 		while ( have_posts() ) {
+			the_post();
 			get_template_part( 'content', get_post_format() );
 		}
-
-		get_template_part( 'pagination' );
 	} else {
 		echo '<p>' . __( 'In the beginning there was only chaos.', 'tect' ) . '</p>';
 	}
@@ -25,5 +24,6 @@ get_sidebar();
 ?>
 </main>
 <?php
-get_footer();
+	get_template_part( 'pagination' );
+	get_footer();
 ?>
