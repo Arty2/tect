@@ -9,7 +9,7 @@ Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.05
+Version: 1.2.06
 */
 
 /*
@@ -1066,10 +1066,12 @@ main.archive {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center; 
-	justify-content: space-around;
+	justify-content: space-around; 
 }
+
 main.archive article {
 	position: relative;
+
 	flex: 1 1 18rem;
 
 	/*outline: 1px dashed blue;*/
@@ -1081,7 +1083,8 @@ main.archive article.format-standard {
 }
 
 main.archive article.format-image {
-	flex: 1 1 36rem;
+	flex: 1 1 50%;
+	width: 50%;
 
 	/*margin: 2rem;*/
 
@@ -1091,8 +1094,6 @@ main.archive article.format-image {
 		margin: 0;
 	}
 		main.archive article.format-image figure figcaption {
-			position: absolute;
-
 			width: 100%;
 
 			text-align: center !important;

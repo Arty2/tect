@@ -3,7 +3,7 @@
 	$slug = basename(get_permalink());
 
 	if ( get_the_title() != $slug ) {
-		$excerpt = '<h2 class="entry-title">' . get_the_title() . '</h2>';
+		// $excerpt = '<h2 class="entry-title">' . get_the_title() . '</h2>';
 	}
 	$excerpt .= preg_replace( '#</?a(\s[^>]*)?>#i', '', get_the_excerpt() );
 
