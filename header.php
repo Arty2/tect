@@ -26,15 +26,15 @@
 	<meta name="description" content="
 <?php if ( (is_home()) || (is_front_page()) ) {
 	//fix that bit of code
-    echo ('Your main description goes here');
+	echo ('Your main description goes here');
 } elseif(is_category()) {
-    echo category_description();
+	echo category_description();
 } elseif(is_tag()) {
-    echo '-tag archive page for this blog' . single_tag_title();
+	echo '-tag archive page for this blog' . single_tag_title();
 } elseif(is_month()) {
-    echo 'archive page for this blog' . the_time('F, Y');
+	echo 'archive page for this blog' . the_time('F, Y');
 } else {
-    echo get_post_meta($post->ID, "Metadescription", true);
+	echo get_post_meta($post->ID, "Metadescription", true);
 }?>">
 	<base href="<?php echo site_url('/'); ?>" />
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
@@ -53,15 +53,15 @@
 
 </head>
 <body <?php body_class( $body_class ); //http://codex.wordpress.org/Function_Reference/body_class ?>>
-<header>
-<!--[if lt IE 13]>
+<header role="banner">
+<!--[if lt IE 11]>
 	<p class="notice"><?php _e('You are using a very old browser therefore you can’t expect this website —or “the internet”— to work properly.<br>
 	Do yourself a favor and <a href="http://browsehappy.com/">download a better one</a>.','tect'); ?>
 	</p>
 <![endif]-->
 	<div id="about">
 <?php
-	if ( !dynamic_sidebar( 'sidebar-about' ) ) {
+	if ( !dynamic_sidebar( 'tect-about' ) ) {
 		echo  '<h1>' . get_bloginfo( 'name' ) . '</h1>';
 		echo  get_bloginfo( 'description' );
 	}
@@ -69,7 +69,7 @@
 	</div>
 	<nav role="navigation">
 <?php
-	if ( !dynamic_sidebar( 'sidebar-nav' ) ) { 
+	if ( !dynamic_sidebar( 'tect-nav' ) ) { 
 		echo '<ul class="tags"><li>';
 		wp_tag_cloud(array(
 			'smallest' => 1, //0.8
@@ -84,14 +84,21 @@
 <?php	
 	//echo tect_lang_switcher();
 
-	echo '<div id="logo"><a href="' . get_bloginfo('url') . '">';
-	if ( get_header_image() != '' ) {
-		echo '<img src="' . get_header_image() . '" alt="' . get_bloginfo('name') . '" />';
-	} else {
-		bloginfo('name');
-	}
-	echo '</a></div>'
+	echo '<div id="banner">
+		<a id="logo" href="' . get_bloginfo('url') . '">';
+		if ( get_header_image() != '' ) {
+			echo '<img src="' . get_header_image() . '" alt="' . get_bloginfo('name') . '" />';
+		} else {
+			bloginfo('name');
+		}
+		echo '</a>';
+		echo '<div id="status">';
+			if ( !dynamic_sidebar( 'tect-status' ) ) {
+				echo tect_lang_switcher();
+				// echo 'some more stuff that I want to say';
+			}
+		echo '</div>';
+	echo '</div>';
 ?>
 
 </header>
-<?php echo tect_lang_switcher(); ?>

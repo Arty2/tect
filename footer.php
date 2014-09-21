@@ -1,6 +1,6 @@
 <?php
 	//perhaps move the appendix into page footer?
-	echo '<section id="appendix">';
+	echo '<section id="appendix" role="complementary">';
 		$tect_page_title = wp_title( '•', false, 'right' );
 		$tect_page_title .= get_bloginfo( 'name' );
 
@@ -13,9 +13,9 @@
 		echo '<ol></ol>';
 	echo '</section>';
 ?>
-<footer>
+<footer role="contentinfo">
 <?php
-if (!dynamic_sidebar('sidebar-footer')) { 
+if (!dynamic_sidebar('tect-footer')) { 
 		//copyright notice?
 	}
 ?>

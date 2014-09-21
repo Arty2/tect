@@ -16,7 +16,8 @@
 	}
 	echo '</a>';
 
-	echo '<header>';
+	echo '
+		<header>';
 		echo '<a href="' . get_permalink() . '">';
 		echo '<h1 rel="bookmark">/' . basename(get_permalink()) . '</h1>';
 		echo '<div class="entry-summary">' . $excerpt . '</div>';
@@ -30,7 +31,7 @@
 		}
 		echo '</p>';
 
-		echo get_the_tag_list( '<ul class="tags"><li>','</li><li>','</li></ul>' );
+		// echo get_the_tag_list( '<ul class="tags"><li>','</li><li>','</li></ul>' );
 	echo '</header>';
 	echo '</article>';
 

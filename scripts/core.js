@@ -110,50 +110,59 @@ see: http://popdevelop.com/2010/08/touching-the-web/
 		$.fn.draggable = function() {
 			this
 				.css('cursor', 'move')
-				.on('mousedown touchstart', function(e) {
-				//start counting time to detect click or drag
-					var $dragged = $(this);
+				.on('mousedown', function(e) {
+					e.preventDefault();
 
-					var x = $dragged.position().left - e.screenX,
-						y = $dragged.position().top - e.screenY,
-						z = $dragged.css('z-index');
+					var dragged = $(this);
+
+					var x = dragged.position().left - e.screenX,
+						y = dragged.position().top - e.screenY,
+						z = dragged.css('z-index');
 
 					if (!$.fn.draggable.stack) {
 						$.fn.draggable.stack = 999;
 					}
 					stack = $.fn.draggable.stack;
-					
+
 					$(window)
-						.on('mousemove.draggable touchmove.draggable', function(e) {
-							$dragged
+						.on('mousemove.draggable', function(e) {
+							dragged
 								.css({'z-index': stack,
-									'transform': 'translate(' + (x + e.screenX) + 'px, ' + (y + e.screenY) + 'px)'
+									'transform': 'translate(' + (x + e.screenX) + 'px, ' + (y + e.screenY) + 'px)',
+									'pointer-events': 'none'
 								});
-
-							e.preventDefault();
 						})
-						.one('mouseup touchend touchcancel', function() {
-							$(this).off('mousemove.draggable touchmove.draggable'); //click.draggable
-							$dragged.css({'z-index': stack});
-							// $dragged.css({'z-index': stack, 'transform': 'scale(1)'});
-							$.fn.draggable.stack++;
-						});
+						.one('mouseup', function(e) {
+							$(this).off('mousemove.draggable');
 
-					e.preventDefault();
+							dragged.css({'z-index': stack});
+							// $dragged.css({'z-index': stack, 'transform': 'scale(1)'});
+
+							setTimeout(function(){
+								dragged.css({'pointer-events': 'inherit'});
+							}, 150);
+							
+							$.fn.draggable.stack++;
+						})
+
 				});
 			return this;
 		};
 	}
 
 
-	// $('.post-thumbnail, article header').draggable();
+	$('.format-standard .post-thumbnail, .format-standard header, .format-image figure').draggable();
 
 /*--------------------------------------------------------------
 Masonry
 --------------------------------------------------------------*/
-/*	$('main.archive').masonry({ 
-		itemSelector: 'article'
-	});*/
+	/*var $container = $('main.archive');
+	$container.imagesLoaded( function() {
+		$container.masonry({ 
+			itemSelector: 'article',
+			// 'isFitWidth': true,
+		});
+	}).css({'margin': '0 auto'});*/
 
 
 });

@@ -9,7 +9,7 @@
 
 	$post_class = implode( ' ',  get_post_class() );
 
-	echo '<article class="hentry hnews ' . $post_class . '">';	
+	echo '<article class="hentry hnews ' . $post_class . '" role="article">';	
 	if ( has_post_thumbnail() ) { 
 		$thumbnail_original = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
 		echo '
@@ -17,8 +17,8 @@
 			. '<a class="post-thumbnail" href="' . $thumbnail_original[0] . '" title="' . $excerpt . '" >' . get_the_post_thumbnail() . '</a>'
 			. '<figcaption>'
 			. '<a href="' . get_permalink() . '">'
-			// . tect_get_meta( $id, 'tect_time', true, '<time datetime="' . tect_get_meta( $id, 'tect_time') . '">','</time> ')
 			. '<p>' . $excerpt . '</p>'
+			. tect_get_meta( $id, 'tect_time', true, '<time datetime="' . tect_get_meta( $id, 'tect_time') . '">','</time> ')
 			. '</a>'
 			. '</figcaption>'
 			. '</figure>';

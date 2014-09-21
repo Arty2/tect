@@ -55,22 +55,29 @@ To-do
 -----------------------------------
 
 ### high priority
-* Implement [flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/): 4 “columns” and flex-grow per importance / custom field
-* Rework language switcher (keep current as prev/next?).
-* Fix Draggables ← [touch enable](http://popdevelop.com/2010/08/touching-the-web/).
-* Add social icon font for header stuff (github, twitter etc)
+* Hierarchical sizes for flex items via custom field.
+* Make tect_lang _witcher a widget.
+* Rename #logo and add navigation field for widgets
+* Finalize image post type looks.
+* Style single pages differently from posts (?)
+* Find (or write) a responsive/fluid post slider plugin.
+
+* Finilize normal post looks.
+* Draggables ← [touch enable](http://popdevelop.com/2010/08/touching-the-web/).
+* Move *Magnific Popup* into a separate plugin.
 * Always complete Greek l10n.
-* Rework all styles.
-* Enable [h-entry](http://microformats.org/wiki/h-entry)
 * Option to display select taxonomies in home.
+
+### medium priority
+* Reduce echo functions, see content-single.php (?)
+* Add description to widget areas.
 * Option to group select taxonomies in home by week or month (emphemera).
 * Look into [Markdown](http://en.support.wordpress.com/markdown-quick-reference/) for WordPress.
 * HTML 5 for Galleries and captions: `add_theme_support( 'html5', array( 'gallery', 'caption' ) );`
-
-### low priority
-* Move *Magnific Popup* into a separate plugin.
+* Enable [h-entry](http://microformats.org/wiki/h-entry)
+* Add social icon font for header stuff (github, twitter etc)
 * Make use of [Attachment](http://wordpress.org/plugins/attachments/) plugin.
-* Remove junk HTML from header and better meta description.
+* Remove junk HTML from header.php and better meta description.
 * Menu enable & own menu walker.
 * Style [Post Formats](http://codex.wordpress.org/Post_Formats)
 * Theme options:
@@ -79,12 +86,12 @@ To-do
 	* Hyper-relative links toggle. (default: true)
 * Test and work on RSS feeds.
 * Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions) and write documentation on styles.
-* Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
 
-### even lower priority
+
+### low priority
+* Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
 * Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)(?)
 * Polish [caption] shortcode enhancements.
-* Flexbox CSS at .gallery.
 * Add Location custom field w/ [OSM](http://wordpress.org/plugins/osm/)?
 * Singled-out page template for cleaner .html (offline) copies of content.
 * Ensure output code has better linebreaks.

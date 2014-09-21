@@ -3,7 +3,7 @@ get_header();
 get_sidebar();
 ?>
 
-<main id="content" class="archive">
+<main id="content" class="archive" role="main">
 <?php
 	// Get posts only from the default category on homepage
 	if ( is_home() ) {

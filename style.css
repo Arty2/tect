@@ -1,15 +1,15 @@
 /*
 Theme Name: tect
 Theme URI: https://github.com/Arty2/tect
+Text Domain: tect
 Description: an architect’s WordPress theme
 Author: Heracles Papatheodorou
 Author URI: http://archi.tect.gr
 Tags: responsive, experimental
-Text Domain: tect
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.06
+Version: 1.2.07
 */
 
 /*
@@ -97,8 +97,6 @@ body {
 	box-sizing        : border-box;
 }
 
-
-
 /*--------------------------------------------------------------
 2.0 - Typography
 --------------------------------------------------------------*/
@@ -148,7 +146,7 @@ html {
 body > header,
 body > footer,
 time, nav,
-.share, .tags,
+.share, .tags, .pagination,
 .revision:before,
 #appendix, .ref,
 main.single article footer,
@@ -438,9 +436,9 @@ del {
 		-webkit-transform-origin: top left;
 		-moz-transform-origin   : top left;
 		transform-origin        : top left;
-		-webkit-transform   : rotate(90deg);
-		-moz-transform      : rotate(90deg);
-		transform           : rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform   : rotate(90deg);
+		transform        : rotate(90deg);
 	}
 	.revision:hover {
 		border-color: rgba(0,0,0,.5);
@@ -465,14 +463,15 @@ del {
 .right,
 .alighright {
 	float: right;
-	margin-left: 2% !important;
 }
 
 .half {
+	margin-right: 0;
+	margin-left: 0;
 	width: 48%;
 }
-	.half.right,
-	.half.alignright {
+	.half.left + .half.right,
+	.half.alignleft + .half.alignright {
 		margin-left: 2%;
 	}
 
@@ -498,9 +497,9 @@ del {
 
 .column,
 .columns {
-	-moz-column-gap     : 1rem;
-	-webkit-column-gap  : 1rem;
-	column-gap          : 1rem;
+	-moz-column-gap   : 1rem;
+	-webkit-column-gap: 1rem;
+	column-gap        : 1rem;
 }
 	.column ol, .column ul,
 	.columns ol, .columns ul { /* fixes some display bug */
@@ -716,21 +715,93 @@ time {
 }
 	.pagination a {
 		display: inline-block;
+
+		line-height: 2rem;
+		/*border: 0 !important;*/
 	}
 	.pagination .nav-newer {
-		/*float: left;*/
+		float: left;
+
+		-webkit-transform-origin: top left;
+		-moz-transform-origin	: top left;
+		transform-origin		: top left;
+
+		/*-webkit-transform	: rotate(-90deg);*/ /* buggy */
+		-webkit-transform   : rotate(-90deg) scale(1) translate3d(0,0,0);
+		-moz-transform		: rotate(-90deg);
+		transform			: rotate(-90deg);
 	}
-		.pagination .nav-newer:before {
-			content: '← ';
+		.pagination .nav-newer:after {
+			/*content: '↑ ';*/
 		}
 	.pagination .nav-older {
-		/*float: right;*/
+		float: right;
+
+		-webkit-transform-origin: top right;
+		-moz-transform-origin	: top right;
+		transform-origin		: top right;
+
+		/*-webkit-transform	: rotate(90deg);*/ /* buggy */
+		-webkit-transform   : rotate(90deg) scale(1) translate3d(0,0,0);
+		-moz-transform		: rotate(90deg);
+		transform			: rotate(90deg);
 	}
 		.pagination .nav-older:after {
-			content: ' →';
+			/*content: ' ↑';*/
 		}
 
 .languages {
+	margin: 0;
+
+	list-style: none;
+}
+	.languages li {
+		display: inline;
+	}
+	.languages a {
+		position: relative;
+		
+		display: inline;
+		padding: 0.5rem;
+
+		/*border-right: 5px solid rgba(0,0,0,0.3);*/
+		/*border-bottom: none;*/
+		font-size: 0.8rem;
+		text-align: right;
+	}
+		.languages a:before {
+			content: attr(title) '';
+
+			position: absolute;
+			top: 0;
+			right: 2.1rem;
+
+			padding: 0.5rem;
+
+			background: #444;
+			color: #fff;
+			opacity: 0;
+			visibility: hidden;
+
+			-webkit-transition: opacity .3s;
+			-moz-transition   : opacity .3s;
+			transition        : opacity .3s;
+		}
+			.languages a:hover:before {
+				opacity: 1;
+				visibility: visible;
+
+			}
+		.languages a:hover {
+			border-color: #ff8080;
+		}
+		.languages a.active {
+			border-color: #000;
+			font-weight: 600;
+		}
+
+/* useful solution, do not delete */
+/* .languages {
 	position: absolute;
 	right: 0;
 	z-index: 1;
@@ -758,7 +829,7 @@ time {
 
 			position: absolute;
 			top: 0;
-			right: 2.1rem; /* 2rem and 1.9rem cause an unexpected flash of 1px width change to the right */
+			right: 2.1rem;
 
 			padding: 0.5rem;
 
@@ -782,7 +853,8 @@ time {
 		.languages a.active {
 			border-color: #000;
 			font-weight: 600;
-		}
+		} */
+
 
 .share {
 	margin: 0;
@@ -855,20 +927,25 @@ body > header {
 		font-style: normal;
 	}
 
-#logo {
+#banner {
 	clear: both;
 
 	display: block;
-	padding: 0;
+	padding: 2rem 0;
 	max-width: 100%;
 }
-	#logo a {
+	#logo {
+		display: inline-block;
+
 		border: none;
 	}
-	#logo img {
-		margin: 2rem 0;
+		#logo img {
+			height: 2rem;
+			width: auto;
+		}
+	#status {
+		float: right;
 		height: 2rem;
-		width: auto;
 	}
 
 /*--------------------------------------------------------------
@@ -906,7 +983,7 @@ main article header {
 		transform-origin		: top left;
 
 		/*-webkit-transform	: rotate(90deg);*/ /* buggy */
-		-webkit-transform: rotate(90deg) scale(1) translate3d(0,0,0);
+		-webkit-transform   : rotate(90deg) scale(1) translate3d(0,0,0);
 		-moz-transform		: rotate(90deg);
 		transform			: rotate(90deg);
 	}
@@ -1066,33 +1143,37 @@ main.archive {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center; 
-	justify-content: space-around; 
+	justify-content: space-around;
 }
 
 main.archive article {
 	position: relative;
 
-	flex: 1 1 18rem;
+	flex: 1 1 18rem; 
 
 	/*outline: 1px dashed blue;*/
 }
 
+
 main.archive article.format-standard {
 	padding: 2rem;
-	max-width: 23rem;
+	max-width: 20rem;
 }
 
 main.archive article.format-image {
 	flex: 1 1 50%;
 	width: 50%;
 
-	/*margin: 2rem;*/
+	padding: 2rem;
 
 	text-align: center;
 }
 	main.archive article.format-image figure {
 		margin: 0;
 	}
+		main.archive article.format-image figure img {
+			width: 100%;
+		}
 		main.archive article.format-image figure figcaption {
 			width: 100%;
 
@@ -1114,28 +1195,28 @@ main.archive article.format-standard .post-thumbnail {
 	position: absolute;
 
 	padding: 1rem;
-	max-width: 100%;
+	max-width: 90%;
 
 	border: none;
 
 	opacity: 0.5;
 
-	-webkit-transition  : all 0.5s;
-	-moz-transition     : all 0.5s;
-	transition          : all 0.5s;
+	-webkit-transition  : opacity 0.5s;
+	-moz-transition     : opacity 0.5s;
+	transition          : opacity 0.5s;
 }
 	main.archive article .post-thumbnail:hover {
 		/*z-index: 1000;*/
 
 		opacity: 1;
 
-		-webkit-transform   : scale(1.1);
+		/* -webkit-transform   : scale(1.1);
 		-moz-transform      : scale(1.1);
-		transform           : scale(1.1);
+		transform           : scale(1.1); */
 	}
 	main.archive article .post-thumbnail:nth-child(1) {
-		top: 3rem;
-		left: 0rem;
+		top: 0rem;
+		left: 2rem;
 	}
 	main.archive article .post-thumbnail:nth-child(2) {
 		top: 2rem;

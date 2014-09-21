@@ -35,23 +35,24 @@ Theme settings
 
 	// http://codex.wordpress.org/Post_Formats
 	add_theme_support( 'post-formats', array(
-		'aside',
-		'gallery',
-		'link',
+		// 'aside',
+		// 'gallery',
+		// 'link',
 		'image',
-		'quote',
+		// 'quote',
 		//'status',
-		'video',
-		'audio',
+		// 'video',
+		// 'audio',
 		//'chat'
 	) );
 
+	// Excerpts for pages
+	add_post_type_support( 'page', 'excerpt' );
+
 	// Thumbnail settings
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 0 , 600 );
-	//need another size for width = 600
+	set_post_thumbnail_size( 600 , 600 );
 	//http://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
-	//https://codex.wordpress.org/Content_Width
 
 	// Custom header image (#logo)
 	$args = array(
@@ -75,13 +76,13 @@ Theme settings
 		return 'class="nav-newer"';
 	}
 
-	add_filter('next_posts_link_attributes', 'nav_newer');
+	add_filter('previous_posts_link_attributes', 'nav_newer');
 
 	function nav_older() {
 		return 'class="nav-older"';
 	}
 
-	add_filter('previous_posts_link_attributes', 'nav_older');
+	add_filter('next_posts_link_attributes', 'nav_older');
 
 
 /*--------------------------------------------------------------
@@ -150,8 +151,7 @@ CSS and script enqueues
 		wp_register_script( 'popup', get_stylesheet_directory_uri() . '/scripts/jquery.popupWindow.js', array( 'jquery' ), true );
 		wp_enqueue_script( 'popup' );
 
-		wp_register_script( 'masonry', get_stylesheet_directory_uri() . '/scripts/masonry/masonry.min.js', array( 'jquery' ), true );
-		wp_enqueue_script( 'masonry' );
+		// wp_enqueue_script( 'masonry' );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'tect_enqueue' );
@@ -183,7 +183,8 @@ Register widget areas
 
 	register_sidebar(array(
 		'name' => 'about',
-		'id' => 'sidebar-about',
+		'id' => 'tect-about',
+		'description'   => 'Defaults to blog’s name and tagline.',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -191,8 +192,19 @@ Register widget areas
 	));
 
 	register_sidebar(array(
-		'name' => 'nav',
-		'id' => 'sidebar-nav',
+		'name' => 'navigation',
+		'id' => 'tect-nav',
+		'description'   => 'Defaults to hashtag cloud.',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	));
+
+	register_sidebar(array(
+		'name' => 'status',
+		'id' => 'tect-status',
+		'description'   => __( 'Defaults to Polylang language switcher.', 'tect' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -201,7 +213,8 @@ Register widget areas
 
 	register_sidebar(array(
 		'name' => 'share',
-		'id' => 'share',
+		'id' => 'tect-share',
+		'description'   => 'Defaults to no—track twitter and facebook.',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -210,7 +223,8 @@ Register widget areas
 
 	register_sidebar(array(
 		'name' => 'footer',
-		'id' => 'sidebar-footer',
+		'id' => 'tect-footer',
+		'description'   => '',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -462,7 +476,6 @@ Improved gallery code
 /*--------------------------------------------------------------
 Make WordPress URLs hyper-relative! (domain agnostic)
 --------------------------------------------------------------*/
-
 	function tect_buffer_filter( $buffer ) {
 		return preg_replace(
 			array(
@@ -481,7 +494,8 @@ Make WordPress URLs hyper-relative! (domain agnostic)
 	function tect_buffer_end() { ob_end_flush(); }
 
 	add_action( 'wp_head', 'tect_buffer_start', 1 );
-	add_action( 'wp_footer', 'tect_buffer_end', 9999 ); //admin-bar has annoyingly low priority
+	add_action( 'wp_footer', 'tect_buffer_end', 9999 );
+
 
 
 
