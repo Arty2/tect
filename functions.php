@@ -351,6 +351,18 @@ Custom fields and meta boxes
 		}
 	}
 
+
+/*--------------------------------------------------------------
+Hide password protected posts from timeline
+--------------------------------------------------------------*/
+function tect_hide_protected($where = '') {
+	if (!is_single() && !is_admin()) {
+		$where .= " AND post_password = ''";
+	}
+	return $where;
+}
+add_filter( 'posts_where', 'tect_hide_protected' );
+
 /*--------------------------------------------------------------
 Sort posts by key of 'tect_time' or post_date if it doesn't exist
 --------------------------------------------------------------*/

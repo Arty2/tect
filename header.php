@@ -78,7 +78,7 @@
 			'separator' => '</li><li>',
 		));
 		echo '</ul>';
-	}
+	} 
 ?>
 	</nav>
 <?php	
@@ -100,5 +100,4 @@
 		echo '</div>';
 	echo '</div>';
 ?>
-
 </header>

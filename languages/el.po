@@ -1,24 +1,46 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tect\n"
-"POT-Creation-Date: 2013-09-22 03:53+0200\n"
-"PO-Revision-Date: 2013-09-22 04:07+0200\n"
+"POT-Creation-Date: 2014-10-08 00:16+0200\n"
+"PO-Revision-Date: 2014-10-08 00:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:57
+#: ../404.php:58
 msgid "Not what you expected?"
 msgstr "Περιμένατε κάτι διαφορετικό;"
 
-#: ../footer.php:7
-msgid "Hyperlink index"
+#: ../content-single.php:19 ../content.php:28
+msgid "published"
+msgstr "δημοσίευση"
+
+#: ../content-single.php:21 ../content.php:30
+msgid "updated"
+msgstr "ενημέρωση"
+
+#: ../content-single.php:32
+msgid "tweet"
+msgstr "τιτιβίστε"
+
+#: ../content-single.php:38
+msgid "share on facebook"
+msgstr "μοιραστείτε στο facebook"
+
+#: ../content-single.php:39
+msgid "Make a Hyperlink index and print."
+msgstr ""
+
+#: ../content-single.php:39
+msgid "print"
 msgstr ""
 
 #: ../footer.php:9
@@ -29,42 +51,51 @@ msgstr "πηγή"
 msgid "Accessed"
 msgstr "Ανακτήθηκε"
 
-#: ../functions.php:212
+#: ../functions.php:24
+msgid "Options"
+msgstr ""
+
+#: ../functions.php:207
+msgid "Defaults to Polylang language switcher."
+msgstr ""
+
+#: ../functions.php:297
+#, fuzzy
 msgid ""
-"Project completion time by <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" "
-"target=\"_blank\">ISO 6801</a>."
+"Event time by <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" target="
+"\"_blank\">ISO 6801</a>."
 msgstr ""
 "Χρόνος ολοκλήρωσης έργου κατά <a href=\"http://en.wikipedia.org/wiki/"
 "ISO_8601\" target=\"_blank\">ISO 6801</a>."
 
-#: ../functions.php:220
+#: ../functions.php:305
 msgid "Refer to the guidelines for accepted structures."
 msgstr "Ανατρέξτε στις οδηγίες για τις αποδεκτές δομές."
 
-#: ../functions.php:228 ../functions.php:236
+#: ../functions.php:313 ../functions.php:321
 msgid "Caution: not validated automagically."
 msgstr "Προσοχή: δεν επικυρώνεται αυτομαγικά."
 
-#: ../index.php:38 ../single.php:29
-msgid "published"
-msgstr "δημοσίευση"
-
-#: ../index.php:40 ../single.php:31
-msgid "updated"
-msgstr "ενημέρωση"
-
-#: ../single.php:42
-msgid "tweet"
-msgstr "τιτιβίστε"
-
-#: ../single.php:48
-msgid "share on facebook"
-msgstr "μοιραστείτε στο facebook"
-
-#: ../single.php:49
-msgid "Make a Hyperlink index and print."
+#: ../header.php:58
+msgid ""
+"You are using a very old browser therefore you can’t expect this website —or "
+"“the internet”— to work properly.<br>\n"
+"\tDo yourself a favor and <a href=\"http://browsehappy.com/\">download a "
+"better one</a>."
 msgstr ""
+"Χρησιμοποιείς ένα αρχαίο πρόγραμμα και δεν είναι δυνατόν να περιμένεις από "
+"αυτή τη σελίδα —ή το “internet”— να λειτουργούν σωστά.<br>\n"
+"\tΚάνε μια χάρη στον εαυτό σου και <a href=\"http://browsehappy.com/"
+"\">κατέβασε ένα καλύτερο</a>."
 
-#: ../single.php:49
-msgid "print"
-msgstr ""
+#: ../index.php:21
+msgid "In the beginning there was only chaos."
+msgstr "Ἦτοι μὲν πρώτιστα Χάος γένετο."
+
+#: ../pagination.php:3
+msgid "newer"
+msgstr "νεότερα"
+
+#: ../pagination.php:4
+msgid "older"
+msgstr "παλαιότερα"

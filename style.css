@@ -9,7 +9,7 @@ Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.07
+Version: 1.2.08
 */
 
 /*
@@ -568,8 +568,10 @@ main article a {
 	border-bottom: 1px solid #ccc;
 	border-color: rgba(0,0,0,0.2);
 }
-	main article .entry a:hover,
 	main article:hover a { /* performance hit? */
+		border-color: #ff8080;
+	}
+	main article .entry-content a:hover {
 		border-color: #ff8080;
 		color: #ff8080;
 	}
@@ -588,7 +590,7 @@ a.half { /* block level links */
 a[href*=".jpg"],
 a[href*=".jpeg"],
 a[href*=".png"],
-a[href*=".gif"] {
+a[href*=".gif"] {\
 	border: none !important;
 }
 
@@ -893,6 +895,24 @@ time {
 			content: '#';
 		}
 
+.video { /* responsive video container */
+	position: relative;
+
+	overflow: hidden;
+
+	height: 0;
+	padding-bottom: 54%; /* 56.25 */
+	padding-top: 30px;
+}
+	.video iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		height: 100%;
+		width: 100%;
+	}
+
 /*--------------------------------------------------------------
 Theme Specific Elements (order of appearence)
 --------------------------------------------------------------*/
@@ -1111,7 +1131,7 @@ main.single article footer {
 	}
 
 main.single .entry-content {
-	clear: both;
+	/*clear: both;*/
 }
 
 main.single .entry-content > *,
@@ -1283,28 +1303,33 @@ Responsiveness
 @media only screen and (min-width: 1000px) {
 	#about,
 	main.single article header {
-		float: left;
+		float: left;		
+		z-index: 1000;
 
-		width: 18rem;
+		width: 16rem;
+		outline: 1px solid red;
 	}
 	body > header > nav {
-		float: right;
+		/*float: right;*/
 		
-		width: 25rem; /* need to look into a better solution */
-		width: calc(100% - 18rem);
+		/*width: 25rem;*/
+		/*width: calc(100% - 18rem);*/
+
+		outline: 1px solid red;
 	}
 
 	main.single article footer {
-		float: right;
+		/*float: right;*/
 		
-		width: 25rem;
-		width: calc(100% - 24rem);
+		/*width: 25rem;*/
+
+		outline: 1px solid red;
 	}
 
 	main.single .entry-content > * {
 		position: relative;
 		margin-left: 20rem;
-		max-width: 40rem;
+		max-width: 34rem;
 	}
 	main.single .entry-content .marginalia {
 		float: left;
