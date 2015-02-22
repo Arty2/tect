@@ -27,11 +27,14 @@ Theme settings
 	add_action( 'admin_menu', 'tect_wp_options' );
 	
 	// Set excerpt length
-	// function tect_excerpt_length( $length ) {
-	// 	return 20;
-	// }
+	function tect_excerpt_length( $length ) {
+		return 20;
+	}
 
-	// add_filter( 'excerpt_length', 'tect_excerpt_length' );
+	add_filter( 'excerpt_length', 'tect_excerpt_length' );
+
+	// Excerpts for pages
+	add_post_type_support( 'page', 'excerpt' );
 
 	// http://codex.wordpress.org/Post_Formats
 	add_theme_support( 'post-formats', array(
@@ -45,9 +48,6 @@ Theme settings
 		// 'audio',
 		//'chat'
 	) );
-
-	// Excerpts for pages
-	add_post_type_support( 'page', 'excerpt' );
 
 	// Thumbnail settings
 	add_theme_support( 'post-thumbnails' );
@@ -72,18 +72,47 @@ Theme settings
 	
 
 	// Add classes to navigation links
-	function nav_newer() {
+	function tect_nav_newer() {
 		return 'class="nav-newer"';
 	}
 
-	add_filter('previous_posts_link_attributes', 'nav_newer');
+	add_filter('previous_posts_link_attributes', 'tect_nav_newer');
 
-	function nav_older() {
+	function tect_nav_older() {
 		return 'class="nav-older"';
 	}
 
-	add_filter('next_posts_link_attributes', 'nav_older');
+	add_filter('next_posts_link_attributes', 'tect_nav_older');
 
+
+/*--------------------------------------------------------------
+Cleanup
+--------------------------------------------------------------*/
+	// Enable soil plugin - https://github.com/roots/soil
+	add_theme_support('soil-clean-up');
+	add_theme_support('soil-relative-urls');
+	add_theme_support('soil-nice-search');
+	add_theme_support('soil-disable-trackbacks');
+	add_theme_support('soil-disable-asset-versioning');
+
+	//remove extra adminbar styles
+	function tect_adminbar() {
+		remove_action('wp_head', '_admin_bar_bump_cb');
+	}
+
+	add_action('get_header', 'tect_adminbar');
+
+/*--------------------------------------------------------------
+Menus
+--------------------------------------------------------------*/
+	function tect_menus() {
+		register_nav_menus(
+			array(
+				'navigation' => __( 'navigation' ),
+			)
+		);
+	}
+	add_action( 'init', 'tect_menus' );
 
 /*--------------------------------------------------------------
 Internationalization
@@ -487,16 +516,17 @@ Improved gallery code
 
 /*--------------------------------------------------------------
 Make WordPress URLs hyper-relative! (domain agnostic)
+deprecated by soil plugin, required localhost on other device
 --------------------------------------------------------------*/
-	function tect_buffer_filter( $buffer ) {
+/*	function tect_buffer_filter( $buffer ) {
 		return preg_replace(
 			array(
 			'@' . get_bloginfo( 'url' ) . '/@',
 			'@="\./@',
 			),
 		array(
-			'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
-			'="' . 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
+			'//'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
+			'="' . '//'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/',
 			),
 		$buffer );
 	}
@@ -507,8 +537,107 @@ Make WordPress URLs hyper-relative! (domain agnostic)
 
 	add_action( 'wp_head', 'tect_buffer_start', 1 );
 	add_action( 'wp_footer', 'tect_buffer_end', 9999 );
+*/
 
+/*--------------------------------------------------------------
+TGM Plugin Activation
+http://tgmpluginactivation.com/
+--------------------------------------------------------------*/
+require_once dirname( __FILE__ ) . '/utilities/class-tgm-plugin-activation.php';
+ 
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 
+function my_theme_register_required_plugins() {
+ 
+	/**
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+		array(
+			'name'         => 'GitHub Updater',
+			'slug'         => 'github-updater',
+			'source'       => 'https://github.com/afragen/github-updater/archive/master.zip',
+			'required'     => true,
+			'external_url' => 'https://github.com/afragen/github-updater',
+		),
+		array(
+			'name'         => 'tect-media',
+			'slug'         => 'tect-media',
+			'source'       => 'https://github.com/Arty2/tect-media/archive/master.zip',
+			'required'     => false,
+			'external_url' => 'https://github.com/Arty2/tect-media',
+		),
+		array(
+			'name'         => 'wp-toolbar-collapse',
+			'slug'         => 'wp-toolbar-collapse',
+			'source'       => 'https://github.com/Arty2/wp-toolbar-collapse/archive/master.zip',
+			'required'     => false,
+			'external_url' => 'https://github.com/Arty2/wp-toolbar-collapse',
+		),
+		array(
+			'name'         => 'Soil',
+			'slug'         => 'soil',
+			'source'       => 'https://github.com/roots/soil/archive/master.zip',
+			'required'     => false,
+			'external_url' => 'http://roots.io/plugins/soil/',
+		),
+		array(
+			'name'         => 'Magic Widgets',
+			'slug'         => 'magic-widgets',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Polylang',
+			'slug'         => 'polylang',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'JP Markdown',
+			'slug'         => 'jetpack-markdown',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Greeklish-permalink',
+			'slug'         => 'greeklish-permalink',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Font emoticons',
+			'slug'         => 'font-emoticons',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Regenerate Thumbnails',
+			'slug'         => 'regenerate-thumbnails',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Prism Syntax Highlighter',
+			'slug'         => 'prism-syntax-highlighter',
+			'required'     => false,
+		),
+		array(
+			'name'         => 'Facebook OGraph and Twitter Cards',
+			'slug'         => 'wonderm00ns-simple-facebook-open-graph-tags',
+			'required'     => false,
+		),
+ 
+	);
+ 
+
+	$config = array(
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'is_automatic' => false,
+		'message'      => __( 'Hand picked plugins that work well with this theme.', 'tect' ),
+	);
+ 
+	tgmpa( $plugins, $config );
+ 
+}
 
 
 /*--------------------------------------------------------------
@@ -529,5 +658,7 @@ DEBUG
 		echo $stat;
 	}
 	// add_action( 'wp_footer', 'tect_debug', 20 );
+
+
 
 ?>

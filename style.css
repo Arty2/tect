@@ -9,7 +9,7 @@ Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.09
+Version: 1.2.10
 */
 
 /*
@@ -317,7 +317,7 @@ q {
 	q:after {
 		content: close-quote;
 	}
-	q:lang(el) {
+	q:lang(el_GR) {
 		quotes: "«" "»" '“' '”';
 	}
 
@@ -337,7 +337,7 @@ ol ol {
 ol.alpha {
 	list-style: lower-alpha;
 }
-	ol.alpha:lang(el) {
+	ol.alpha:lang(el_GR) {
 		list-style: lower-greek;
 	}
 
@@ -391,7 +391,7 @@ ins {
 		ins.revision:hover:before {
 			content: 'addition';
 		}
-			ins.revision:lang(el):hover:before {
+			ins.revision:lang(el_GR):hover:before {
 				content: 'προσθήκη';
 			}
 
@@ -408,7 +408,7 @@ del {
 		del.revision:hover:before {
 			content: 'deletion';
 		}
-			del.revision:lang(el):hover:before {
+			del.revision:lang(el_GR):hover:before {
 				content: 'διαγραφή';
 			}
 
@@ -558,15 +558,10 @@ a {
 	-webkit-transition  : background .3s, border .3s, color .3s;
 	-moz-transition     : background .3s, border .3s, color .3s;
 	transition          : background .3s, border .3s, color .3s;
-
-	background-image: linear-gradient(transparent, transparent);
-	background-repeat: repeat-x;
-	background-position: 0 105%;
-	background-size: 1px 1px;
 }
 	a:hover {
-	background-image: linear-gradient(#000, #000);
-	background-size: 1px 3px;
+		border-bottom-style: solid;
+		border-bottom-width: 4px;
 	}
 
 main article .entry-content a {
@@ -574,6 +569,7 @@ main article .entry-content a {
 	background-repeat: repeat-x;
 	background-position: 0 1.4rem;
 	background-size: 1px 1px;
+	border: none;
 }
 	main article .entry-content:hover a {
 		background-image: linear-gradient(#ff8080, #ff8080);
@@ -627,6 +623,30 @@ a[href$=".zip"]:before {
 }
 
 
+/*--------------------------------------------------------------
+Navigation
+--------------------------------------------------------------*/
+/*body > header {
+	outline: 1px solid yellow;
+}
+header > nav {
+	outline: 1px solid red;
+}
+#about {
+	outline: 1px solid blue;
+}*/
+#menu-navigation {
+	margin: 0 0 2rem 0;
+	padding: 0;
+
+}
+	#menu-navigation li {
+		display: inline-block;
+		margin-right: 1rem;
+	}
+		#menu-navigation li:last-child {
+			margin-right: 0;
+		}
 
 /*--------------------------------------------------------------
 Structures
@@ -1167,18 +1187,18 @@ main.single .entry-content .marginalia {
 Article: archive view
 --------------------------------------------------------------*/
 main.archive {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center; 
-	justify-content: space-around;
+
 }
 
 main.archive article {
 	position: relative;
+	
+	display: inline-block;
+	/*max-width: 20rem;*/
 
-	flex: 1 1 18rem; 
+	vertical-align: top;
 
-	/*outline: 1px dashed blue;*/
+	/*outline: 1px dashed purple;*/
 }
 
 
@@ -1314,15 +1334,11 @@ Responsiveness
 		z-index: 1000;
 
 		width: 16rem;
+		margin-right: 2rem;
 		/*outline: 1px solid red;*/
 	}
 	body > header > nav {
-		/*float: right;*/
-		
-		/*width: 25rem;*/
-		/*width: calc(100% - 18rem);*/
-
-		/*outline: 1px solid red;*/
+		text-align: right;
 	}
 
 	main.single article footer {

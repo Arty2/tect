@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 Header animations
 --------------------------------------------------------------*/
 /*	var body = $('html, body');
-	var target = $('#logo');
+	var target = $('#banner');
 	//ease to target if the user hasn't scrolled already
 	setTimeout(function() {
 		if (window.pageYOffset == 0) {
@@ -13,9 +13,9 @@ Header animations
 	}, 3000);
 
 	$('body > header').hover(
-		//ease to top on target mouseenter
 		function() {
-			if (window.pageYOffset != 0) {
+			if (window.pageYOffset > 50) {
+				//ease to top on target mouseenter
 				body.delay(1000).animate({ scrollTop: 0 }, 500);
 			}
 		},
@@ -23,7 +23,7 @@ Header animations
 		//unless the user has scrolled down already
 		function() {
 			body.stop(true);
-			if (window.pageYOffset < target.offset().top) {
+			if (window.pageYOffset == 0) {
 				body.animate({ scrollTop: target.offset().top }, 500);
 			}
 		}
@@ -56,7 +56,7 @@ at the time of writing, the latest versions of Firefox, Chrome and Opera behave 
 		};
 	}
 
-	$('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)').greek_small_caps();
+	$('dt:lang(el_GR), h1:lang(el_GR), h2:lang(el_GR), h3:lang(el_GR), a:lang(el_GR)').greek_small_caps();
 
 /*--------------------------------------------------------------
 Style External links

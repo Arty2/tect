@@ -57,6 +57,8 @@
 	</div>
 	<nav role="navigation">
 <?php
+	wp_nav_menu( array( 'theme_location' => 'navigation' ) );
+	
 	if ( !dynamic_sidebar( 'tect-nav' ) ) { 
 		echo '<ul class="tags"><li>';
 		wp_tag_cloud(array(

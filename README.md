@@ -4,8 +4,7 @@
 
 > “In the beginning there was only chaos.”
 
-A bespoke ecosystem created out of frustration for untidy, complex and unnecessary code in WordPress themes. 
-Safe to deploy, but still experimental!
+A bespoke ecosystem created out of frustration for untidy, complex and unnecessary code in WordPress themes. **Safe to deploy, but still experimental!**
 
 ##This theme aims to:
 
@@ -15,9 +14,14 @@ Safe to deploy, but still experimental!
 * Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
 * Be suitable for bilingual users. English & Greek localization included.
 
-##Included enhancements / Credits
+##Required plugins
 
-* [GitHub Updater](https://github.com/afragen/github-updater) enabled.
+* [GitHub Updater](https://github.com/afragen/github-updater): enables theme updates
+
+
+##Included / Credits
+
+* [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
 * [normalize.css](http://necolas.github.io/normalize.css/)
 * [Gentium](scripts.sil.org/gentium) font in Latin & Greek.
@@ -25,45 +29,24 @@ Safe to deploy, but still experimental!
 * [Graphe Alpha](https://github.com/Arty2/graphe) font in Latin & Greek.
 * bits and pieces from [roots.io](http://roots.io/starter-theme/)
 
-#####Known bugs / Undocumented behaviors
+#####Known issues / Undocumented behaviors
 
 * Caption shortcode requires width=1 for fluid width.
 * It is suggested to use full-size for images if you want them to be fluid, filesize will be addressed with a plugin in the future.
 * RSS feeds have not been tested thus they may not work as expected.
-* If your blog already contains media, they may not work as expected.
-
-##Suggested plugins
-
-* [GitHub Updater](https://github.com/afragen/github-updater)
-* [tect-media](https://github.com/Arty2/wp-tect-media)
-* [Magic Widgets](http://wordpress.org/plugins/magic-widgets/)
-* [Polylang](http://wordpress.org/plugins/polylang/) (theme uses own language switcher when plugin is enabled)
-	* ☑ Hide URL language information for default language.
-	* ☐ Activate languages and translations for media. (poorly applied)
-	* ☐ Synchronization: Custom fields. (they may be translatable)
-* [Greeklish Permalinks](https://github.com/dyrer/greeklish-permalinks)
-* [Stage switcher](https://github.com/roots/wp-stage-switcher)
-* [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/)
-* [Prism Syntax Highlighter](http://wordpress.org/plugins/prism-syntax-highlighter/)
-* [Font emoticons](http://wordpress.org/plugins/font-emoticons/)
-* [JP Markdown](https://wordpress.org/plugins/jetpack-markdown/)
-* ? [IndieWeb](https://wordpress.org/plugins/indieweb/)
-* ?[Dynamic Featured Image](http://wordpress.org/plugins/dynamic-featured-image/)
-* ?[Raw HTML](http://wordpress.org/extend/plugins/raw-html/)
-* ?[Better Delete Revision](http://wordpress.org/plugins/better-delete-revision/)
-* ?[Root Relative URLs](http://wordpress.org/plugins/root-relative-urls/)
 
 
 ##To-do
 
 
 ### high priority
+* add custom menu
+* tag releases	http://git-scm.com/book/en/v2/Git-Basics-Tagging
+* header links ← borders instead of background-image
+* Test and work on RSS feeds.
+* * test why wp-stage-switcher messes up
 * Finalize image post type looks.
 * Finilize normal post looks.
-* only display title/slug if short(?)
-* Draggables ← [touch enable](http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/#comment-1592055).
-* Include [TGM Plugin activation](http://tgmpluginactivation.com/)
-* Make use of JP Markdown
 * fade out header in article view
 * sort article header and footer widths
 * IE issue with header svg
@@ -84,29 +67,21 @@ Safe to deploy, but still experimental!
 * Reduce echo functions, see content-single.php (?)
 * Add description to widget areas.
 * Option to group select taxonomies in home by week or month (emphemera).
-* Look into [Markdown](http://en.support.wordpress.com/markdown-quick-reference/) for WordPress.
 * HTML 5 for Galleries and captions: `add_theme_support( 'html5', array( 'gallery', 'caption' ) );`
-* Enable [h-entry](http://microformats.org/wiki/h-entry)
 * Add social icon font for header stuff (github, twitter etc)
-* Make use of [Attachment](http://wordpress.org/plugins/attachments/) plugin.
-* Remove junk HTML from header.php and better meta description.
 * Menu enable & own menu walker.
 * Style [Post Formats](http://codex.wordpress.org/Post_Formats)
 * Theme options:
 	* Categories that are displayed in homepage. (default: all)
 	* Media directory → /media (default: true)
-	* Hyper-relative links toggle. (default: true)
-* Test and work on RSS feeds.
 * Turn styleguide-raw.html into a [proper accompanying page](http://wordpress.stackexchange.com/posts/35487/revisions) and write documentation on styles.
 
 
 ### low priority
 * Semantic HTML for [curator’s code](http://www.brainpickings.org/index.php/2012/03/09/curators-code/).
-* Do something similar to [Roots Rewrites](http://roots.io/plugins/roots-rewrites/)(?)
 * Polish [caption] shortcode enhancements.
 * Add Location custom field w/ [OSM](http://wordpress.org/plugins/osm/)?
 * Singled-out page template for cleaner .html (offline) copies of content.
-* Ensure output code has better linebreaks.
 * Add style options to Customizer:
 	* logo height
 	* text colors
@@ -119,6 +94,10 @@ Safe to deploy, but still experimental!
 
 ##Plugins to select or write
 
+
+* http://wordpress.org/plugins/attachments/
+* https://wordpress.org/plugins/soliloquy-lite/
+* https://github.com/roots/roots-rewrites
 * Adaptive images using alternate sizes as already generated by WordPress.
 	* Use [img] shortcode for images to return <picture>?
 	* http://mobile.smashingmagazine.com/2013/10/08/responsive-website-design-with-ress/
