@@ -1,12 +1,8 @@
 <?php
 	$id = get_the_ID();
 	$slug = basename(get_permalink());
-
-	if ( get_the_title() != $slug ) {
-		$excerpt = '<h2 class="entry-title">' . get_the_title() . '</h2>';
-	}
+	$title = ( get_the_title() == $slug ? '/' . $slug : get_the_title() );
 	$excerpt .= preg_replace( '#</?a(\s[^>]*)?>#i', '', get_the_excerpt() );
-
 	$post_class = implode( ' ',  get_post_class() );
 
 	echo '<article class="hentry hnews ' . $post_class . '">';
@@ -19,7 +15,7 @@
 	echo '
 		<header>';
 		echo '<a href="' . get_permalink() . '">';
-		echo '<h1 rel="bookmark">/' . basename(get_permalink()) . '</h1>';
+		echo '<h1 class="entry-title">' . $title . '</h1>';
 		echo '<div class="entry-summary">' . $excerpt . '</div>';
 		echo '</a>';
 

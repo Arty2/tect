@@ -27,11 +27,11 @@ Theme settings
 	add_action( 'admin_menu', 'tect_wp_options' );
 	
 	// Set excerpt length
-	function tect_excerpt_length( $length ) {
-		return 20;
-	}
+	// function tect_excerpt_length( $length ) {
+	// 	return 20;
+	// }
 
-	add_filter( 'excerpt_length', 'tect_excerpt_length' );
+	// add_filter( 'excerpt_length', 'tect_excerpt_length' );
 
 	// http://codex.wordpress.org/Post_Formats
 	add_theme_support( 'post-formats', array(

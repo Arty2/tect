@@ -56,8 +56,12 @@ at the time of writing, the latest versions of Firefox, Chrome and Opera behave 
 		};
 	}
 
-$('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)').greek_small_caps();
+	$('dt:lang(el), h1:lang(el), h2:lang(el), h3:lang(el), a:lang(el)').greek_small_caps();
 
+/*--------------------------------------------------------------
+Style External links
+--------------------------------------------------------------*/
+	$('a[href*="//"]:not([href*="' + window.location.hostname + '"])').css('cursor', 'alias');
 
 /*--------------------------------------------------------------
 Slide thumbnails on archive view
@@ -108,43 +112,100 @@ see: http://popdevelop.com/2010/08/touching-the-web/
 --------------------------------------------------------------*/
 	if (!jQuery().draggable) {
 		$.fn.draggable = function() {
+			var _fixMobileEvent = function (e) {
+				if (e.originalEvent && e.originalEvent.targetTouches && e.originalEvent.targetTouches[0]) {
+					var t = e.originalEvent.targetTouches[0];
+					e.pageX = t.clientX;
+					e.pageY = t.clientY;
+					return true;
+				} else {
+					return false;
+				}
+			};
 			this
 				.css('cursor', 'move')
-				.on('mousedown', function(e) {
-					e.preventDefault();
+				.on('mousedown touchstart', function(e) {
+					_fixMobileEvent(e);
+					var $dragged = $(this);
 
-					var dragged = $(this);
-
-					var x = dragged.position().left - e.screenX,
-						y = dragged.position().top - e.screenY,
-						z = dragged.css('z-index');
+					var startOffset = $dragged.offset();
+					var x = startOffset.left - e.pageX,
+						y = startOffset.top - e.pageY,
+						z = $dragged.css('z-index');
 
 					if (!$.fn.draggable.stack) {
 						$.fn.draggable.stack = 999;
 					}
 					stack = $.fn.draggable.stack;
+					var firstMove = true;
+					var $preventClick = null;
 
 					$(window)
-						.on('mousemove.draggable', function(e) {
-							dragged
-								.css({'z-index': stack,
-									'transform': 'translate(' + (x + e.screenX) + 'px, ' + (y + e.screenY) + 'px)',
-									'pointer-events': 'none'
-								});
+						.on('mousemove.draggable touchmove.draggable', function(e) {
+							_fixMobileEvent(e);
+							//$("#log").text("x: " + e.pageX + "; y: " + e.pageY);
+
+							if (firstMove) {
+								firstMove = false;
+								$dragged
+									.css({'z-index': stack, 'transform': 'scale(1.1)', 'transition': 'transform .3s',
+										  'bottom': 'auto', 'right': 'auto'
+									});
+									/*.find('a').one('click.draggable', function(e) {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										$("#log").text("link: click prevented " + stack);
+									});*/
+								var $target = $(e.target);
+								if ($target.is('a')) {
+									$preventClick = $target;
+									$target.one('click.draggable', function(e) {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										//$("#log").text("link: click prevented " + stack);
+									});
+								} else if ($dragged.is('a')) {
+									$preventClick = $dragged;
+									$dragged.one('click.draggable', function(e) {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										//$("#log").text("dragged: click prevented " + stack);
+									});
+								}
+							}
+							$dragged.offset({
+								left: x + e.pageX,
+								top: y + e.pageY
+							});
+							e.preventDefault();
 						})
-						.one('mouseup', function(e) {
-							$(this).off('mousemove.draggable');
-
-							dragged.css({'z-index': stack});
-							// $dragged.css({'z-index': stack, 'transform': 'scale(1)'});
-
-							setTimeout(function(){
-								dragged.css({'pointer-events': 'inherit'});
-							}, 150);
-							
+						.one('mouseup touchend touchcancel', function() {
+							$(this).off('mousemove.draggable touchmove.draggable');
+							$dragged.css({'z-index': z, 'transform': 'scale(1)'})
 							$.fn.draggable.stack++;
-						})
+							if (_fixMobileEvent(e)) {
+								if ($preventClick) $preventClick.off('click.draggable');
+								var endOffset = $dragged.offset();
+								//$("#log").text("left :" + startOffset.left + "; top: " + startOffset.top
+								//               + "; newLeft: " + endOffset.left + "; newTop: " + endOffset.top);
+								if (Math.abs(endOffset.left - startOffset.left) <= 3
+										&& Math.abs(endOffset.top - startOffset.top) <= 3) {
 
+									if ($preventClick) {
+										$preventClick[0].click();
+									} else {
+										var $target = $(e.target);
+										if ($target.is('a')) {
+											e.target.click();
+										} else if ($dragged.is('a')) {
+											$dragged[0].click();
+										}
+									}
+								}
+							}
+						});
+
+					e.preventDefault();
 				});
 			return this;
 		};

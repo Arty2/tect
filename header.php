@@ -23,19 +23,7 @@
 	echo $tect_page_title;
 ?>
 	</title>
-	<meta name="description" content="
-<?php if ( (is_home()) || (is_front_page()) ) {
-	//fix that bit of code
-	echo ('Your main description goes here');
-} elseif(is_category()) {
-	echo category_description();
-} elseif(is_tag()) {
-	echo '-tag archive page for this blog' . single_tag_title();
-} elseif(is_month()) {
-	echo 'archive page for this blog' . the_time('F, Y');
-} else {
-	echo get_post_meta($post->ID, "Metadescription", true);
-}?>">
+
 	<base href="<?php echo site_url('/'); ?>" />
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
