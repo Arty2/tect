@@ -212,7 +212,7 @@ see: http://popdevelop.com/2010/08/touching-the-web/
 	}
 
 
-	$('.format-standard .post-thumbnail, .format-standard header, .format-image figure').draggable();
+	// $('.format-standard .post-thumbnail, .format-standard header, .format-image figure').draggable();
 
 /*--------------------------------------------------------------
 Masonry

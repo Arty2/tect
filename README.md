@@ -40,12 +40,13 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 
 
 ### high priority
+* expand second language → more understandable?
+* remove body > selectors (they cause issues with wrappers)
 * fix pages automatically being added to menu
 * tag releases	http://git-scm.com/book/en/v2/Git-Basics-Tagging
-* header links ← borders instead of background-image
 * Test and work on RSS feeds.
-* * test why wp-stage-switcher messes up
-* Finalize image post type looks.
+* test why wp-stage-switcher messes up
+* Finalize image post type looks (custom widths).
 * Finilize normal post looks.
 * fade out header in article view
 * sort article header and footer widths

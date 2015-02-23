@@ -36,6 +36,7 @@ Theme settings
 	// Excerpts for pages
 	add_post_type_support( 'page', 'excerpt' );
 
+
 	// http://codex.wordpress.org/Post_Formats
 	add_theme_support( 'post-formats', array(
 		// 'aside',
@@ -259,6 +260,43 @@ Register widget areas
 		'before_title' => '',
 		'after_title' => '',
 	));
+
+/*--------------------------------------------------------------
+Tag cloud improved
+via http://www.sitepoint.com/better-wordpress-tag-cloud/
+--------------------------------------------------------------*/
+
+function tect_tags($params = array()) {
+	extract(shortcode_atts(array(
+		'orderby' => 'name',
+		'order' => 'ASC',
+		'number' => '',
+		'sizemin' => 1,
+		'sizemax' => 5
+	), $params));
+
+	$list = ''; $min = 9999999; $max = 0;
+
+	$tags = get_tags(array('orderby' => $orderby, 'order' => $order, 'number' => $number));
+	
+	foreach ($tags as $tag) { // get minimum and maximum number tag counts
+		$min = min($min, $tag->count);
+		$max = max($max, $tag->count);
+	}
+	
+	foreach ($tags as $tag) { // generate tag list
+		$url = get_tag_link($tag->term_id);
+		$title = $tag->count .' '. _n( 'article', 'articles', $tag->count, 'tect' );
+		if ($max > $min) {
+			$class = 'tag-' . floor((($tag->count - $min) / ($max - $min)) * ($sizemax - $sizemin) + $sizemin);
+		}
+		else {
+			$class = 'tag';
+		}
+		$list .= '<li><a href="' . $url . '" class="' . $class . '" title="' . $title . '">' . $tag->name . '</a></li>';
+	}
+	return '<ul class="tags">' . $list . '</ul>';
+}
 
 /*--------------------------------------------------------------
 Custom fields and meta boxes

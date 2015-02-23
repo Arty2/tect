@@ -55,19 +55,12 @@
 	}
 ?>
 	</div>
-	<nav role="navigation">
+	<nav id="navigation" role="navigation">
 <?php
 	wp_nav_menu( array( 'theme_location' => 'navigation' ) );
 	
 	if ( !dynamic_sidebar( 'tect-nav' ) ) { 
-		echo '<ul class="tags"><li>';
-		wp_tag_cloud(array(
-			'smallest' => 1, //0.8
-			'largest' => 1, //1.1
-			'unit' => 'rem',
-			'separator' => '</li><li>',
-		));
-		echo '</ul>';
+		echo tect_tags();
 	} 
 ?>
 	</nav>

@@ -9,7 +9,7 @@ Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.10
+Version: 1.2.11
 */
 
 /*
@@ -635,16 +635,16 @@ header > nav {
 #about {
 	outline: 1px solid blue;
 }*/
-#menu-navigation {
+#navigation .menu {
 	margin: 0 0 2rem 0;
 	padding: 0;
 
 }
-	#menu-navigation li {
+	#navigation .menu li {
 		display: inline-block;
 		margin-right: 1rem;
 	}
-		#menu-navigation li:last-child {
+		#navigation .menu li:last-child {
 			margin-right: 0;
 		}
 
@@ -918,9 +918,18 @@ time {
 		display: inline-block;
 		padding: 0 0.3rem;
 	}
+		.tags li a:hover {
+			opacity: 1;
+		}
 		.tags li a:before {
 			content: '#';
 		}
+
+.tag-1 { opacity: .2; }
+.tag-2 { opacity: .4; }
+.tag-5 { opacity: .6; }
+.tag-4 { opacity: .8; }
+.tag-5 { opacity:  1; }
 
 .video { /* responsive video container */
 	position: relative;
