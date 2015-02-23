@@ -42,7 +42,7 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 ### high priority
 * expand second language → more understandable?
 * remove body > selectors (they cause issues with wrappers)
-* fix pages automatically being added to menu
+* debug draggables, not working in Android
 * tag releases	http://git-scm.com/book/en/v2/Git-Basics-Tagging
 * Test and work on RSS feeds.
 * test why wp-stage-switcher messes up
