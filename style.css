@@ -985,11 +985,21 @@ body > header {
 		display: inline-block;
 
 		border: none;
+
+		-webkit-transition: all .3s;
+		-moz-transition   : all .3s;
+		transition        : all .3s;
 	}
 		#logo img {
 			height: 2rem;
 			width: auto;
 		}
+		#logo:hover {
+			-webkit-transform: scale(1.2);
+			-moz-transform   : scale(1.2);
+			transform        : scale(1.2);
+		}
+
 	#status {
 		float: right;
 		height: 2rem;
@@ -1209,7 +1219,7 @@ main.archive article.format-standard {
 
 main.archive article.format-image {
 	flex: 1 1 50%;
-	width: 50%;
+	width: 33.33%;
 
 	padding: 2rem;
 
