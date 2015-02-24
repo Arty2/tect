@@ -106,14 +106,14 @@ Cleanup
 /*--------------------------------------------------------------
 Menus
 --------------------------------------------------------------*/
-	function tect_menus() {
+	/*function tect_menus() {
 		register_nav_menus(
 			array(
 				'navigation' => __( 'navigation' ),
 			)
 		);
 	}
-	add_action( 'init', 'tect_menus' );
+	add_action( 'init', 'tect_menus' );*/
 
 /*--------------------------------------------------------------
 Internationalization
@@ -618,7 +618,7 @@ function my_theme_register_required_plugins() {
 			'slug'         => 'soil',
 			'source'       => 'https://github.com/roots/soil/archive/master.zip',
 			'required'     => false,
-			'external_url' => 'http://roots.io/plugins/soil/',
+			'external_url' => 'https://github.com/roots/soil',
 		),
 		array(
 			'name'         => 'Magic Widgets',

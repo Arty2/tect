@@ -57,7 +57,7 @@
 	</div>
 	<nav id="navigation" role="navigation">
 <?php
-	wp_nav_menu( array( 'theme_location' => 'navigation' ) );
+	wp_nav_menu( array( 'fallback_cb' => '__return_false' ) );
 	
 	if ( !dynamic_sidebar( 'tect-nav' ) ) { 
 		echo tect_tags();

@@ -40,11 +40,13 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 
 
 ### high priority
+* link styles in .single header
+* imporve galleries (center, animations)
 * expand second language → more understandable?
 * remove body > selectors (they cause issues with wrappers)
 * debug draggables, not working in Android
-* tag releases	http://git-scm.com/book/en/v2/Git-Basics-Tagging
 * Test and work on RSS feeds.
+* header animations
 * test why wp-stage-switcher messes up
 * Finalize image post type looks (custom widths).
 * Finilize normal post looks.

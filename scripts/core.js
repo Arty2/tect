@@ -61,20 +61,8 @@ at the time of writing, the latest versions of Firefox, Chrome and Opera behave 
 /*--------------------------------------------------------------
 Style External links
 --------------------------------------------------------------*/
-	$('a[href*="//"]:not([href*="' + window.location.hostname + '"])').css('cursor', 'alias');
+	// $('a[href*="//"]:not([href*="' + window.location.hostname + '"])').css('cursor', 'alias');
 
-/*--------------------------------------------------------------
-Slide thumbnails on archive view
-should be applied on figure:hover
---------------------------------------------------------------*/
-	$('main.archive article figure > img').hover(
-		function() {
-			$(this).css('transform', 'translate(-' + ($(this).width() - $(this).parent().width()) + 'px, 0)');
-		},
-		function() {
-			$(this).css('transform', 'translate(0, 0)');
-		}
-	);
 
 /*--------------------------------------------------------------
 Hyperlink index
