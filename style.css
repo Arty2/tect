@@ -9,7 +9,7 @@ Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.11
+Version: 1.2.12
 */
 
 /*
@@ -706,27 +706,40 @@ Structures
 }
 
 .gallery {
-	/* use flexbox in .gallery */
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	text-align: center;
 }
-	.gallery img {
-		height: 200px; /* 150px wide thumbnails */
-		width: auto;
+.gallery img {
+	height: 200px; /* 150px wide thumbnails */
+	width: auto;
+}
+.gallery a {
+	display: inline-block;
+
+	margin-left: -150px;
+
+	border: none !important;
+
+	-webkit-box-shadow: -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
+	-moz-box-shadow : -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
+	box-shadow : -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
+
+	-webkit-transition: all .3s;
+	-moz-transition   : all .3s;
+	transition        : all .3s;
+}
+	.gallery a:first-child {
+		margin-left: 0;
 	}
+	.gallery a:hover {
+		-webkit-box-shadow: 0 0 0.5rem rgba(0,0,0,.5);
+		-moz-box-shadow : 0 0 0.5rem rgba(0,0,0,.5);
+		box-shadow : 0 0 0.5rem rgba(0,0,0,.5);
 
-	.gallery a {
-		float: left;
-
-		display: block;
-
-		border: none !important;
-
-		-webkit-box-shadow: -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
-		-moz-box-shadow   : -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
-		box-shadow        : -0.5rem 0 0.5rem -0.5rem rgba(0,0,0,.5);
-
-		-webkit-transition: all .3s;
-		-moz-transition   : all .3s;
-		transition        : all .3s;
+		-webkit-transform: scale(1.1);
+		-moz-transform   : scale(1.1);
+		transform        : scale(1.1);
 	}
 
 time {
