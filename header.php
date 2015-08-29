@@ -32,7 +32,7 @@
 <?php
 
 	wp_head();
-	
+
 	if ( is_single() ) {
 		//add custom post CSS
 		echo tect_get_meta( get_the_ID(), 'tect_css', true, '<style type="text/css" media="screen">','</style> ');
@@ -57,14 +57,17 @@
 	</div>
 	<nav id="navigation" role="navigation">
 <?php
-	wp_nav_menu( array( 'fallback_cb' => '__return_false' ) );
-	
-	if ( !dynamic_sidebar( 'tect-nav' ) ) { 
-		echo tect_tags();
-	} 
+	wp_nav_menu( array(
+		'theme_location' => __( 'navigation' ),
+		'fallback_cb' => '__return_false'
+	) );
+
+	if ( !dynamic_sidebar( 'tect-nav' ) ) {
+		the_widget('tect_widget_tags');
+	}
 ?>
 	</nav>
-<?php	
+<?php
 	//echo tect_lang_switcher();
 
 	echo '<div id="banner">

@@ -5,16 +5,14 @@
 	$excerpt .= preg_replace( '#</?a(\s[^>]*)?>#i', '', get_the_excerpt() );
 	$post_class = implode( ' ',  get_post_class() );
 
-	echo '<article class="hentry hnews ' . $post_class . '">';
-	echo '<a class="post-thumbnail">';
-	if ( has_post_thumbnail() ) { 
+	echo '<article class="hentry hnews ' . $post_class . '" lang="' . tect_lang($id) . '">';
+	echo '<a class="post-thumbnail" href="' . get_permalink() . '">';
+	if ( has_post_thumbnail() ) {
 		echo get_the_post_thumbnail();
 	}
-	echo '</a>';
 
 	echo '
 		<header>';
-		echo '<a href="' . get_permalink() . '">';
 		echo '<h1 class="entry-title">' . $title . '</h1>';
 		echo '<div class="entry-summary">' . $excerpt . '</div>';
 		echo '</a>';

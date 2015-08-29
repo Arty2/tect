@@ -15,7 +15,7 @@ Utilities
 /*--------------------------------------------------------------
 Theme settings
 --------------------------------------------------------------*/
-	
+
 	// Define base location for use in header.php // site_url()
 	//define('WP_BASE', 'http://'.dirname($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']).'/');
 
@@ -25,7 +25,7 @@ Theme settings
 	}
 
 	add_action( 'admin_menu', 'tect_wp_options' );
-	
+
 	// Set excerpt length
 	function tect_excerpt_length( $length ) {
 		return 20;
@@ -70,7 +70,7 @@ Theme settings
 
 	// Custom background
 	add_theme_support( 'custom-background' );
-	
+
 
 	// Add classes to navigation links
 	function tect_nav_newer() {
@@ -103,17 +103,25 @@ Cleanup
 
 	add_action('get_header', 'tect_adminbar');
 
+	//hide WordPress version
+	function tect_remove_version() {
+		return '';
+	}
+
+	add_filter('the_generator','tect_remove_version');
+
 /*--------------------------------------------------------------
 Menus
 --------------------------------------------------------------*/
-	/*function tect_menus() {
+
+	function tect_menus() {
 		register_nav_menus(
 			array(
 				'navigation' => __( 'navigation' ),
 			)
 		);
 	}
-	add_action( 'init', 'tect_menus' );*/
+	add_action( 'init', 'tect_menus' );
 
 /*--------------------------------------------------------------
 Internationalization
@@ -124,6 +132,12 @@ Internationalization
 	}
 
 	add_action('after_setup_theme', 'tect_i18n');
+
+	function tect_lang($post_id) {
+		if ( function_exists( 'pll_get_post_language' ) ) {
+			return pll_get_post_language($post_id);
+		}
+	}
 
 	/**
 	 * Language switcher
@@ -151,6 +165,38 @@ Internationalization
 		}
 	}
 
+	/**
+	 * Show posts from other languages if untranslated
+	 * doesn't yet work with default language
+	 * reference: https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+	 * https://developer.wordpress.org/reference/functions/wp_parse_id_list/
+	 * based on http://wordpress.syllogic.in/2014/08/going-multi-lingual-with-polylang/
+	 */
+	add_filter( 'pre_get_posts', 'get_default_language_posts' );
+	function get_default_language_posts( $query ) {
+		if ( $query->is_main_query() && is_home() && function_exists('pll_languages_list') && !is_admin()){
+			$languages = pll_languages_list( array( 'hide_empty' => 1 ) );
+			$terms = get_terms('post_translations');
+			$lang_default =  pll_default_language();
+			$lang_current =  pll_current_language();
+			$post_ids = array();
+
+			foreach($terms as $translation){
+				$transPost = unserialize($translation->description);
+				if($transPost[$lang_current] != 0) { //has no translation in $lang_current
+					$post_ids[]=$transPost[$lang_default];
+				}
+			}
+
+			if($lang_default!=$lang_current){ //without this check, default language returns zero posts
+				$query->set('lang' , join( ',', $languages ) );
+				$query->set('post__not_in', $post_ids);
+			}
+		}
+
+		return $query;
+	}
+
 
 /*--------------------------------------------------------------
 wpautop() tweaks
@@ -158,7 +204,7 @@ wpautop() tweaks
 
 	//make it run after ashortcodes
 	remove_filter( 'the_content', 'wpautop' );
-	add_filter( 'the_content', 'wpautop' , 12);
+	add_filter( 'the_content', 'wpautop' , 12 );
 
 	//remove <p>'s around lone images
 	//via http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
@@ -194,7 +240,7 @@ Magnific Popup → https://github.com/dimsemenov/Magnific-Popup
 	workaround based on http://ajtroxell.com/use-magnific-popup-with-wordpress-now/
 	remove section once the plugin is ready: http://dimsemenov.com/plugins/magnific-popup/wordpress.html
 --------------------------------------------------------------*/
-	
+
 	function tect_enqueue_magnific_popup() {
 		wp_register_style( 'magnific_popup_style', get_template_directory_uri() . '/scripts/magnific-popup/magnific-popup.css' );
 		wp_enqueue_style( 'magnific_popup_style' );
@@ -224,7 +270,7 @@ Register widget areas
 	register_sidebar(array(
 		'name' => 'navigation',
 		'id' => 'tect-nav',
-		'description'   => 'Defaults to hashtag cloud.',
+		'description'   => 'Defaults to tect_widget_tags.',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -264,9 +310,71 @@ Register widget areas
 /*--------------------------------------------------------------
 Tag cloud improved
 via http://www.sitepoint.com/better-wordpress-tag-cloud/
+reference http://www.wpbeginner.com/wp-tutorials/how-to-create-a-custom-wordpress-widget/
 --------------------------------------------------------------*/
+add_action( 'widgets_init', 'tect_register_widgets' );
 
-function tect_tags($params = array()) {
+function tect_register_widgets() {
+	register_widget( 'tect_widget_tags' );
+}
+
+class tect_widget_tags extends WP_Widget
+{
+
+	public function __construct()
+	{
+		$widget_details = array(
+			'classname' => 'tect_widget_tags',
+			'description' => __( 'A list of your most used tags.' )
+		);
+
+		parent::__construct( 'tect_widget_tags', 'tect_widget_tags', $widget_details );
+
+	}
+
+	public function form( $instance ) {
+		echo '<p>moo</p>';
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		return $new_instance;
+	}
+
+	public function widget( $args, $instance ) {
+			extract(shortcode_atts(array(
+				'orderby' => 'name',
+				'order' => 'ASC',
+				'number' => '',
+				'sizemin' => 1,
+				'sizemax' => 5
+			), $params));
+
+			$list = ''; $min = 9999999; $max = 0;
+
+			$tags = get_tags(array('orderby' => $orderby, 'order' => $order, 'number' => $number));
+
+			foreach ($tags as $tag) { // get minimum and maximum number tag counts
+				$min = min($min, $tag->count);
+				$max = max($max, $tag->count);
+			}
+
+			foreach ($tags as $tag) { // generate tag list
+				$url = get_tag_link($tag->term_id);
+				$title = $tag->count .' '. _n( 'article', 'articles', $tag->count, 'tect' );
+				if ($max > $min) {
+					$class = 'tag-' . floor((($tag->count - $min) / ($max - $min)) * ($sizemax - $sizemin) + $sizemin);
+				}
+				else {
+					$class = 'tag';
+				}
+				$list .= '<li><a href="' . $url . '" class="' . $class . '" title="' . $title . '">' . $tag->name . '</a></li>';
+			}
+			echo '<ul class="tags">' . $list . '</ul>';
+	}
+
+}
+
+/*function tect_tags($params = array()) {
 	extract(shortcode_atts(array(
 		'orderby' => 'name',
 		'order' => 'ASC',
@@ -278,12 +386,12 @@ function tect_tags($params = array()) {
 	$list = ''; $min = 9999999; $max = 0;
 
 	$tags = get_tags(array('orderby' => $orderby, 'order' => $order, 'number' => $number));
-	
+
 	foreach ($tags as $tag) { // get minimum and maximum number tag counts
 		$min = min($min, $tag->count);
 		$max = max($max, $tag->count);
 	}
-	
+
 	foreach ($tags as $tag) { // generate tag list
 		$url = get_tag_link($tag->term_id);
 		$title = $tag->count .' '. _n( 'article', 'articles', $tag->count, 'tect' );
@@ -296,7 +404,7 @@ function tect_tags($params = array()) {
 		$list .= '<li><a href="' . $url . '" class="' . $class . '" title="' . $title . '">' . $tag->name . '</a></li>';
 	}
 	return '<ul class="tags">' . $list . '</ul>';
-}
+}*/
 
 /*--------------------------------------------------------------
 Custom fields and meta boxes
@@ -434,9 +542,9 @@ add_filter( 'posts_where', 'tect_hide_protected' );
 Sort posts by key of 'tect_time' or post_date if it doesn't exist
 --------------------------------------------------------------*/
 	//LEFT JOIN the meta table so that we can sort by it
-	function tect_query_join($join) { 
+	function tect_query_join($join) {
 		global $wp_query, $wpdb;
-		if ( is_home() || is_archive() || is_search() ) { 
+		if ( is_home() || is_archive() || is_search() ) {
 			$join .= "LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id AND meta_key = 'tect_time' ";
 			//custom categories to display here?
 		}
@@ -447,7 +555,7 @@ Sort posts by key of 'tect_time' or post_date if it doesn't exist
 
 	//sort by custom field by key of e.g. 'tect_time' or post_date if it doesn't exist
 	function tect_query_order( $orderby ) {
-		if ( is_home() || is_archive() || is_search() ) { 
+		if ( is_home() || is_archive() || is_search() ) {
 			$orderby = "COALESCE(meta_value, post_date) DESC";
 		}
 		return $orderby;
@@ -582,11 +690,11 @@ TGM Plugin Activation
 http://tgmpluginactivation.com/
 --------------------------------------------------------------*/
 require_once dirname( __FILE__ ) . '/utilities/class-tgm-plugin-activation.php';
- 
+
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 
 function my_theme_register_required_plugins() {
- 
+
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -660,9 +768,9 @@ function my_theme_register_required_plugins() {
 			'slug'         => 'wonderm00ns-simple-facebook-open-graph-tags',
 			'required'     => false,
 		),
- 
+
 	);
- 
+
 
 	$config = array(
 		'default_path' => '',
@@ -672,9 +780,9 @@ function my_theme_register_required_plugins() {
 		'is_automatic' => false,
 		'message'      => __( 'Hand picked plugins that work well with this theme.', 'tect' ),
 	);
- 
+
 	tgmpa( $plugins, $config );
- 
+
 }
 
 
