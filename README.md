@@ -6,7 +6,7 @@
 
 A bespoke ecosystem created out of frustration for untidy, complex and unnecessary code in WordPress themes. **Safe to deploy, but still experimental!**
 
-##This theme aims to:
+## This theme aims to:
 
 * Be an unobtrusive, contemporary and responsive, suitable for visual designers and writers.
 * Be a deployable ecosystem with select plugins and style classes.
@@ -14,12 +14,12 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 * Break free from WordPress' dated content behaviors, bad output code and template–like PHP code.
 * Be suitable for bilingual users. English & Greek localization included.
 
-##Required plugins
+## Required plugins
 
 * [GitHub Updater](https://github.com/afragen/github-updater): enables theme updates
 
 
-##Included / Credits
+## Included / Credits
 
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
@@ -36,12 +36,40 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 * RSS feeds have not been tested thus they may not work as expected.
 
 
-##To-do
+## To-do
 
+<!--
+
+- [X] item 1
+    * [X] item A
+    * [ ] item B
+        more text
+        + [x] item a
+        + [ ] item b
+        + [x] item c
+    * [X] item C
+- [ ] item 2
+- [ ] item 3
+
+## Check
+http://www.ifdo.co/
+* https://github.com/wilddeer/stickyfill
+* https://github.com/weaintplastic/jquery-unveiled-navigation
+* look into https://github.com/daveliepmann/tufte-css
+* https://developer.wordpress.org/themes/advanced-topics/customizer-api/
+* https://wordpress.org/plugins/simple-responsive-slider/installation/
+* more print styles: http://www.smashingmagazine.com/2015/01/07/designing-for-print-with-css/
+
+## Inspirations
+* http://www.phasesmag.com/
+-->
 
 ### high priority
+* restructure this list
+* image post → link different than thumb (link inside content?)
+* style prev and next links below the header, horizontally
 * link styles in .single header
-* imporve galleries (center, animations)
+* improve galleries (center, animations)
 * expand second language → more understandable?
 * remove body > selectors (they cause issues with wrappers)
 * debug draggables, not working in Android
@@ -95,7 +123,7 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 * Custom [editor styles](http://codex.wordpress.org/Function_Reference/add_editor_style).
 
 
-##Plugins to select or write
+## Plugins to select or write
 
 * http://wordpress.org/plugins/attachments/
 * http://dimsemenov.com/plugins/royal-slider/
@@ -114,7 +142,7 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 * WordPress → Twitter.
 
 
-##References
+## References
 
 * [Github flavored markdown](https://help.github.com/articles/github-flavored-markdown)
 * [Theme options page](http://codex.wordpress.org/Creating_Options_Pages)
@@ -134,10 +162,8 @@ A bespoke ecosystem created out of frustration for untidy, complex and unnecessa
 
 
 
-##Some things that “tect” likes
+## Some things that “tect” likes
 
-* [Roots Theme](http://roots.io/)
 * [Wired.co.uk](http://www.wired.co.uk/magazine/archive/2013/03/features/up) articles / see [dev post](http://views.fromthe7th.com/posts/2013/04/wired-uk-website-launches-new-articles) or [CQ](http://www.gq-magazine.co.uk/entertainment/articles/2013-04/09/steve-martin-david-walliams-in-conversation/viewall)
-* [The Guardian: Adventures in content](http://next.theguardian.com/blog/bison/)
 
 ~ a pet project by [Heracles Papatheodorou](http://archi.tect.gr) a.k.a [Arty2](http://www.twitter.com/Arty2)

@@ -9,7 +9,7 @@ get_sidebar();
 	if ( is_home() ) {
 		// create setting in options
 		// query_posts('cat=' . get_option('default_category'));
-		
+
 	}
 	// Start The Loop
 	if ( have_posts() ) {

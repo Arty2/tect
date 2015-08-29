@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	
+
 /*--------------------------------------------------------------
 Header animations
 --------------------------------------------------------------*/
@@ -88,7 +88,7 @@ Popup windows
 	$('.share-twitter, .share-facebook').popupWindow({
 		width: 550,
 		height: 250,
-		centerScreen: 1 
+		centerScreen: 1
 	});
 
 
@@ -206,7 +206,7 @@ Masonry
 --------------------------------------------------------------*/
 	/*var $container = $('main.archive');
 	$container.imagesLoaded( function() {
-		$container.masonry({ 
+		$container.masonry({
 			itemSelector: 'article',
 			// 'isFitWidth': true,
 		});
