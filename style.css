@@ -9,7 +9,7 @@ Tags: responsive, experimental
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 GitHub Theme URI: https://github.com/Arty2/tect
-Version: 1.2.13
+Version: 1.2.14
 */
 
 /*
@@ -1241,11 +1241,13 @@ html:lang(el_GR) article:lang(en) {
 main.archive {
 	margin: 0 2rem;
 
-	column-width     : 15rem;
-	-moz-column-width: 15rem;
-	column-gap       : 2rem;
-	-moz-column-gap  : 2rem;
-}
+	-moz-column-width   : 15rem;
+	-webkit-column-width: 15rem;
+	column-width        : 15rem;
+	-moz-column-gap   : 2rem;
+	-webkit-column-gap: 2rem;
+	column-gap        : 2rem;
+	}
 
 main.archive article {
 	position: relative;
